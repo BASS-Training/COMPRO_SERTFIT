@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LSP FIT — Lembaga Sertifikasi Profesi Teknologi Informasi</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ============ NAV ============ -->
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">FIT</span>
+          <span class="logo-text">
+            LSP
+            <em>Sertifikasi</em>
+          </span>
+        </a>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="index.html" class="active">Beranda</a></li>
+            <li><a href="aboutus.html">Tentang Kami</a></li>
+            <li class="has-dropdown">
+              <a href="skema.html">
+                Skema
+                <span class="chevron">›</span>
+              </a>
+              <ul class="dropdown">
+                <li><a href="skema.html#software">Software Engineering</a></li>
+                <li><a href="skema.html#data">Data & Analytics</a></li>
+                <li><a href="skema.html#cyber">Cyber Security</a></li>
+                <li><a href="skema.html#network">Networking & Cloud</a></li>
+              </ul>
+            </li>
+            <li><a href="asesor.html">Asesor</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </nav>
+        <a href="daftar.html" class="btn-header">Daftar Uji</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge reveal">Terakreditasi BNSP</div>
+        <h1 class="hero-title reveal">
+          Sertifikasi Profesi
+          <br />
+          <em>Teknologi Informasi</em>
+          <br />
+          Terpercaya
+        </h1>
+        <p class="hero-desc reveal">
+          LSP FIT hadir untuk menjamin kompetensi tenaga ahli teknologi informasi Indonesia melalui proses asesmen yang terstandar,
+          transparan, dan diakui secara nasional maupun internasional.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="daftar.html" class="btn-primary">Mulai Sertifikasi</a>
+          <a href="skema.html" class="btn-ghost">Lihat Skema →</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-logo">FIT</span>
+            <span class="cert-tag">BNSP</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-line"></div>
+            <div class="cert-line short"></div>
+            <div class="cert-meta">
+              <span>Software Engineer</span>
+              <span class="cert-year">2024</span>
+            </div>
+            <div class="cert-seal">✦</div>
+          </div>
+        </div>
+        <div class="floating-badge badge-top">ISO 17024</div>
+        <div class="floating-badge badge-bottom">Diakui Nasional</div>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>Software Engineering</span>
+        <span class="dot">◆</span>
+        <span>Data Science</span>
+        <span class="dot">◆</span>
+        <span>Cyber Security</span>
+        <span class="dot">◆</span>
+        <span>Cloud Computing</span>
+        <span class="dot">◆</span>
+        <span>Artificial Intelligence</span>
+        <span class="dot">◆</span>
+        <span>Network Engineering</span>
+        <span class="dot">◆</span>
+        <span>Software Engineering</span>
+        <span class="dot">◆</span>
+        <span>Data Science</span>
+        <span class="dot">◆</span>
+        <span>Cyber Security</span>
+        <span class="dot">◆</span>
+        <span>Cloud Computing</span>
+        <span class="dot">◆</span>
+        <span>Artificial Intelligence</span>
+        <span class="dot">◆</span>
+        <span>Network Engineering</span>
+        <span class="dot">◆</span>
+      </div>
+    </div>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="4800">0</span>
+            <span class="stat-plus">+</span>
+            <p>Peserta Tersertifikasi</p>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="18">0</span>
+            <p>Skema Kompetensi</p>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="120">0</span>
+            <span class="stat-plus">+</span>
+            <p>Asesor Berpengalaman</p>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="95">0</span>
+            <span class="stat-plus">%</span>
+            <p>Tingkat Kelulusan</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TENTANG ============ -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-left reveal">
+            <div class="section-eyebrow">Tentang LSP FIT</div>
+            <h2>Membangun Ekosistem Talenta Digital Indonesia</h2>
+            <p>
+              LSP FIT (Future Innovation Technology) adalah lembaga sertifikasi profesi berlisensi BNSP yang berfokus pada kompetensi
+              teknologi informasi. Kami percaya bahwa standarisasi kompetensi adalah fondasi industri digital yang kuat.
+            </p>
+            <p>
+              Didirikan pada 2016, kami telah menjadi mitra kepercayaan ratusan perusahaan teknologi, pemerintahan, dan institusi pendidikan
+              dalam memvalidasi dan mengembangkan talenta digital.
+            </p>
+            <a href="aboutus.html" class="link-arrow">Pelajari Selengkapnya →</a>
+          </div>
+          <div class="about-right reveal">
+            <div class="about-image-block">
+              <div class="about-img-frame">
+                <div class="img-placeholder">
+                  <div class="img-icon">⬡</div>
+                  <span>Foto Kantor / Tim</span>
+                </div>
+              </div>
+              <div class="about-accent-card">
+                <strong>Terakreditasi</strong>
+                <span>BNSP No. BNSP-LSP-1532-ID</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKEMA ============ -->
+    <section class="scheme-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-eyebrow">Skema Sertifikasi</div>
+          <h2>
+            Bidang Kompetensi
+            <br />
+            yang Kami Sertifikasi
+          </h2>
+          <p>18 skema yang selaras dengan kebutuhan industri, dikembangkan bersama para pemangku kepentingan.</p>
+        </div>
+        <div class="scheme-grid">
+          <div class="scheme-card reveal" style="--delay:0.05s">
+            <div class="scheme-icon">⟨/⟩</div>
+            <h3>Software Engineering</h3>
+            <p>Junior Programmer, Web Developer, Mobile Developer, Full Stack Engineer</p>
+            <span class="scheme-count">6 Skema</span>
+          </div>
+          <div class="scheme-card reveal" style="--delay:0.1s">
+            <div class="scheme-icon">◎</div>
+            <h3>Data & Analytics</h3>
+            <p>Data Analyst, Data Engineer, Data Scientist, Business Intelligence</p>
+            <span class="scheme-count">4 Skema</span>
+          </div>
+          <div class="scheme-card reveal" style="--delay:0.15s">
+            <div class="scheme-icon">⛨</div>
+            <h3>Cyber Security</h3>
+            <p>Security Analyst, Ethical Hacker, Digital Forensics, Security Auditor</p>
+            <span class="scheme-count">4 Skema</span>
+          </div>
+          <div class="scheme-card reveal" style="--delay:0.2s">
+            <div class="scheme-icon">☁</div>
+            <h3>Cloud & Network</h3>
+            <p>Cloud Architect, Network Engineer, DevOps Engineer, System Administrator</p>
+            <span class="scheme-count">4 Skema</span>
+          </div>
+        </div>
+        <div class="section-cta reveal">
+          <a href="skema.html" class="btn-primary">Lihat Semua Skema</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROSES ============ -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-eyebrow">Alur Sertifikasi</div>
+          <h2>
+            Proses yang Terstandar
+            <br />
+            & Transparan
+          </h2>
+        </div>
+        <div class="process-timeline">
+          <div class="process-step reveal" style="--delay:0s">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>Pendaftaran</h4>
+              <p>Isi formulir online, pilih skema, dan unggah dokumen persyaratan.</p>
+            </div>
+          </div>
+          <div class="process-step reveal" style="--delay:0.08s">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>Verifikasi Dokumen</h4>
+              <p>Tim admin memverifikasi kelengkapan dan eligibilitas peserta.</p>
+            </div>
+          </div>
+          <div class="process-step reveal" style="--delay:0.16s">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Asesmen Kompetensi</h4>
+              <p>Uji tulis, demonstrasi praktik, dan wawancara dengan asesor bersertifikat.</p>
+            </div>
+          </div>
+          <div class="process-step reveal" style="--delay:0.24s">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h4>Keputusan & Sertifikat</h4>
+              <p>Keputusan kompeten/belum kompeten dan penerbitan sertifikat BNSP.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONI ============ -->
+    <section class="testi-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-eyebrow">Testimoni</div>
+          <h2>
+            Kata Mereka yang Telah
+            <br />
+            Tersertifikasi
+          </h2>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card reveal" style="--delay:0.05s">
+            <div class="testi-quote">"</div>
+            <p>
+              Proses asesmen sangat profesional dan terstruktur. Sertifikat BNSP dari LSP FIT membuka banyak pintu karier di perusahaan
+              teknologi terkemuka.
+            </p>
+            <div class="testi-author">
+              <div class="author-avatar">AR</div>
+              <div>
+                <strong>Andi Rasyid</strong>
+                <span>Senior Web Developer, Tokopedia</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card reveal" style="--delay:0.1s">
+            <div class="testi-quote">"</div>
+            <p>Skema Data Scientist yang ditawarkan sangat relevan dengan kebutuhan industri. Asesornya benar-benar expert di bidangnya.</p>
+            <div class="testi-author">
+              <div class="author-avatar">SM</div>
+              <div>
+                <strong>Sari Maulida</strong>
+                <span>Data Scientist, GoTo Group</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card reveal" style="--delay:0.15s">
+            <div class="testi-quote">"</div>
+            <p>
+              Sangat direkomendasikan untuk fresh graduate yang ingin meningkatkan daya saing. Prosesnya jelas dan hasilnya diakui luas.
+            </p>
+            <div class="testi-author">
+              <div class="author-avatar">BN</div>
+              <div>
+                <strong>Bima Nugraha</strong>
+                <span>Network Engineer, Telkom Indonesia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MITRA ============ -->
+    <section class="partner-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-eyebrow">Mitra Kami</div>
+          <h2>Dipercaya Ratusan Institusi</h2>
+        </div>
+        <div class="partner-logos reveal">
+          <div class="partner-logo">
+            BUMN
+            <br />
+            <small>Digital</small>
+          </div>
+          <div class="partner-logo">
+            TechCorp
+            <br />
+            <small>Indonesia</small>
+          </div>
+          <div class="partner-logo">
+            State
+            <br />
+            <small>University</small>
+          </div>
+          <div class="partner-logo">
+            Digital
+            <br />
+            <small>Agency</small>
+          </div>
+          <div class="partner-logo">
+            Gov
+            <br />
+            <small>Ministry</small>
+          </div>
+          <div class="partner-logo">
+            Startup
+            <br />
+            <small>Hub ID</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BERITA ============ -->
+    <section class="news-section">
+      <div class="container">
+        <div class="section-head-row reveal">
+          <div>
+            <div class="section-eyebrow">Berita & Artikel</div>
+            <h2>Terkini dari LSP FIT</h2>
+          </div>
+          <a href="berita.html" class="link-arrow">Semua Berita →</a>
+        </div>
+        <div class="news-grid">
+          <div class="news-card featured reveal" style="--delay:0.05s">
+            <div class="news-img-placeholder">
+              <div class="news-cat">Pengumuman</div>
+            </div>
+            <div class="news-body">
+              <span class="news-date">10 Februari 2025</span>
+              <h3>LSP FIT Membuka Pendaftaran Sertifikasi Batch Q1 2025</h3>
+              <p>Pendaftaran gelombang pertama 2025 resmi dibuka untuk 8 skema sertifikasi teknologi informasi.</p>
+              <a href="berita.html" class="link-arrow">Baca Selengkapnya →</a>
+            </div>
+          </div>
+          <div class="news-card reveal" style="--delay:0.1s">
+            <div class="news-img-placeholder small">
+              <div class="news-cat">Artikel</div>
+            </div>
+            <div class="news-body">
+              <span class="news-date">28 Januari 2025</span>
+              <h3>Pentingnya Sertifikasi Profesi di Era Transformasi Digital</h3>
+              <a href="berita.html" class="link-arrow">Baca →</a>
+            </div>
+          </div>
+          <div class="news-card reveal" style="--delay:0.15s">
+            <div class="news-img-placeholder small">
+              <div class="news-cat">Kerjasama</div>
+            </div>
+            <div class="news-body">
+              <span class="news-date">15 Januari 2025</span>
+              <h3>MoU LSP FIT dengan 5 Universitas Negeri untuk Pengembangan Kompetensi</h3>
+              <a href="berita.html" class="link-arrow">Baca →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="cta-banner">
+      <div class="cta-bg"></div>
+      <div class="container">
+        <div class="cta-content reveal">
+          <h2>Siap Validasi Kompetensi Anda?</h2>
+          <p>Bergabunglah dengan ribuan profesional IT yang telah dipercaya industri melalui sertifikasi LSP FIT.</p>
+          <div class="cta-buttons">
+            <a href="daftar.html" class="btn-primary btn-white">Daftar Sekarang</a>
+            <a href="kontak.html" class="btn-ghost btn-ghost-white">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo logo-light">
+              <span class="logo-mark">FIT</span>
+              <span class="logo-text">
+                LSP
+                <em>Sertifikasi</em>
+              </span>
+            </a>
+            <p>Lembaga Sertifikasi Profesi Teknologi Informasi berlisensi BNSP. Menjamin standar kompetensi profesional IT Indonesia.</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="Instagram">ig</a>
+              <a href="#" aria-label="Twitter">tw</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Navigasi</h5>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="aboutus.html">Tentang Kami</a></li>
+              <li><a href="skema.html">Skema Sertifikasi</a></li>
+              <li><a href="asesor.html">Asesor</a></li>
+              <li><a href="berita.html">Berita</a></li>
+              <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Skema Unggulan</h5>
+            <ul>
+              <li><a href="skema.html">Software Engineering</a></li>
+              <li><a href="skema.html">Data Science</a></li>
+              <li><a href="skema.html">Cyber Security</a></li>
+              <li><a href="skema.html">Cloud Computing</a></li>
+              <li><a href="skema.html">AI & Machine Learning</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Kontak</h5>
+            <ul class="footer-contact">
+              <li>
+                <span>📍</span>
+                <span>Jl. Titihan Raya B9/HF 12-7A, Permata Bintaro. Bintaro Jaya Sektor 9 Tangerang Selatan, Banten 15228, South Tangerang 15228</span>
+              </li>
+              <li>
+                <span>📞</span>
+                <span>(021) 022213903</span>
+              </li>
+              <li>
+                 <span>📞</span>
+                <span>0811-1210-1007</span>
+              </li>
+              <li>
+                <span>✉</span>
+                <span>info@lspfit.id</span>
+              </li>
+              <li>
+                <span>⏰</span>
+                <span>Senin–Jumat, 08.00–17.00 WIB</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 LSP FIT — Lembaga Sertifikasi Profesi Teknologi Informasi. Hak Cipta Dilindungi.</p>
+          <div class="footer-links-bottom">
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat & Ketentuan</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
