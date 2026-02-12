@@ -23,8 +23,8 @@
   --text-muted: #6B7280;
   --border:     #F2DDD8;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-display: Helvetica, Arial, sans-serif;
+  --font-body:    'Plus Jakarta Sans';
 
   --radius-sm:   8px;
   --radius-md:   16px;
