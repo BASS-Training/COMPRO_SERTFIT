@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 160 60" role="img" aria-label="Sanggar Sarana Baja">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E35A2B" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#2AA8C7" stop-opacity="0.14"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="158" height="58" rx="10" fill="url(#g)" stroke="#E8CFC5"/>
+  <text x="80" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1F120D">SANGGAR</text>
+  <text x="80" y="46" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#6B5B52">SARANA BAJA</text>
+</svg>

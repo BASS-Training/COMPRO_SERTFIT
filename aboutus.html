@@ -8,386 +8,323 @@
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="aboutus.css" />
+  <link rel="stylesheet" href="/assets/css/aboutus.css" />
 </head>
 
 <body>
-  <!-- Background decorative -->
-  <div class="bg-orbs" aria-hidden="true">
-    <span class="orb orb--1"></span>
-    <span class="orb orb--2"></span>
-    <span class="orb orb--3"></span>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true">11
+    <div class="scroll-bar" id="scrollBar"></div>
   </div>
 
-  <!-- Top progress bar (scroll) -->
-  <div class="scroll-progress" aria-hidden="true">
-    <div class="scroll-progress__bar" id="scrollProgress"></div>
+  <!-- NAVBAR (sesuai permintaan kamu) -->
+ <header class="site-header" id="siteHeader">
+  <div class="header-inner">
+
+    <a href="index.html" class="logo-img-wrap" aria-label="LSP FIT">
+      <img src="/assets/fitb logo.png" alt="LSP FIT Logo" id="logoImg" class="logo-invert" />
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="aboutus.html" class="active">Tentang Kami</a></li>
+
+        <li class="has-dropdown">
+          <a href="skema.html">Skema <span class="chevron">&#x203A;</span></a>
+          <ul class="dropdown">
+            <li><a href="skema.html#klaster">Skema Klaster</a></li>
+            <li><a href="skema.html#instruktur">Skema Instruktur</a></li>
+            <li><a href="skema.html#kepelatihan">Tenaga Kepelatihan</a></li>
+          </ul>
+        </li>
+
+        <li><a href="asesor.html">Asesor</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <a href="daftar.html" class="btn-header">Daftar Uji</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
   </div>
+</header>
 
-  <!-- NAV (minimal) -->
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="brand" href="#">
-        <span class="brand__mark" aria-hidden="true"></span>
-        <span class="brand__text">LSP <em>FIT</em></span>
-      </a>
 
-      <nav class="nav">
-        <a href="#tentang">Tentang</a>
-        <a href="#nilai">Nilai</a>
-        <a href="#perjalanan">Perjalanan</a>
-        <a href="#tim">Tim</a>
-      </nav>
+  <main>
 
-      <a class="btn btn--ghost" href="#cta">Hubungi</a>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main id="tentang">
-    <section class="hero">
+    <!-- HERO / TENTANG KAMI (PDF halaman 2) -->
+    <section class="hero" id="tentang">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow reveal" style="--d:0ms">
-            <span class="eyebrow__dot"></span>
-            <span>Tentang Kami</span>
-          </div>
-
-          <h1 class="hero-title reveal" style="--d:90ms">
-            Membangun standar kompetensi
-            <span class="accent">yang dipercaya</span>
-            untuk talenta digital Indonesia.
+        <div>
+          <h1>
+            Tentang <span>LSP FIT</span>
           </h1>
-
-          <p class="hero-desc reveal" style="--d:170ms">
-            LSP FIT berkomitmen menyelenggarakan asesmen kompetensi yang objektif, terukur, dan relevan dengan kebutuhan industri.
-            Kami menghubungkan individu, institusi, dan dunia kerja melalui sertifikasi yang berintegritas.
+          <p>
+            Lembaga Sertifikasi Profesi Fasilitator, Instruktur dan Tenaga Kepelatihan (LSP FIT) memiliki lisensi
+            dari Badan Nasional Sertifikasi Profesi (BNSP) dengan Nomor <b>BNSP-LSP-444-ID</b> dan berhak melakukan
+            Uji Kompetensi yang mengacu kepada Standar Kompetensi Kerja Nasional Indonesia (SKKNI) No <b>333 Tahun 2020</b>.
+          </p>
+          <p>
+            LSP FIT didukung oleh dua asosiasi; <b>APTISI</b> (Asosiasi Perguruan Tinggi Swasta Indonesia) wilayah 3 DKI Jaya
+            dan <b>AFIN</b> (Asosiasi Fasilitator Instruktur Nusantara).
           </p>
 
-          <div class="hero-actions reveal" style="--d:240ms">
-            <a class="btn btn--primary" href="#nilai">Lihat Nilai Kami</a>
-            <a class="btn btn--soft" href="#perjalanan">Perjalanan LSP FIT</a>
-          </div>
-
-          <div class="hero-badges reveal" style="--d:320ms">
-            <div class="badge">
-              <div class="badge__icon" aria-hidden="true">✓</div>
-              <div class="badge__text">
-                <strong>Objektif</strong>
-                <span>berbasis bukti & standar</span>
-              </div>
-            </div>
-            <div class="badge">
-              <div class="badge__icon" aria-hidden="true">⚡</div>
-              <div class="badge__text">
-                <strong>Relevan</strong>
-                <span>selaras kebutuhan industri</span>
-              </div>
-            </div>
-            <div class="badge">
-              <div class="badge__icon" aria-hidden="true">🛡</div>
-              <div class="badge__text">
-                <strong>Berintegritas</strong>
-                <span>transparan & akuntabel</span>
-              </div>
-            </div>
-          </div>
+          <a class="btn-primary" href="#visi-misi">Lihat Visi & Misi</a>
         </div>
 
-        <!-- HERO VISUAL CARD -->
-        <div class="hero-visual">
-          <div class="visual-card reveal" style="--d:120ms">
-            <div class="visual-card__top">
-              <div class="shine-line" aria-hidden="true"></div>
-              <p class="kicker">Ringkas</p>
-              <h2>Visi. Misi. Nilai.</h2>
-              <p class="muted">
-                Tiga pilar yang memastikan setiap asesmen menghasilkan keputusan kompeten yang dapat dipertanggungjawabkan.
-              </p>
-            </div>
-
-            <div class="visual-card__grid">
-              <div class="mini mini--a">
-                <p class="mini__label">Fokus</p>
-                <p class="mini__value">Mutu Asesmen</p>
-              </div>
-              <div class="mini mini--b">
-                <p class="mini__label">Pendekatan</p>
-                <p class="mini__value">Berbasis Standar</p>
-              </div>
-              <div class="mini mini--c">
-                <p class="mini__label">Arah</p>
-                <p class="mini__value">Talenta Digital</p>
-              </div>
-              <div class="mini mini--d">
-                <p class="mini__label">Prinsip</p>
-                <p class="mini__value">Adil & Transparan</p>
-              </div>
-            </div>
-
-            <div class="visual-card__footer">
-              <div class="pulse" aria-hidden="true"></div>
-              <span>Komitmen mutu & peningkatan berkelanjutan</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat reveal" style="--d:0ms">
-          <div class="stat__num" data-counter="1200">0</div>
-          <div class="stat__label">Peserta tersertifikasi</div>
-        </div>
-        <div class="stat reveal" style="--d:80ms">
-          <div class="stat__num" data-counter="25">0</div>
-          <div class="stat__label">Skema okupasi</div>
-        </div>
-        <div class="stat reveal" style="--d:160ms">
-          <div class="stat__num" data-counter="40">0</div>
-          <div class="stat__label">Asesor terverifikasi</div>
-        </div>
-        <div class="stat reveal" style="--d:240ms">
-          <div class="stat__num" data-counter="98">0</div>
-          <div class="stat__label">Tingkat kepuasan (%)</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT / STORY -->
-    <section class="about">
+    <!-- VISI MISI (PDF halaman 3) -->
+    <section class="about section-light" id="visi-misi">
       <div class="container about-grid">
-        <div class="about-panel reveal" style="--d:0ms">
-          <h2 class="section-title">Siapa Kami</h2>
-          <p class="section-desc">
-            Kami adalah lembaga sertifikasi profesi yang berfokus pada kompetensi Teknologi Informasi, dengan proses asesmen yang
-            konsisten, terstandar, dan menjunjung tinggi etika profesional.
+        <div>
+          <h2>Visi</h2>
+          <p>
+            Menjadi Lembaga Sertifikasi Profesi Fasilitator, Instruktur & Tenaga Kepelatihan yang tangguh dan terpercaya.
           </p>
-
-          <div class="callout">
-            <div class="callout__icon" aria-hidden="true">★</div>
-            <div class="callout__text">
-              <strong>Tujuan utama kami</strong>
-              <span>membantu individu dan organisasi memastikan kompetensi yang nyata — bukan sekadar klaim.</span>
-            </div>
-          </div>
-
-          <div class="pill-row">
-            <span class="pill">Asesmen Objektif</span>
-            <span class="pill">Standar Kompetensi</span>
-            <span class="pill">Industri-Ready</span>
-            <span class="pill">Audit Trail</span>
-          </div>
         </div>
 
-        <div class="about-cards">
-          <article class="card reveal" style="--d:60ms">
-            <div class="card__head">
-              <div class="icon-chip" aria-hidden="true">👁</div>
-              <h3>Visi</h3>
-            </div>
-            <p>
-              Menjadi lembaga sertifikasi profesi TI terdepan yang diakui secara nasional dan internasional dalam menjamin standar kompetensi.
+        <div class="cards">
+          <div class="card">
+            <h3>Misi</h3>
+            <p class="mb-10">LSP FIT menetapkan misi sebagai berikut:</p>
+            <p class="text-muted text-relaxed mb-0">
+              1. Menyediakan MUK sesuai dengan Ruang Lingkup Skema.<br/>
+              2. Menyediakan Asesor yang kompeten sesuai dengan Ruang Lingkup Skema.<br/>
+              3. Mensertifikasi para Instruktur dari Badan Diklat Pemerintah dan Swasta.<br/>
+              4. Melaksanakan Uji Kompetensi dengan integritas dan kualitas yang tinggi dengan mengutamakan Pelayanan Prima.
             </p>
-          </article>
-
-          <article class="card reveal" style="--d:140ms">
-            <div class="card__head">
-              <div class="icon-chip" aria-hidden="true">🎯</div>
-              <h3>Misi</h3>
-            </div>
-            <ul class="clean-list">
-              <li>Menyelenggarakan asesmen kompetensi yang objektif dan terstandar.</li>
-              <li>Mengembangkan skema sertifikasi sesuai kebutuhan industri.</li>
-              <li>Membangun ekosistem talenta digital yang berdaya saing.</li>
-              <li>Berkolaborasi dengan industri, pemerintah, dan akademisi.</li>
-            </ul>
-          </article>
-
-          <article class="card reveal" style="--d:220ms" id="nilai">
-            <div class="card__head">
-              <div class="icon-chip" aria-hidden="true">🧭</div>
-              <h3>Nilai</h3>
-            </div>
-            <div class="value-grid">
-              <div class="value">
-                <strong>Integritas</strong>
-                <span>jujur, transparan, akuntabel</span>
-              </div>
-              <div class="value">
-                <strong>Kompeten</strong>
-                <span>standar tinggi, terukur</span>
-              </div>
-              <div class="value">
-                <strong>Inovatif</strong>
-                <span>adaptif, relevan, efektif</span>
-              </div>
-              <div class="value">
-                <strong>Kolaboratif</strong>
-                <span>sinergi multi-pihak</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section class="timeline" id="perjalanan">
-      <div class="container">
-        <div class="timeline-head">
-          <h2 class="section-title reveal" style="--d:0ms">Perjalanan Kami</h2>
-          <p class="section-desc reveal" style="--d:80ms">
-            Dibangun dari komitmen terhadap mutu, lalu bertumbuh melalui kolaborasi dan kebutuhan industri.
-          </p>
-        </div>
-
-        <div class="timeline-wrap">
-          <div class="tline">
-            <div class="titem reveal" style="--d:0ms">
-              <div class="titem__dot" aria-hidden="true"></div>
-              <div class="titem__card">
-                <p class="titem__year">2019</p>
-                <h3>Fondasi Mutu</h3>
-                <p>Membangun sistem asesmen, perangkat uji, dan tata kelola yang rapi.</p>
-              </div>
-            </div>
-
-            <div class="titem reveal" style="--d:80ms">
-              <div class="titem__dot" aria-hidden="true"></div>
-              <div class="titem__card">
-                <p class="titem__year">2021</p>
-                <h3>Ekspansi Skema</h3>
-                <p>Menambah skema sesuai peta jabatan TI dan kebutuhan industri.</p>
-              </div>
-            </div>
-
-            <div class="titem reveal" style="--d:160ms">
-              <div class="titem__dot" aria-hidden="true"></div>
-              <div class="titem__card">
-                <p class="titem__year">2023</p>
-                <h3>Kolaborasi Strategis</h3>
-                <p>Memperluas kemitraan dengan kampus, industri, dan komunitas.</p>
-              </div>
-            </div>
-
-            <div class="titem reveal" style="--d:240ms">
-              <div class="titem__dot" aria-hidden="true"></div>
-              <div class="titem__card">
-                <p class="titem__year">Sekarang</p>
-                <h3>Impact Talenta Digital</h3>
-                <p>Fokus pada kualitas, kecepatan layanan, dan pengalaman asesmen yang lebih baik.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="tline-aside reveal" style="--d:120ms">
-            <div class="aside-card">
-              <h3>Komitmen Kami</h3>
-              <p class="muted">
-                Setiap keputusan asesmen harus dapat ditelusuri, berbasis bukti, dan dilakukan dengan prinsip keadilan.
-              </p>
-              <div class="aside-points">
-                <div class="apoint"><span aria-hidden="true">✓</span> Bukti kompetensi jelas</div>
-                <div class="apoint"><span aria-hidden="true">✓</span> Proses konsisten</div>
-                <div class="apoint"><span aria-hidden="true">✓</span> Peningkatan berkelanjutan</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TEAM -->
-    <section class="team" id="tim">
+    <!-- PRODUK KAMI (PDF halaman 4–7) -->
+    <section class="timeline" id="produk">
       <div class="container">
-        <div class="team-head">
-          <h2 class="section-title reveal" style="--d:0ms">Tim & Tata Kelola</h2>
-          <p class="section-desc reveal" style="--d:80ms">
-            Struktur yang jelas, kolaborasi yang sehat, dan standar yang sama—itulah yang menjaga kualitas layanan kami.
-          </p>
+        <h2>Produk Kami</h2>
+
+        <div class="timeline-line">
+          <div class="timeline-item">
+            <span>01</span>
+            <p><b>Skema Klaster</b></p>
+          </div>
+
+          <div class="timeline-item">
+            <span>02</span>
+            <p><b>Skema Okupasi Bidang Instruktur</b></p>
+          </div>
+
+          <div class="timeline-item">
+            <span>03</span>
+            <p><b>Skema Okupasi Bidang Tenaga Kepelatihan</b></p>
+          </div>
         </div>
 
+        <!-- Detail skema (PDF halaman 5) -->
+        <div class="cards mt-14">
+          <div class="card" id="klaster">
+            <h3>Skema Klaster</h3>
+            <p class="text-muted text-relaxed mb-0">
+              • Skema Klaster Perencanaan Penyajian Materi Pelatihan<br/>
+              • Skema Klaster Pelaksanaan Program Pembelajaran (Blended Learning)<br/>
+              • Skema Klaster Penyajian Materi Pembelajaran Daring<br/>
+              • Skema Klaster Pelaksanaan Pelatihan Tatap Muka (Luring)
+            </p>
+          </div>
+
+          <!-- Detail instruktur (PDF halaman 6) -->
+          <div class="card" id="instruktur">
+            <h3>Skema Okupasi Bidang Instruktur</h3>
+            <p class="text-muted text-relaxed mb-0">
+              <b>Jenjang Kualifikasi Level 3</b><br/>
+              • Asisten Instruktur • Mentor • Instruktur Junior • Instruktur Terampil • Pelatih • Pelatih di Tempat Kerja<br/><br/>
+
+              <b>Jenjang Kualifikasi Level 4</b><br/>
+              • Instruktur Pertama • Fasilitator • Pengajar Vokasi • Instruktur • Instruktur Penyelia<br/><br/>
+
+              <b>Jenjang Kualifikasi Level 5</b><br/>
+              • Instruktur Muda • Instruktur Senior<br/><br/>
+
+              <b>Jenjang Kualifikasi Level 6</b><br/>
+              • Instruktur Madya • Instruktur Master
+            </p>
+          </div>
+
+          <!-- Detail tenaga kepelatihan (PDF halaman 7) -->
+          <div class="card" id="kepelatihan">
+            <h3>Skema Okupasi Bidang Tenaga Kepelatihan</h3>
+            <p class="text-muted text-relaxed mb-0">
+              <b>Jenjang Kualifikasi 3</b><br/>
+              • Koordinator Pemagangan • Pengembangan Kurikulum dan Fasilitas Pelatihan<br/><br/>
+
+              <b>Jenjang Kualifikasi 4</b><br/>
+              • Staff Administrasi • Pelaksana Kegiatan Pelatihan • Pemasar Program Pelatihan • Penata Diklat<br/>
+              • Pengelola Rekrutmen dan Seleksi • Penyelenggara Pelatihan • Penyedia Bahan Pelatihan<br/><br/>
+
+              <b>Jenjang Kualifikasi 5</b><br/>
+              • Manajer<br/><br/>
+
+              <b>Jenjang Kualifikasi 6</b><br/>
+              • Kepala Lembaga Pelatihan
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROSES SERTIFIKASI (PDF halaman 8) -->
+    <section class="about section-light" id="proses">
+      <div class="container">
+        <h2 class="section-title">Proses Sertifikasi</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Tahap 1</h3>
+            <p>Mendaftar ke LSP FIT. Mengisi Form APL 1 & 2.</p>
+          </div>
+
+          <div class="card">
+            <h3>Tahap 2</h3>
+            <p>Verifikasi dokumen pemohon. Pemohon diterima sebagai asesi. Pemohon melakukan pembayaran.</p>
+          </div>
+
+          <div class="card">
+            <h3>Tahap 3</h3>
+            <p>Melakukan konsultasi Pra Asesmen.</p>
+          </div>
+
+          <div class="card">
+            <h3>Tahap 4</h3>
+            <p>Melakukan proses Asesmen.</p>
+          </div>
+
+          <div class="card">
+            <h3>Tahap 5</h3>
+            <p>Asesor kompetensi mencatat bukti dan membuat rekomendasi.</p>
+          </div>
+
+          <div class="card">
+            <h3>Tahap 6</h3>
+            <p>Rapat Pleno Komite Teknik.</p>
+          </div>
+
+          <div class="card">
+            <h3>Tahap 7</h3>
+            <p>Serah terima sertifikat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOKUMENTASI (PDF halaman 9) -->
+    <section class="team" id="dokumentasi">
+      <div class="container">
+        <h2>Dokumentasi</h2>
+        <p class="text-muted text-relaxed mb-14">
+          Dokumentasi kegiatan sertifikasi dan pelatihan.
+        </p>
+
+        <!-- Placeholder gallery (isi dengan foto asli) -->
         <div class="team-grid">
-          <!-- Ganti nama & jabatan sesuai kebutuhan -->
-          <article class="person reveal" style="--d:0ms">
-            <div class="person__avatar" aria-hidden="true"></div>
-            <div class="person__meta">
-              <h3>Nama Ketua</h3>
-              <p>Ketua / Penanggung Jawab</p>
-            </div>
-            <div class="person__tags">
-              <span>Leadership</span><span>Governance</span>
-            </div>
-          </article>
-
-          <article class="person reveal" style="--d:90ms">
-            <div class="person__avatar" aria-hidden="true"></div>
-            <div class="person__meta">
-              <h3>Nama Manajer</h3>
-              <p>Manajer Sertifikasi</p>
-            </div>
-            <div class="person__tags">
-              <span>Quality</span><span>Assurance</span>
-            </div>
-          </article>
-
-          <article class="person reveal" style="--d:180ms">
-            <div class="person__avatar" aria-hidden="true"></div>
-            <div class="person__meta">
-              <h3>Nama Koordinator</h3>
-              <p>Koordinator Asesor</p>
-            </div>
-            <div class="person__tags">
-              <span>Assessment</span><span>Standard</span>
-            </div>
-          </article>
-
-          <article class="person reveal" style="--d:270ms">
-            <div class="person__avatar" aria-hidden="true"></div>
-            <div class="person__meta">
-              <h3>Nama Admin</h3>
-              <p>Layanan & Administrasi</p>
-            </div>
-            <div class="person__tags">
-              <span>Service</span><span>Ops</span>
-            </div>
-          </article>
+          <div class="team-card">
+            <div class="avatar"></div>
+            <h4>Foto Kegiatan 1</h4>
+            <p>Upload foto dokumentasi</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar"></div>
+            <h4>Foto Kegiatan 2</h4>
+            <p>Upload foto dokumentasi</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar"></div>
+            <h4>Foto Kegiatan 3</h4>
+            <p>Upload foto dokumentasi</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta" id="cta">
+    <!-- PARTNER KAMI (PDF halaman 10) -->
+    <section class="team section-light" id="partner">
       <div class="container">
-        <div class="cta-card reveal" style="--d:0ms">
-          <div class="cta-copy">
-            <h2>Siap berkolaborasi atau mengikuti sertifikasi?</h2>
-            <p>
-              Hubungi kami untuk informasi skema, jadwal asesmen, atau kemitraan institusi.
-              Kami respon cepat dan transparan.
-            </p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn--primary" href="#">Kontak Admin</a>
-            <a class="btn btn--ghost" href="#">Lihat Skema</a>
-          </div>
+        <h2>Partner Kami</h2>
+        <p class="text-muted text-relaxed mb-14">
+          Mitra kolaborasi LSP FIT.
+        </p>
+
+        <!-- Placeholder logo grid (ganti dengan logo asli) -->
+        <div class="team-grid">
+          <div class="team-card"><div class="avatar"></div><h4>Logo Partner</h4><p>Upload logo</p></div>
+          <div class="team-card"><div class="avatar"></div><h4>Logo Partner</h4><p>Upload logo</p></div>
+          <div class="team-card"><div class="avatar"></div><h4>Logo Partner</h4><p>Upload logo</p></div>
         </div>
       </div>
     </section>
+
+    <!-- KONTAK (PDF halaman 1, 11, 12) -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo-wrap">
+              <img src="/assets/fitb logo.png" alt="LSP FIT" class="footer-logo-img" />
+            </div>
+            <p>Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Berlisensi BNSP No. BNSP-LSP-444-ID.</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="Instagram">ig</a>
+              <a href="#" aria-label="WhatsApp">wa</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Navigasi</h5>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="aboutus.html">Tentang Kami</a></li>
+              <li><a href="skema.html">Skema Sertifikasi</a></li>
+              <li><a href="asesor.html">Asesor</a></li>
+              <li><a href="berita.html">Berita</a></li>
+              <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Skema Unggulan</h5>
+            <ul>
+              <li><a href="skema.html">Instruktur Junior</a></li>
+              <li><a href="skema.html">Instruktur Senior</a></li>
+              <li><a href="skema.html">Fasilitator</a></li>
+              <li><a href="skema.html">Blended Learning</a></li>
+              <li><a href="skema.html">Penyelenggara Pelatihan</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Kontak</h5>
+            <ul class="footer-contact">
+              <li><span>&#x1F4CD;</span><span>Ruko Akasa Blok B No. 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan</span></li>
+              <li><span>&#x1F4DE;</span><span>0811-1210-1007</span></li>
+              <li><span>&#x2709;</span><span>info.lspfit@gmail.com</span></li>
+              <li><span>&#x1F310;</span><span>www.sertifikasifit.com</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© <span id="year"></span> LSP FIT. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <span>© <span id="yearNow"></span> LSP FIT. All rights reserved.</span>
-      <span class="footer-mini">Built with integrity • quality • impact</span>
-    </div>
-  </footer>
-
-  <script src="about.js"></script>
+  <script src="/assets/js/about.js"></script>
 </body>
 </html>
