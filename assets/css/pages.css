@@ -62,6 +62,57 @@
   max-width: 560px;
 }
 
+.page-hero .hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(240,73,35,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240,73,35,0.15) 1px, transparent 1px),
+    linear-gradient(rgba(0,172,234,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,172,234,0.15) 1px, transparent 1px),
+    linear-gradient(rgba(245,37,37,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,37,37,0.12) 1px, transparent 1px);
+  background-size: 56px 56px, 56px 56px, 78px 78px, 78px 78px, 104px 104px, 104px 104px;
+}
+.page-hero .hero-grid.is-mobile {
+  opacity: 0.6;
+  background-size: 90px 90px, 90px 90px, 124px 124px, 124px 124px, 150px 150px, 150px 150px;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.page-hero .hero-cta {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.page-hero-desc {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 120px 4% 80px;
+  }
+  .page-hero-desc {
+    font-size: 1rem;
+  }
+  .page-hero .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 /* ─── Tentang: Visi Misi ─── */
 .vm-section {
   padding: 100px 0;

@@ -23,7 +23,7 @@
   --text-muted: #6B7280;
   --border:     #F2DDD8;
 
-  --font-display: Helvetica, Arial, sans-serif;
+  --font-display: Helvetica, Arial;
   --font-body:    'Plus Jakarta Sans';
 
   --radius-sm:   8px;
@@ -348,9 +348,13 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(240,73,35,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(240,73,35,0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(240,73,35,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240,73,35,0.12) 1px, transparent 1px),
+    linear-gradient(rgba(0,172,234,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,172,234,0.12) 1px, transparent 1px),
+    linear-gradient(rgba(245,37,37,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,37,37,0.1) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px, 84px 84px, 84px 84px, 112px 112px, 112px 112px;
 }
 
 .hero-blob {

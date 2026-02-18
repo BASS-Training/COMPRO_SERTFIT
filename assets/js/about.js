@@ -1,119 +1,128 @@
-// About Us — navbar scroll, progress bar, reveal, counter, mobile nav
-(() => {
-  // ===== Year =====
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+const AOS_CSS_URL = 'https://unpkg.com/aos@2.3.4/dist/aos.css';
+const AOS_JS_URL = 'https://unpkg.com/aos@2.3.4/dist/aos.js';
 
-  // ===== Scroll Progress Bar (gunakan #scrollBar) =====
-  const scrollBar = document.getElementById("scrollBar");
-  const updateProgress = () => {
-    if (!scrollBar) return;
-    const doc = document.documentElement;
-    const scrollTop = doc.scrollTop || document.body.scrollTop;
-    const height = doc.scrollHeight - doc.clientHeight;
-    const pct = height > 0 ? (scrollTop / height) * 100 : 0;
-    scrollBar.style.width = `${pct}%`;
+const debounce = (fn, delay = 200) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
   };
+};
 
-  // ===== Navbar dark -> white on scroll =====
-  const siteHeader = document.getElementById("siteHeader");
-  const updateHeader = () => {
-    if (!siteHeader) return;
-    if (window.scrollY > 12) siteHeader.classList.add("scrolled");
-    else siteHeader.classList.remove("scrolled");
+const throttleRAF = (fn) => {
+  let scheduled = false;
+  return (...args) => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      fn(...args);
+      scheduled = false;
+    });
   };
+};
 
-  // Gabung listener scroll biar rapi
-  const onScroll = () => {
-    updateProgress();
-    updateHeader();
-  };
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("load", () => {
-    updateProgress();
-    updateHeader();
+const loadAsset = (tag, attributes) => {
+  return new Promise((resolve, reject) => {
+    const selector = attributes.href
+      ? `${tag}[href="${attributes.href}"]`
+      : `${tag}[src="${attributes.src}"]`;
+    if (document.querySelector(selector)) {
+      resolve();
+      return;
+    }
+    const element = document.createElement(tag);
+    Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
+    element.addEventListener('load', () => resolve(element));
+    element.addEventListener('error', reject);
+    document.head.appendChild(element);
   });
+};
 
-  // ===== Hamburger toggle (mobile) =====
-  const hamburger = document.getElementById("hamburger");
-  const mainNav = document.getElementById("mainNav");
+const applyAosAttributes = () => {
+  const mappings = [
+    { selector: '.page-hero-title', animation: 'fade-down' },
+    { selector: '.page-hero-desc', animation: 'fade-up' },
+    { selector: '.hero-cta', animation: 'zoom-in' },
+    { selector: '.vm-card', animation: 'fade-right' },
+    { selector: '.timeline-card', animation: 'fade-up' },
+    { selector: '.team-card', animation: 'zoom-in' },
+    { selector: '.cta-content', animation: 'fade-up' },
+    { selector: '.section-eyebrow', animation: 'fade-right' },
+  ];
 
-  if (hamburger && mainNav) {
-    hamburger.addEventListener("click", () => {
-      mainNav.classList.toggle("open");
-    });
-
-    // Tutup menu saat klik link (mobile), kecuali dropdown trigger
-    mainNav.addEventListener("click", (e) => {
-      const link = e.target.closest("a");
-      if (!link) return;
-
-      const dropdownLink = link.parentElement && link.parentElement.classList.contains("has-dropdown");
-      if (dropdownLink && window.innerWidth <= 768) {
-        e.preventDefault();
-        link.parentElement.classList.toggle("open");
-        return;
-      }
-
-      if (window.innerWidth <= 768) {
-        mainNav.classList.remove("open");
+  mappings.forEach(({ selector, animation }) => {
+    document.querySelectorAll(selector).forEach((el, index) => {
+      el.dataset.aos = animation;
+      el.dataset.aosDuration = '700';
+      el.dataset.aosOffset = '70';
+      el.dataset.aosOnce = 'true';
+      if (!el.dataset.aosDelay) {
+        el.dataset.aosDelay = `${(index % 3) * 80}`;
       }
     });
+  });
+};
+
+const initAos = () => {
+  if (!window.AOS) return;
+  window.AOS.init({
+    duration: 720,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 60,
+    mirror: false,
+  });
+};
+
+const loadAosAssets = async () => {
+  try {
+    await loadAsset('link', { rel: 'stylesheet', href: AOS_CSS_URL });
+    await loadAsset('script', { src: AOS_JS_URL, defer: true });
+    initAos();
+    window.addEventListener('resize', debounce(() => window.AOS && window.AOS.refresh(), 250));
+  } catch (error) {
+    console.warn('AOS failed to load', error);
   }
+};
 
-  // ===== Mobile dropdown toggle handled in nav click above =====
+const setupSmoothScroll = () => {
+  const links = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+  links.forEach((link) => {
+    const target = document.querySelector(link.hash);
+    if (!target) return;
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', link.hash);
+    });
+  });
+};
 
-  // ===== Reveal on scroll (optional) =====
-  const reveals = document.querySelectorAll(".reveal");
-  if (reveals.length) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((ent) => {
-          if (ent.isIntersecting) {
-            ent.target.classList.add("is-in");
-            io.unobserve(ent.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
+const updateHeroGridMode = () => {
+  const grid = document.querySelector('.page-hero .hero-grid');
+  if (!grid) return;
+  grid.classList.toggle('is-mobile', window.innerWidth <= 720);
+};
 
-    reveals.forEach((el) => io.observe(el));
-  }
+const syncLogoContrast = () => {
+  const logoImg = document.getElementById('logoImg');
+  if (!logoImg) return;
+  logoImg.classList.toggle('logo-invert', window.scrollY <= 60);
+};
 
-  // ===== Counter animation (optional) =====
-  const counters = document.querySelectorAll("[data-counter]");
-  if (counters.length) {
-    const animateCounter = (el) => {
-      const target = Number(el.getAttribute("data-counter")) || 0;
-      const duration = 900;
-      const start = performance.now();
-      const from = 0;
+const initAboutScripts = () => {
+  applyAosAttributes();
+  setupSmoothScroll();
+  updateHeroGridMode();
+  loadAosAssets();
 
-      const step = (now) => {
-        const t = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-        const val = Math.round(from + (target - from) * eased);
-        el.textContent = val.toLocaleString("id-ID");
-        if (t < 1) requestAnimationFrame(step);
-      };
+  const resizeGrid = debounce(updateHeroGridMode, 180);
+  window.addEventListener('resize', resizeGrid, { passive: true });
+  window.addEventListener('orientationchange', updateHeroGridMode);
 
-      requestAnimationFrame(step);
-    };
+  const handleLogoScroll = throttleRAF(syncLogoContrast);
+  window.addEventListener('scroll', handleLogoScroll, { passive: true });
+  handleLogoScroll();
+};
 
-    const counterIO = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((ent) => {
-          if (ent.isIntersecting) {
-            animateCounter(ent.target);
-            counterIO.unobserve(ent.target);
-          }
-        });
-      },
-      { threshold: 0.35 }
-    );
-
-    counters.forEach((el) => counterIO.observe(el));
-  }
-})();
+document.addEventListener('DOMContentLoaded', initAboutScripts);

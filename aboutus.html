@@ -5,326 +5,279 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tentang Kami — LSP FIT</title>
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/assets/css/aboutus.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/brand.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
 </head>
 
 <body>
-
-  <!-- Scroll Progress -->
-  <div class="scroll-progress" aria-hidden="true">11
+  <div class="scroll-progress" aria-hidden="true">
     <div class="scroll-bar" id="scrollBar"></div>
   </div>
 
-  <!-- NAVBAR (sesuai permintaan kamu) -->
- <header class="site-header" id="siteHeader">
-  <div class="header-inner">
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="logo-img-wrap" aria-label="LSP FIT">
+        <img src="/assets/fitb logo.png" alt="LSP FIT Logo" class="logo-invert" id="logoImg" />
+      </a>
 
-    <a href="index.html" class="logo-img-wrap" aria-label="LSP FIT">
-      <img src="/assets/fitb logo.png" alt="LSP FIT Logo" id="logoImg" class="logo-invert" />
-    </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="aboutus.html" class="active">Tentang Kami</a></li>
+          <li class="has-dropdown">
+            <a href="skema.html">Skema <span class="chevron">&#x203A;</span></a>
+            <ul class="dropdown">
+              <li><a href="skema.html#klaster">Skema Klaster</a></li>
+              <li><a href="skema.html#instruktur">Skema Instruktur</a></li>
+              <li><a href="skema.html#kepelatihan">Tenaga Kepelatihan</a></li>
+            </ul>
+          </li>
+          <li><a href="asesor.html">Asesor</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
 
-    <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
-      <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="aboutus.html" class="active">Tentang Kami</a></li>
+      <a href="daftar.html" class="btn-header">Daftar Uji</a>
 
-        <li class="has-dropdown">
-          <a href="skema.html">Skema <span class="chevron">&#x203A;</span></a>
-          <ul class="dropdown">
-            <li><a href="skema.html#klaster">Skema Klaster</a></li>
-            <li><a href="skema.html#instruktur">Skema Instruktur</a></li>
-            <li><a href="skema.html#kepelatihan">Tenaga Kepelatihan</a></li>
-          </ul>
-        </li>
-
-        <li><a href="asesor.html">Asesor</a></li>
-        <li><a href="berita.html">Berita</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-      </ul>
-    </nav>
-
-    <a href="daftar.html" class="btn-header">Daftar Uji</a>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
-
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
   <main>
-
-    <!-- HERO / TENTANG KAMI (PDF halaman 2) -->
-    <section class="hero" id="tentang">
-      <div class="container hero-grid">
-        <div>
-          <h1>
-            Tentang <span>LSP FIT</span>
-          </h1>
-          <p>
-            Lembaga Sertifikasi Profesi Fasilitator, Instruktur dan Tenaga Kepelatihan (LSP FIT) memiliki lisensi
-            dari Badan Nasional Sertifikasi Profesi (BNSP) dengan Nomor <b>BNSP-LSP-444-ID</b> dan berhak melakukan
-            Uji Kompetensi yang mengacu kepada Standar Kompetensi Kerja Nasional Indonesia (SKKNI) No <b>333 Tahun 2020</b>.
-          </p>
-          <p>
-            LSP FIT didukung oleh dua asosiasi; <b>APTISI</b> (Asosiasi Perguruan Tinggi Swasta Indonesia) wilayah 3 DKI Jaya
-            dan <b>AFIN</b> (Asosiasi Fasilitator Instruktur Nusantara).
-          </p>
-
-          <a class="btn-primary" href="#visi-misi">Lihat Visi & Misi</a>
+    <section class="page-hero" id="tentang">
+      <div class="page-hero-bg"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container">
+        <nav class="page-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a>
+          <span>&#x203A;</span>
+          <span>Tentang Kami</span>
+        </nav>
+        <h1 class="page-hero-title">Tentang LSP FIT</h1>
+        <p class="page-hero-desc">
+          Lembaga Sertifikasi Profesi Fasilitator, Instruktur dan Tenaga Kepelatihan (LSP FIT) memegang lisensi resmi BNSP
+          Nomor <strong>BNSP-LSP-444-ID</strong> dan memiliki wewenang menyelenggarakan Uji Kompetensi yang mengacu kepada
+          SKKNI No. 333 Tahun 2020, didukung oleh APTISI Wilayah 3 DKI Jaya dan AFIN.
+        </p>
+        <div class="hero-cta">
+          <a class="btn-primary" href="#visi-misi">Visi &amp; Misi</a>
+          <a class="btn-ghost" href="#produk">Produk Kami</a>
         </div>
-
       </div>
     </section>
 
-    <!-- VISI MISI (PDF halaman 3) -->
-    <section class="about section-light" id="visi-misi">
-      <div class="container about-grid">
-        <div>
-          <h2>Visi</h2>
-          <p>
-            Menjadi Lembaga Sertifikasi Profesi Fasilitator, Instruktur & Tenaga Kepelatihan yang tangguh dan terpercaya.
-          </p>
-        </div>
-
-        <div class="cards">
-          <div class="card">
+    <section class="vm-section" id="visi-misi">
+      <div class="container">
+        <div class="section-eyebrow">Visi &amp; Misi</div>
+        <p class="section-title">Landasan nilai yang menjadi dasar layanan sertifikasi kami.</p>
+        <div class="vm-grid">
+          <article class="vm-card">
+            <span class="vm-icon">V</span>
+            <h3>Visi</h3>
+            <p>
+              Menjadi Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan yang tangguh, terpercaya,
+              dan diakui secara nasional.
+            </p>
+          </article>
+          <article class="vm-card">
+            <span class="vm-icon">M</span>
             <h3>Misi</h3>
-            <p class="mb-10">LSP FIT menetapkan misi sebagai berikut:</p>
-            <p class="text-muted text-relaxed mb-0">
-              1. Menyediakan MUK sesuai dengan Ruang Lingkup Skema.<br/>
-              2. Menyediakan Asesor yang kompeten sesuai dengan Ruang Lingkup Skema.<br/>
-              3. Mensertifikasi para Instruktur dari Badan Diklat Pemerintah dan Swasta.<br/>
-              4. Melaksanakan Uji Kompetensi dengan integritas dan kualitas yang tinggi dengan mengutamakan Pelayanan Prima.
+            <ul class="vm-list">
+              <li>Menyediakan MUK sesuai dengan ruang lingkup skema.</li>
+              <li>Menyediakan asesor kompeten berstandar BNSP.</li>
+              <li>Mensertifikasi instruktur mitra pemerintah dan swasta.</li>
+              <li>Melaksanakan uji kompetensi dengan integritas, kualitas, dan pelayanan prima.</li>
+            </ul>
+          </article>
+          <article class="vm-card">
+            <span class="vm-icon">A</span>
+            <h3>Akuntabilitas</h3>
+            <p>
+              Setiap proses pengujian dan pembuktian kompetensi mengikuti SOP internal yang diaudit secara berkala dan transparan
+              terhadap peserta serta pemangku kepentingan.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PRODUK KAMI (PDF halaman 4–7) -->
-    <section class="timeline" id="produk">
+    <section class="timeline-section" id="produk">
       <div class="container">
-        <h2>Produk Kami</h2>
-
-        <div class="timeline-line">
-          <div class="timeline-item">
-            <span>01</span>
-            <p><b>Skema Klaster</b></p>
-          </div>
-
-          <div class="timeline-item">
-            <span>02</span>
-            <p><b>Skema Okupasi Bidang Instruktur</b></p>
-          </div>
-
-          <div class="timeline-item">
-            <span>03</span>
-            <p><b>Skema Okupasi Bidang Tenaga Kepelatihan</b></p>
-          </div>
-        </div>
-
-        <!-- Detail skema (PDF halaman 5) -->
-        <div class="cards mt-14">
-          <div class="card" id="klaster">
-            <h3>Skema Klaster</h3>
-            <p class="text-muted text-relaxed mb-0">
-              • Skema Klaster Perencanaan Penyajian Materi Pelatihan<br/>
-              • Skema Klaster Pelaksanaan Program Pembelajaran (Blended Learning)<br/>
-              • Skema Klaster Penyajian Materi Pembelajaran Daring<br/>
-              • Skema Klaster Pelaksanaan Pelatihan Tatap Muka (Luring)
-            </p>
-          </div>
-
-          <!-- Detail instruktur (PDF halaman 6) -->
-          <div class="card" id="instruktur">
-            <h3>Skema Okupasi Bidang Instruktur</h3>
-            <p class="text-muted text-relaxed mb-0">
-              <b>Jenjang Kualifikasi Level 3</b><br/>
-              • Asisten Instruktur • Mentor • Instruktur Junior • Instruktur Terampil • Pelatih • Pelatih di Tempat Kerja<br/><br/>
-
-              <b>Jenjang Kualifikasi Level 4</b><br/>
-              • Instruktur Pertama • Fasilitator • Pengajar Vokasi • Instruktur • Instruktur Penyelia<br/><br/>
-
-              <b>Jenjang Kualifikasi Level 5</b><br/>
-              • Instruktur Muda • Instruktur Senior<br/><br/>
-
-              <b>Jenjang Kualifikasi Level 6</b><br/>
-              • Instruktur Madya • Instruktur Master
-            </p>
-          </div>
-
-          <!-- Detail tenaga kepelatihan (PDF halaman 7) -->
-          <div class="card" id="kepelatihan">
-            <h3>Skema Okupasi Bidang Tenaga Kepelatihan</h3>
-            <p class="text-muted text-relaxed mb-0">
-              <b>Jenjang Kualifikasi 3</b><br/>
-              • Koordinator Pemagangan • Pengembangan Kurikulum dan Fasilitas Pelatihan<br/><br/>
-
-              <b>Jenjang Kualifikasi 4</b><br/>
-              • Staff Administrasi • Pelaksana Kegiatan Pelatihan • Pemasar Program Pelatihan • Penata Diklat<br/>
-              • Pengelola Rekrutmen dan Seleksi • Penyelenggara Pelatihan • Penyedia Bahan Pelatihan<br/><br/>
-
-              <b>Jenjang Kualifikasi 5</b><br/>
-              • Manajer<br/><br/>
-
-              <b>Jenjang Kualifikasi 6</b><br/>
-              • Kepala Lembaga Pelatihan
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROSES SERTIFIKASI (PDF halaman 8) -->
-    <section class="about section-light" id="proses">
-      <div class="container">
-        <h2 class="section-title">Proses Sertifikasi</h2>
-
-        <div class="cards">
-          <div class="card">
-            <h3>Tahap 1</h3>
-            <p>Mendaftar ke LSP FIT. Mengisi Form APL 1 & 2.</p>
-          </div>
-
-          <div class="card">
-            <h3>Tahap 2</h3>
-            <p>Verifikasi dokumen pemohon. Pemohon diterima sebagai asesi. Pemohon melakukan pembayaran.</p>
-          </div>
-
-          <div class="card">
-            <h3>Tahap 3</h3>
-            <p>Melakukan konsultasi Pra Asesmen.</p>
-          </div>
-
-          <div class="card">
-            <h3>Tahap 4</h3>
-            <p>Melakukan proses Asesmen.</p>
-          </div>
-
-          <div class="card">
-            <h3>Tahap 5</h3>
-            <p>Asesor kompetensi mencatat bukti dan membuat rekomendasi.</p>
-          </div>
-
-          <div class="card">
-            <h3>Tahap 6</h3>
-            <p>Rapat Pleno Komite Teknik.</p>
-          </div>
-
-          <div class="card">
-            <h3>Tahap 7</h3>
-            <p>Serah terima sertifikat.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DOKUMENTASI (PDF halaman 9) -->
-    <section class="team" id="dokumentasi">
-      <div class="container">
-        <h2>Dokumentasi</h2>
-        <p class="text-muted text-relaxed mb-14">
-          Dokumentasi kegiatan sertifikasi dan pelatihan.
-        </p>
-
-        <!-- Placeholder gallery (isi dengan foto asli) -->
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="avatar"></div>
-            <h4>Foto Kegiatan 1</h4>
-            <p>Upload foto dokumentasi</p>
-          </div>
-          <div class="team-card">
-            <div class="avatar"></div>
-            <h4>Foto Kegiatan 2</h4>
-            <p>Upload foto dokumentasi</p>
-          </div>
-          <div class="team-card">
-            <div class="avatar"></div>
-            <h4>Foto Kegiatan 3</h4>
-            <p>Upload foto dokumentasi</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PARTNER KAMI (PDF halaman 10) -->
-    <section class="team section-light" id="partner">
-      <div class="container">
-        <h2>Partner Kami</h2>
-        <p class="text-muted text-relaxed mb-14">
-          Mitra kolaborasi LSP FIT.
-        </p>
-
-        <!-- Placeholder logo grid (ganti dengan logo asli) -->
-        <div class="team-grid">
-          <div class="team-card"><div class="avatar"></div><h4>Logo Partner</h4><p>Upload logo</p></div>
-          <div class="team-card"><div class="avatar"></div><h4>Logo Partner</h4><p>Upload logo</p></div>
-          <div class="team-card"><div class="avatar"></div><h4>Logo Partner</h4><p>Upload logo</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAK (PDF halaman 1, 11, 12) -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="footer-logo-wrap">
-              <img src="/assets/fitb logo.png" alt="LSP FIT" class="footer-logo-img" />
+        <div class="section-eyebrow">Produk Unggulan</div>
+        <h2 class="section-title">Skema Sertifikasi LSP FIT</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-year">01</div>
+            <div class="timeline-card">
+              <h4>Skema Klaster</h4>
+              <p>
+                Mendukung pengembangan kurikulum dan delivery pelatihan dengan pendekatan blended learning, daring, dan tatap muka.
+              </p>
+              <ul class="vm-list">
+                <li>Skema Klaster Perencanaan Penyajian Materi Pelatihan.</li>
+                <li>Skema Klaster Pelaksanaan Program Pembelajaran (Blended Learning).</li>
+                <li>Skema Klaster Penyajian Materi Pembelajaran Daring &amp; Tatap Muka.</li>
+              </ul>
             </div>
-            <p>Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Berlisensi BNSP No. BNSP-LSP-444-ID.</p>
-            <div class="footer-socials">
-              <a href="#" aria-label="LinkedIn">in</a>
-              <a href="#" aria-label="Instagram">ig</a>
-              <a href="#" aria-label="WhatsApp">wa</a>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">02</div>
+            <div class="timeline-card">
+              <h4>Skema Okupasi Bidang Instruktur</h4>
+              <p>Penilaian kompetensi multi-level untuk berbagai jenjang instruktur profesional.</p>
+              <ul class="vm-list">
+                <li>Jenjang Level 3: Asisten Instruktur hingga Pelatih di Tempat Kerja.</li>
+                <li>Jenjang Level 4: Instruktur Pertama hingga Penyelia.</li>
+                <li>Jenjang Level 5 &amp; 6: Instruktur Muda hingga Master.</li>
+              </ul>
             </div>
-          </div>
-          <div class="footer-col">
-            <h5>Navigasi</h5>
-            <ul>
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="aboutus.html">Tentang Kami</a></li>
-              <li><a href="skema.html">Skema Sertifikasi</a></li>
-              <li><a href="asesor.html">Asesor</a></li>
-              <li><a href="berita.html">Berita</a></li>
-              <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>Skema Unggulan</h5>
-            <ul>
-              <li><a href="skema.html">Instruktur Junior</a></li>
-              <li><a href="skema.html">Instruktur Senior</a></li>
-              <li><a href="skema.html">Fasilitator</a></li>
-              <li><a href="skema.html">Blended Learning</a></li>
-              <li><a href="skema.html">Penyelenggara Pelatihan</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>Kontak</h5>
-            <ul class="footer-contact">
-              <li><span>&#x1F4CD;</span><span>Ruko Akasa Blok B No. 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan</span></li>
-              <li><span>&#x1F4DE;</span><span>0811-1210-1007</span></li>
-              <li><span>&#x2709;</span><span>info.lspfit@gmail.com</span></li>
-              <li><span>&#x1F310;</span><span>www.sertifikasifit.com</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>© <span id="year"></span> LSP FIT. All Rights Reserved.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">03</div>
+            <div class="timeline-card">
+              <h4>Skema Okupasi Bidang Tenaga Kepelatihan</h4>
+              <p>Pelatihan dan sertifikasi bagi tenaga kepelatihan yang mengelola program dan fasilitas pelatihan.</p>
+              <ul class="vm-list">
+                <li>Jenjang Level 3: Koordinator Pemagangan &amp; Pengembang Kurikulum.</li>
+                <li>Jenjang Level 4: Administrasi, Pelaksana, Pemasar, Pengelola Rekrutmen.</li>
+                <li>Jenjang Level 5 &amp; 6: Manajer Program &amp; Kepala Lembaga Pelatihan.</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
-    </footer>
+    </section>
 
+    <section class="team-section" id="asosiasi">
+      <div class="container">
+        <div class="section-eyebrow">Asosiasi &amp; Mitra</div>
+        <h2 class="section-title">Dukungan Ekosistem Pelatihan</h2>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-photo">APT</div>
+            <span class="team-role">APTISI Wilayah 3</span>
+            <h4>Asosiasi Perguruan Tinggi Swasta Indonesia</h4>
+            <p>Menjadi mitra strategis dalam penyelarasan kebutuhan vokasi dan pelatihan bersertifikat nasional.</p>
+          </article>
+          <article class="team-card">
+            <div class="team-photo">AF</div>
+            <span class="team-role">AFIN</span>
+            <h4>Asosiasi Fasilitator Instruktur Nusantara</h4>
+            <p>Mendukung peningkatan kapasitas fasilitator dan instruktur melalui jejaring trainer yang kompeten.</p>
+          </article>
+          <article class="team-card">
+            <div class="team-photo">BNS</div>
+            <span class="team-role">BNSP</span>
+            <h4>Badan Nasional Sertifikasi Profesi</h4>
+            <p>Berkolaborasi untuk memastikan setiap uji kompetensi memenuhi standar nasional dan audit mutu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vm-section" id="proses">
+      <div class="container">
+        <div class="section-eyebrow">Proses Sertifikasi</div>
+        <h2 class="section-title">Langkah Sertifikasi Bersama LSP FIT</h2>
+        <div class="vm-grid">
+          <article class="vm-card">
+            <span class="vm-icon">1</span>
+            <h3>Registrasi &amp; Verifikasi</h3>
+            <p>Peserta mendaftar dan mengumpulkan dokumen APL 1 &amp; 2. Tim kami memvalidasi kelengkapan administrasi.</p>
+          </article>
+          <article class="vm-card">
+            <span class="vm-icon">2</span>
+            <h3>Uji Kompetensi</h3>
+            <p>Asesor kompeten melakukan observasi kinerja, wawancara, dan tes tertulis sesuai skema yang dipilih.</p>
+          </article>
+          <article class="vm-card">
+            <span class="vm-icon">3</span>
+            <h3>Pengumuman &amp; Sertifikat</h3>
+            <p>Hasil dikomunikasikan, sertifikat digital dicetak, dan data peserta diunggah ke sistem nasional BNSP.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-bg"></div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Siap jadi bagian komunitas profesional bersertifikat?</h2>
+          <p>Hubungi kami untuk jadwal uji kompetensi, konsultasi skema, atau kolaborasi pelatihan korporat.</p>
+          <div class="cta-buttons">
+            <a href="daftar.html" class="btn-primary btn-white">Daftar Uji Kompetensi</a>
+            <a href="kontak.html" class="btn-ghost btn-ghost-white">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <script src="/assets/js/about.js"></script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="/assets/fitb logo.png" alt="LSP FIT" class="footer-logo-img" />
+          </div>
+          <p>Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Lisensi BNSP No. BNSP-LSP-444-ID.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navigasi</h5>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="aboutus.html">Tentang Kami</a></li>
+            <li><a href="skema.html">Skema Sertifikasi</a></li>
+            <li><a href="asesor.html">Asesor</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Skema Unggulan</h5>
+          <ul>
+            <li><a href="skema.html">Instruktur Junior</a></li>
+            <li><a href="skema.html">Instruktur Senior</a></li>
+            <li><a href="skema.html">Fasilitator</a></li>
+            <li><a href="skema.html">Blended Learning</a></li>
+            <li><a href="skema.html">Penyelenggara Pelatihan</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Kontak</h5>
+          <ul class="footer-contact">
+            <li><span>&#x1F4CD;</span><span>Ruko Akasa Blok B No. 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Serpong</span></li>
+            <li><span>&#x1F4DE;</span><span>0811-1210-1007</span></li>
+            <li><span>&#x2709;</span><span>info.lspfit@gmail.com</span></li>
+            <li><span>&#x1F310;</span><span>www.sertifikasifit.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2025 LSP FIT — Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Hak Cipta Dilindungi.</p>
+        <div class="footer-links-bottom">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat &amp; Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/about.js" defer></script>
 </body>
 </html>

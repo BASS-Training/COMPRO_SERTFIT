@@ -642,9 +642,13 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,172,234,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,172,234,0.05) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(rgba(240,73,35,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240,73,35,0.1) 1px, transparent 1px),
+    linear-gradient(rgba(0,172,234,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,172,234,0.1) 1px, transparent 1px),
+    linear-gradient(rgba(245,37,37,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,37,37,0.08) 1px, transparent 1px);
+  background-size: 56px 56px, 56px 56px, 78px 78px, 78px 78px, 104px 104px, 104px 104px;
 }
 .produk-bg-glow {
   position: absolute;
