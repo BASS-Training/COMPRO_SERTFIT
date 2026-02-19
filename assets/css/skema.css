@@ -339,14 +339,14 @@
   .kcard { padding: 28px 24px; }
 }
 
-/* Reveal animation */
+/* Reveal animation — uses .in-view (matches main.js) */
 .reveal{
   opacity:0;
   transform:translateY(24px);
   transition:opacity .6s ease, transform .6s ease;
   transition-delay:var(--delay,0s);
 }
-.reveal.visible{
+.reveal.in-view{
   opacity:1;
   transform:translateY(0);
 }

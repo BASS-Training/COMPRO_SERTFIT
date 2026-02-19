@@ -618,24 +618,14 @@
     </div>
   </footer>
 
+  <script src="/assets/js/main.js"></script>
   <script>
-    /* ── Nav scroll ── */
+    // Logo scroll
     const header=document.getElementById('siteHeader'),logoImg=document.getElementById('logoImg');
     window.addEventListener('scroll',()=>{
       if(window.scrollY>60){header.classList.add('scrolled');logoImg&&logoImg.classList.remove('logo-invert');}
       else{header.classList.remove('scrolled');logoImg&&logoImg.classList.add('logo-invert');}
     });
-    /* ── Hamburger ── */
-    const hamburger=document.getElementById('hamburger'),mainNav=document.getElementById('mainNav');
-    hamburger&&hamburger.addEventListener('click',()=>{mainNav.classList.toggle('open');});
-    /* ── Dropdown mobile ── */
-    document.querySelectorAll('.has-dropdown > a').forEach(a=>{
-      a.addEventListener('click',e=>{if(window.innerWidth<=768){e.preventDefault();a.closest('.has-dropdown').classList.toggle('open');}});
-    });
-    /* ── Reveal ── */
-    const revEls=document.querySelectorAll('.reveal');
-    const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');ro.unobserve(e.target);}});},{threshold:0.1});
-    revEls.forEach(el=>ro.observe(el));
 
     /* ── Filter ── */
     const filterBtns=document.querySelectorAll('.as-filter-btn');

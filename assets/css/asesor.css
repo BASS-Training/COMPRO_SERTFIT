@@ -2,18 +2,6 @@
    asesor.css — LSP FIT Asesor Page
    ════════════════════════════════════════════ */
 
-.logo-img-wrap{display:flex;align-items:center}
-.logo-img-wrap img{height:48px;width:auto;display:block}
-.logo-img-wrap img.logo-invert{filter:brightness(0) invert(1)}
-.site-header.scrolled .logo-img-wrap img.logo-invert{filter:none}
-
-.reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .65s ease,transform .65s ease;
-  transition-delay:var(--delay,0s)
-}
-.reveal.in-view{opacity:1;transform:translateY(0)}
-
 /* ════ HERO ════ */
 .as-hero-inner{position:relative;z-index:1;max-width:680px}
 
@@ -197,20 +185,6 @@
   line-height:1.75;margin-bottom:40px
 }
 .as-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-.btn-white{background:var(--white)!important;color:var(--navy)!important}
-.btn-white:hover{
-  background:var(--off-white)!important;
-  transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15)
-}
-.btn-ghost-white{
-  color:rgba(255,255,255,0.8)!important;
-  border-color:rgba(255,255,255,0.3)!important
-}
-.btn-ghost-white:hover{
-  color:var(--white)!important;
-  border-color:rgba(255,255,255,0.6)!important
-}
 
 /* ════ RESPONSIVE ════ */
 @media (max-width:1100px){

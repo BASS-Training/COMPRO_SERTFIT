@@ -305,14 +305,15 @@
 
   <script src="/assets/js/main.js"></script>
   <script>
+    // Logo scroll — header scroll handled by main.js
     const header=document.getElementById('siteHeader'),logoImg=document.getElementById('logoImg');
     window.addEventListener('scroll',()=>{
       if(window.scrollY>60){header.classList.add('scrolled');logoImg&&logoImg.classList.remove('logo-invert');}
       else{header.classList.remove('scrolled');logoImg&&logoImg.classList.add('logo-invert');}
     });
-    // Reveal
+    // Reveal — uses .in-view to match main.js + skema.css
     const revEls=document.querySelectorAll('.reveal');
-    const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.1});
+    const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');ro.unobserve(e.target);}});},{threshold:0.1});
     revEls.forEach(el=>ro.observe(el));
     // Active tabs
     const secs=['klaster','instruktur','kepelatihan'];

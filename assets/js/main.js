@@ -18,28 +18,56 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ─── Mobile Menu ───
+  // ─── Mobile Menu (Side Drawer) ───
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('mainNav');
+
+  // Create overlay backdrop
+  let overlay = document.querySelector('.nav-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  const openNav = () => {
+    nav.classList.add('active');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeNav = () => {
+    nav.classList.remove('active');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      nav.classList.contains('active') ? closeNav() : openNav();
     });
+
+    overlay.addEventListener('click', closeNav);
+
     nav.addEventListener('click', (e) => {
       const link = e.target.closest('a');
       if (!link) return;
 
-      const dropdownLink = link.parentElement && link.parentElement.classList.contains('has-dropdown');
-      if (dropdownLink && window.innerWidth <= 768) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('open');
-        return;
+      const dropdownParent = link.closest('.has-dropdown');
+      if (dropdownParent && window.innerWidth <= 768) {
+        const isDropdownToggle = link.parentElement === dropdownParent;
+        if (isDropdownToggle) {
+          e.preventDefault();
+          dropdownParent.classList.toggle('open');
+          return;
+        }
       }
 
-      nav.classList.remove('open');
-      document.body.style.overflow = '';
+      closeNav();
     });
   }
 
