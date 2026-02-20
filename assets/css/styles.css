@@ -178,7 +178,10 @@ ul { list-style: none; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 0;
-  transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 2px 24px rgba(26,10,7,0.08);
+  backdrop-filter: blur(12px);
+  transition: none;
 }
 .site-header.scrolled {
   background: rgba(255,255,255,0.97);
@@ -190,10 +193,10 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 22px 4%;
+  padding: 14px 4%;
   max-width: 1440px;
   margin: 0 auto;
-  transition: padding var(--transition);
+  transition: none;
 }
 .site-header.scrolled .header-inner { padding-top: 14px; padding-bottom: 14px; }
 
@@ -208,7 +211,7 @@ ul { list-style: none; }
   display: block;
 }
 .logo-img-wrap img.logo-invert {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 .site-header.scrolled .logo-img-wrap img.logo-invert { filter: none; }
 
@@ -234,9 +237,9 @@ ul { list-style: none; }
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.03em;
-  color: var(--white);
+  color: var(--navy);
   line-height: 1.2;
-  transition: color var(--transition);
+  transition: none;
 }
 .logo-text em { font-style: italic; font-weight: 300; display: block; font-size: 0.75rem; }
 .site-header.scrolled .logo-text { color: var(--navy); }
@@ -250,13 +253,13 @@ ul { list-style: none; }
   padding: 8px 14px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: var(--navy);
   border-radius: 6px;
-  transition: color var(--transition), background var(--transition);
+  transition: none;
 }
 .main-nav a:hover, .main-nav a.active {
-  color: var(--white);
-  background: rgba(255,255,255,0.12);
+  color: var(--gold);
+  background: var(--gold-pale);
 }
 .site-header.scrolled .main-nav a { color: var(--navy); }
 .site-header.scrolled .main-nav a:hover,
@@ -303,7 +306,7 @@ ul { list-style: none; }
   font-weight: 700;
   font-size: 0.88rem;
   letter-spacing: 0.03em;
-  transition: background var(--transition), transform var(--transition);
+  transition: none;
 }
 .btn-header:hover { background: var(--red); transform: translateY(-1px); }
 
@@ -321,11 +324,10 @@ ul { list-style: none; }
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--white);
+  background: var(--navy);
   border-radius: 2px;
-  transition: background var(--transition);
+  transition: none;
 }
-.site-header.scrolled .hamburger span { background: var(--navy); }
 
 /* ─── Hero ─── */
 .hero {
@@ -1132,7 +1134,7 @@ ul { list-style: none; }
   margin-bottom: 14px;
   line-height: 1.5;
 }
-.footer-contact li span:first-child { flex-shrink: 0; font-size: 0.9rem; }
+.footer-contact li span:first-child { flex-shrink: 0; display: flex; align-items: center; margin-top: 2px; }
 
 .footer-bottom {
   display: flex;

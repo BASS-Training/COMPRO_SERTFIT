@@ -27,7 +27,7 @@
   font-size:clamp(1.8rem,3vw,2.6rem);
   font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:20px
 }
-.as-intro-grid h2 em{font-style:italic;color:var(--red)}
+.as-intro-grid h2 em{font-style:italic;color:var(--gold)}
 .as-intro-grid p{
   color:var(--text-muted);font-size:0.95rem;line-height:1.8;margin-bottom:16px
 }
@@ -44,7 +44,7 @@
 .as-feature-icon{
   width:48px;height:48px;background:rgba(245,37,37,0.08);
   border-radius:12px;display:flex;align-items:center;justify-content:center;
-  color:var(--red);flex-shrink:0
+  color:var(--gold);flex-shrink:0
 }
 .as-feature strong{
   display:block;font-size:0.95rem;font-weight:700;
@@ -124,11 +124,11 @@
 }
 .as-card:hover{
   transform:translateY(-4px);box-shadow:var(--shadow-elevated);
-  border-color:var(--red)
+  border-color:var(--gold)
 }
 
 .as-card-avatar{
-  width:68px;height:68px;background:var(--red);color:var(--white);
+  width:68px;height:68px;background:var(--gold);color:var(--white);
   border-radius:50%;display:flex;align-items:center;justify-content:center;
   font-family:var(--font-display);font-size:1.15rem;font-weight:800;
   letter-spacing:0.04em;flex-shrink:0
@@ -142,7 +142,7 @@
 }
 .as-card-badge{
   display:inline-block;background:rgba(245,37,37,0.08);
-  color:var(--red);font-size:0.7rem;font-weight:700;
+  color:var(--gold);font-size:0.7rem;font-weight:700;
   letter-spacing:0.06em;padding:4px 10px;border-radius:100px;
   text-transform:uppercase
 }
