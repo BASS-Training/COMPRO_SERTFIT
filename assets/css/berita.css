@@ -5,8 +5,6 @@
 
 .logo-img-wrap{display:flex;align-items:center}
 .logo-img-wrap img{height:48px;width:auto;display:block}
-.logo-img-wrap img.logo-invert{filter:brightness(0) invert(1)}
-.site-header.scrolled .logo-img-wrap img.logo-invert{filter:none}
 
 .reveal{
   opacity:0;transform:translateY(20px);

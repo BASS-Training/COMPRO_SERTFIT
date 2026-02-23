@@ -8,9 +8,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:       #1A0A07;
-  --navy-mid:   #2A120A;
-  --navy-light: #3D1A0E;
+  --navy:       #0D1B2A;
+  --navy-mid:   #112233;
+  --navy-light: #1A2F44;
   --orange:     #F04923;
   --red:        #F52525;
   --cyan:       #00ACEA;
@@ -18,10 +18,10 @@
   --gold-light: #F97B60;
   --gold-pale:  #FEF0EC;
   --white:      #FFFFFF;
-  --off-white:  #FDF6F4;
-  --text:       #1A0A07;
-  --text-muted: #6B7280;
-  --border:     #F2DDD8;
+  --off-white:  #F7FBFE;
+  --text:       #0D1B2A;
+  --text-muted: #5A6A7A;
+  --border:     #D6EAF8;
 
   --font-display: 'Playfair Display', serif;
   --font-body:    'DM Sans', sans-serif;
@@ -31,8 +31,8 @@
   --radius-lg:   24px;
   --radius-xl:   40px;
 
-  --shadow-card: 0 4px 24px rgba(26,10,7,0.08);
-  --shadow-elevated: 0 16px 56px rgba(26,10,7,0.14);
+  --shadow-card: 0 4px 24px rgba(13,27,42,0.08);
+  --shadow-elevated: 0 16px 56px rgba(13,27,42,0.14);
 
   --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -135,7 +135,7 @@ ul { list-style: none; }
 .btn-primary:hover {
   background: var(--red);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(26,10,7,0.2);
+  box-shadow: 0 8px 24px rgba(13,27,42,0.2);
 }
 
 .btn-ghost {
@@ -147,7 +147,7 @@ ul { list-style: none; }
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 0.95rem;
-  border: 2px solid rgba(26,10,7,0.2);
+  border: 2px solid rgba(13,27,42,0.2);
   transition: border-color var(--transition), color var(--transition);
 }
 .btn-ghost:hover {
@@ -179,13 +179,13 @@ ul { list-style: none; }
   z-index: 100;
   padding: 0;
   background: rgba(255,255,255,0.97);
-  box-shadow: 0 2px 24px rgba(26,10,7,0.08);
+  box-shadow: 0 2px 24px rgba(13,27,42,0.08);
   backdrop-filter: blur(12px);
   transition: none;
 }
 .site-header.scrolled {
   background: rgba(255,255,255,0.97);
-  box-shadow: 0 2px 24px rgba(26,10,7,0.08);
+  box-shadow: 0 2px 24px rgba(13,27,42,0.08);
   backdrop-filter: blur(12px);
 }
 
@@ -524,7 +524,7 @@ ul { list-style: none; }
   font-weight: 700;
   padding: 8px 16px;
   border-radius: 100px;
-  box-shadow: 0 8px 32px rgba(26,10,7,0.2);
+  box-shadow: 0 8px 32px rgba(13,27,42,0.2);
 }
 .badge-top { top: -20px; right: -40px; }
 .badge-bottom { bottom: 20px; left: -50px; }
@@ -586,7 +586,7 @@ ul { list-style: none; }
 }
 .marquee-track .dot {
   font-size: 0.55rem;
-  color: rgba(26,10,7,0.4);
+  color: rgba(13,27,42,0.4);
 }
 @keyframes marquee {
   from { transform: translateX(0); }
