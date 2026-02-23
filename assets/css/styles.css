@@ -1074,9 +1074,10 @@ ul { list-style: none; }
 .footer-brand .logo { margin-bottom: 16px; }
 .footer-logo-wrap { margin-bottom: 16px; }
 .footer-logo-img {
-  height: 52px;
-  filter: none;
-  opacity: 1;
+  height: 65px;
+    filter: brightness(0) invert(1);
+  opacity: 0.9;
+  
 }
 .footer-brand p {
   color: rgba(255,255,255,0.45);
