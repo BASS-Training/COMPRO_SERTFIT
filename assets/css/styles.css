@@ -1075,8 +1075,8 @@ ul { list-style: none; }
 .footer-logo-wrap { margin-bottom: 16px; }
 .footer-logo-img {
   height: 52px;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  filter: none;
+  opacity: 1;
 }
 .footer-brand p {
   color: rgba(255,255,255,0.45);
