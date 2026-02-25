@@ -23,8 +23,8 @@
   --text-muted: #5A6A7A;
   --border:     #D6EAF8;
 
-  --font-display: 'Playfair Display', serif;
-  --font-body:    'DM Sans', sans-serif;
+  --font-display: 'Helvetica Neue', serif;
+  --font-body:    Poppins;
 
   --radius-sm:   8px;
   --radius-md:   16px;
