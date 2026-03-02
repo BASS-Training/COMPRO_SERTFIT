@@ -1,15 +1,6 @@
 /* ════════════════════════════════════════════
    asesor.css — LSP FIT Asesor Page
-   Updated with consistent brand colors
    ════════════════════════════════════════════ */
-
-
-.reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .65s ease,transform .65s ease;
-  transition-delay:var(--delay,0s)
-}
-.reveal.in-view{opacity:1;transform:translateY(0)}
 
 /* ════ HERO ════ */
 .as-hero-inner{position:relative;z-index:1;max-width:680px}
@@ -103,11 +94,11 @@
   display:grid;grid-template-columns:repeat(4,1fr);gap:20px
 }
 
+/* Card with Photo */
 .as-card{
   background:var(--white);border:1px solid var(--border);
-  border-radius:var(--radius-md);padding:28px 24px;
-  text-align:center;display:flex;flex-direction:column;
-  align-items:center;gap:16px;
+  border-radius:var(--radius-md);overflow:hidden;
+  display:flex;flex-direction:column;
   transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition)
 }
 .as-card:hover{
@@ -115,27 +106,38 @@
   border-color:var(--red)
 }
 
-.as-card-avatar{
-  width:72px;height:72px;background:var(--red);color:var(--white);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-size:1.2rem;font-weight:700;
-  letter-spacing:0.05em;flex-shrink:0;
-  box-shadow:0 4px 12px rgba(245,37,37,0.15)
+/* Photo container */
+.as-card-photo{
+  position:relative;aspect-ratio:3/4;
+  background:linear-gradient(135deg,#e8eef3,#d6dfe8);
+  overflow:hidden
+}
+.as-card-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  display:block;transition:transform .5s ease
+}
+.as-card:hover .as-card-photo img{transform:scale(1.05)}
+
+/* Placeholder shown when photo fails to load */
+.as-photo-placeholder{
+  position:absolute;inset:0;
+  display:none;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--navy),rgba(13,27,42,0.85))
+}
+.as-photo-initials{
+  font-family:var(--font-display);font-size:3rem;font-weight:700;
+  color:rgba(255,255,255,0.9);letter-spacing:0.05em
 }
 
-.as-card-body{display:flex;flex-direction:column;gap:8px;width:100%}
+/* Card info */
+.as-card-info{padding:20px;text-align:center}
 .as-card h3{
   font-family:var(--font-display);font-size:1rem;font-weight:700;
-  color:var(--navy);line-height:1.3;margin:0
-}
-.as-card-badge{
-  display:inline-block;background:rgba(245,37,37,0.08);
-  color:var(--red);font-size:0.7rem;font-weight:700;
-  letter-spacing:0.08em;padding:5px 12px;border-radius:100px;
-  text-transform:uppercase;align-self:center
+  color:var(--navy);line-height:1.3;margin:0 0 6px 0
 }
 .as-card p{
-  font-size:0.8rem;color:var(--text-muted);line-height:1.5;margin:0
+  font-size:0.82rem;color:var(--text-muted);line-height:1.4;margin:0
 }
 
 /* Not found */
@@ -173,21 +175,6 @@
 }
 .as-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-.btn-white{background:var(--white)!important;color:var(--navy)!important}
-.btn-white:hover{
-  background:var(--off-white)!important;
-  transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15)
-}
-.btn-ghost-white{
-  color:rgba(255,255,255,0.85)!important;
-  border-color:rgba(255,255,255,0.3)!important
-}
-.btn-ghost-white:hover{
-  color:var(--white)!important;
-  border-color:rgba(255,255,255,0.6)!important;
-  background:rgba(255,255,255,0.08)!important
-}
-
 /* ════ RESPONSIVE ════ */
 @media (max-width:1100px){
   .as-grid{grid-template-columns:repeat(3,1fr)}
@@ -203,13 +190,12 @@
 }
 @media (max-width:520px){
   .as-grid{grid-template-columns:1fr}
-  .as-card{padding:24px 20px}
-  .as-card-avatar{width:64px;height:64px;font-size:1.05rem}
+  .as-card-info{padding:16px}
+  .as-photo-initials{font-size:2.5rem}
 }
 
-/* Performance: reduce animations on low-end devices */
 @media (prefers-reduced-motion:reduce){
-  .reveal{transition:opacity .3s;transform:none}
   .as-card{transition:box-shadow .2s}
   .as-card:hover{transform:translateY(-2px)}
+  .as-card-photo img{transition:none}
 }
