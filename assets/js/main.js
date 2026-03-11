@@ -1,148 +1,100 @@
-/* ============================================
-   LSP FIT — main.js
-   Interactions: scroll spy, counter, reveal,
-   sticky header, mobile menu
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
+  const aosTargets = document.querySelectorAll(
+    '.section-head, .card, .timeline-step, .assessor-card, .table-row, .hero h1, .hero p, .hero-actions, .hero-media'
+  );
+  aosTargets.forEach((el, idx) => {
+    if (!el.hasAttribute('data-aos')) {
+      el.setAttribute('data-aos', 'fade-up');
+      el.setAttribute('data-aos-delay', String((idx % 6) * 60));
+    }
+  });
+  if (window.AOS) window.AOS.refreshHard();
 
-  // ─── Sticky Header ───
   const header = document.getElementById('siteHeader');
-  const onScroll = () => {
-    if (window.scrollY > 60) {
+  const nav = document.getElementById('mainNav');
+  const burger = document.getElementById('hamburger');
+
+  const setHeaderState = () => {
+    if (!header) return;
+    if (window.scrollY > 40) {
       header.classList.add('scrolled');
+      header.classList.remove('transparent');
     } else {
+      header.classList.add('transparent');
       header.classList.remove('scrolled');
     }
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
-  // ─── Mobile Menu (Side Drawer) ───
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('mainNav');
+  setHeaderState();
+  window.addEventListener('scroll', setHeaderState, { passive: true });
 
-  // Create overlay backdrop
-  let overlay = document.querySelector('.nav-overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.className = 'nav-overlay';
-    document.body.appendChild(overlay);
-  }
-
-  const openNav = () => {
-    nav.classList.add('active');
-    hamburger.classList.add('active');
-    hamburger.setAttribute('aria-expanded', 'true');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeNav = () => {
-    nav.classList.remove('active');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  if (hamburger && nav) {
-    hamburger.addEventListener('click', () => {
-      nav.classList.contains('active') ? closeNav() : openNav();
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      burger.setAttribute('aria-expanded', nav.classList.contains('active') ? 'true' : 'false');
+      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
     });
 
-    overlay.addEventListener('click', closeNav);
-
-    nav.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (!link) return;
-
-      const dropdownParent = link.closest('.has-dropdown');
-      if (dropdownParent && window.innerWidth <= 768) {
-        const isDropdownToggle = link.parentElement === dropdownParent;
-        if (isDropdownToggle) {
-          e.preventDefault();
-          dropdownParent.classList.toggle('open');
-          return;
-        }
-      }
-
-      closeNav();
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
     });
   }
 
-  // ─── Reveal on scroll ───
-  const reveals = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in-view');
-          revealObserver.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
-  reveals.forEach(el => revealObserver.observe(el));
+  const waFormBtn = document.getElementById('btnWaSubmit');
+  if (waFormBtn) {
+    waFormBtn.addEventListener('click', () => {
+      const nama = document.getElementById('nama')?.value.trim() || '-';
+      const instansi = document.getElementById('instansi')?.value.trim() || '-';
+      const topik = document.getElementById('topik')?.value.trim() || '-';
+      const pesan = document.getElementById('pesan')?.value.trim() || '-';
+      const text = [
+        'Halo LSP FIT, saya ingin mendaftar uji kompetensi',
+        '',
+        `Nama: ${nama}`,
+        `Instansi: ${instansi}`,
+        `Topik: ${topik}`,
+        `Pesan: ${pesan}`,
+      ].join('\n');
+      window.open(`https://wa.me/6281112101007?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    });
+  }
 
-  // ─── Counter animation ───
-  const counters = document.querySelectorAll('.stat-num[data-target]');
-  const counterObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animateCounter(e.target);
-          counterObserver.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-  counters.forEach(el => counterObserver.observe(el));
+  const skemaTabs = document.querySelectorAll('.skema-tab');
+  const skemaRows = document.querySelectorAll('.table-row.skema-row[data-category]');
 
-  function animateCounter(el) {
-    const target = +el.dataset.target;
-    const duration = 2000;
-    const start = performance.now();
-    const update = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 4); // ease-out quartic
-      el.textContent = Math.round(eased * target).toLocaleString('id-ID');
-      if (progress < 1) requestAnimationFrame(update);
+  if (skemaTabs.length && skemaRows.length) {
+    const activateTab = (tabName) => {
+      skemaTabs.forEach((tab) => {
+        const isActive = tab.dataset.tab === tabName;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      skemaRows.forEach((row) => {
+        const show = row.dataset.category === tabName;
+        row.classList.toggle('hidden', !show);
+      });
     };
-    requestAnimationFrame(update);
-  }
 
-  // ─── Smooth active nav highlight (scroll-spy) ───
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.main-nav a');
-  const spyObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('active'));
-          const active = document.querySelector(`.main-nav a[href="#${e.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
+    skemaTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const tabName = tab.dataset.tab;
+        if (!tabName) return;
+        activateTab(tabName);
       });
-    },
-    { threshold: 0.4 }
-  );
-  sections.forEach(s => spyObserver.observe(s));
-
-  // ─── Scheme card hover tilt ───
-  document.querySelectorAll('.scheme-card, .testi-card, .news-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `translateY(-6px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
 
+    const hashTabMap = {
+      '#klaster': 'klaster',
+      '#instruktur': 'instruktur',
+      '#kepelatihan': 'kepelatihan',
+    };
+
+    const initialTab = hashTabMap[window.location.hash] || 'klaster';
+    activateTab(initialTab);
+  }
 });

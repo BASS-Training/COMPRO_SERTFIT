@@ -1,796 +1,181 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asesor Kompetensi — LSP FIT</title>
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-  <link rel="stylesheet" href="/assets/css/brand.css" />
-  <link rel="stylesheet" href="/assets/css/pages.css" />
+  <title>Asesor | LSP FIT</title>
+  <link rel="icon" type="image/png" href="/assets/fitb%20logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/asesor.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/redesign.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <header class="site-header" id="siteHeader">
+  <header class="site-header transparent" id="siteHeader">
     <div class="header-inner">
-      <a href="index.html" class="logo-img-wrap" aria-label="LSP FIT">
-        <img src="/assets/fitb logo.png" alt="LSP FIT Logo" id="logoImg" class="logo-invert" />
-      </a>
+      <a class="logo-link" href="index.html"><img src="/assets/fitb%20logo.png" alt="Logo LSP FIT" /></a>
       <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="aboutus.html">Tentang Kami</a></li>
-          <li class="has-dropdown">
-            <a href="skema.html">Skema <span class="chevron">&#x203A;</span></a>
-            <ul class="dropdown">
-              <li><a href="skema.html#klaster">Skema Klaster</a></li>
-              <li><a href="skema.html#instruktur">Skema Instruktur</a></li>
-              <li><a href="skema.html#kepelatihan">Tenaga Kepelatihan</a></li>
-            </ul>
-          </li>
-          <li><a href="asesor.html" class="active">Asesor</a></li>
+          <li><a href="skema.html">Skema</a></li>
+          <li><a class="active" href="asesor.html">Asesor</a></li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="kontak.html">Kontak</a></li>
+          <li><a class="nav-lms" href="https://app.msdmup.id/" target="_blank" rel="noopener">Portal LMS</a></li>
         </ul>
       </nav>
-      <a href="https://wa.me/6281112101007?text=Halo%20LSP%20FIT%2C%20saya%20ingin%20mendaftar%20uji%20kompetensi" class="btn-header" target="_blank" rel="noopener">Daftar Uji</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="btn btn-primary header-cta" href="https://wa.me/6281112101007?text=Halo%20LSP%20FIT%2C%20saya%20ingin%20mendaftar%20uji%20kompetensi" target="_blank" rel="noopener">Daftar Uji</a>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main>
-
-    <!-- ════ PAGE HERO ════ -->
+  <main class="page-bg">
     <section class="page-hero">
-      <div class="page-hero-bg"></div>
       <div class="container">
-        <nav class="page-breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Beranda</a>
-          <span>/</span>
-          <span style="color:rgba(255,255,255,0.65)">Asesor Kompetensi</span>
-        </nav>
-        <div class="as-hero-inner reveal">
-          <div class="section-eyebrow" style="color:var(--cyan)">
-            <span style="width:28px;height:2px;background:var(--cyan);display:inline-block;"></span>
-            Tim Profesional
-          </div>
-          <h1 class="page-hero-title">
-            Asesor <em>Kompetensi</em><br/>LSP FIT
-          </h1>
-          <p class="page-hero-desc">
-            Didukung oleh tim asesor bersertifikat BNSP dengan kompetensi teknis dan pengalaman luas di bidang instruktur dan pelatihan profesional.
-          </p>
-          <div class="as-hero-stats">
-            <div class="as-hero-stat">
-              <strong>41</strong>
-              <span>Asesor Kompetensi</span>
-            </div>
-            <div class="as-hero-stat">
-              <strong>BNSP</strong>
-              <span>Tersertifikasi</span>
-            </div>
-            <div class="as-hero-stat">
-              <strong>30+</strong>
-              <span>Skema Sertifikasi</span>
-            </div>
-          </div>
-        </div>
+        <p class="breadcrumb">Beranda / Asesor</p>
+        <h1>Tim Asesor Profesional</h1>
+        <p>LSP FIT memiliki 41 asesor kompetensi home-base yang siap melaksanakan asesmen sesuai skema sertifikasi.</p>
       </div>
     </section>
 
-    <!-- ════ INTRO SECTION ════ -->
-    <section class="as-intro">
+    <section class="section">
       <div class="container">
-        <div class="as-intro-grid">
-          <div class="reveal">
-            <div class="section-eyebrow">Kualitas Terjamin</div>
-            <h2>Asesor Bersertifikat<br/><em>BNSP</em></h2>
-            <p>Setiap asesor LSP FIT memiliki kompetensi yang telah diakui dan disertifikasi oleh <strong>Badan Nasional Sertifikasi Profesi (BNSP)</strong>, memastikan objektivitas, profesionalisme, dan integritas dalam setiap proses uji kompetensi.</p>
-            <p>Tim asesor kami terdiri dari praktisi berpengalaman di berbagai bidang instruktur, tenaga kepelatihan, dan industri terkait, yang memahami kebutuhan nyata dunia kerja Indonesia.</p>
-          </div>
-          <div class="as-intro-features reveal" style="--delay:0.08s">
-            <div class="as-feature">
-              <div class="as-feature-icon">
-                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                  <path d="M13 3L3 8v5c0 5.55 4.3 10.74 10 12 5.7-1.26 10-6.45 10-12V8L13 3z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-                  <path d="M9 13l3 3 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <strong>Tersertifikasi BNSP</strong>
-                <p>Setiap asesor memiliki lisensi resmi dari BNSP dengan ruang lingkup yang sesuai skema sertifikasi.</p>
-              </div>
-            </div>
-            <div class="as-feature">
-              <div class="as-feature-icon">
-                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                  <circle cx="13" cy="8" r="5" fill="currentColor"/>
-                  <path d="M4 22c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
-                </svg>
-              </div>
-              <div>
-                <strong>Praktisi Berpengalaman</strong>
-                <p>Memiliki pengalaman praktis di dunia industri, pendidikan, dan pelatihan profesional.</p>
-              </div>
-            </div>
-            <div class="as-feature">
-              <div class="as-feature-icon">
-                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                  <rect x="3" y="5" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2.5"/>
-                  <path d="M8 11h10M8 15h7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <strong>Kompetensi Terkini</strong>
-                <p>Mengikuti perkembangan standar SKKNI dan mengikuti pelatihan berkelanjutan.</p>
-              </div>
-            </div>
-          </div>
+        <div class="assessor-grid">
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/Agus%20Mustofa.jpg" alt="Agus Mustofa" /><div class="assessor-body"><h4>Agus Mustofa</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/B.%20Andreas%20Mada%20WK.jpg" alt="B. Andreas Mada WK" /><div class="assessor-body"><h4>B. Andreas Mada WK</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/Fitri%20firmansyah.png" alt="Fitri Firmansyah" /><div class="assessor-body"><h4>Fitri Firmansyah</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/Iwan%20Setiawan.jpg" alt="Iwan Setiawan" /><div class="assessor-body"><h4>Iwan Setiawan</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/aditya%20yudha%20suseno.png" alt="Aditya Yudha Suseno" /><div class="assessor-body"><h4>Aditya Yudha Suseno</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/anne%20mariane.jpg" alt="Anne Mariane" /><div class="assessor-body"><h4>Anne Mariane</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/b.rusdiharsono.jpg" alt="B. Rusdi Harsono" /><div class="assessor-body"><h4>B. Rusdi Harsono</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/daffa%20muhammad%20ardian.jpeg" alt="Daffa Muhammad Ardian" /><div class="assessor-body"><h4>Daffa Muhammad Ardian</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/fadjar%20eko%20novanto.jpg" alt="Fadjar Eko Novanto" /><div class="assessor-body"><h4>Fadjar Eko Novanto</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/margono%20sugeng.jpg" alt="Margono Sugeng" /><div class="assessor-body"><h4>Margono Sugeng</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/marthen%20christian%20david%20sipahuta.jpeg" alt="Marthen Christian David Sipahuta" /><div class="assessor-body"><h4>Marthen C. D. Sipahuta</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/masdaryanto.jpeg" alt="Masdaryanto" /><div class="assessor-body"><h4>Masdaryanto</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/murniadi%20chandra.JPG" alt="Murniadi Chandra" /><div class="assessor-body"><h4>Murniadi Chandra</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/nelly%20triyas%20dayanti.png" alt="Nelly Triyas Dayanti" /><div class="assessor-body"><h4>Nelly Triyas Dayanti</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/nur%20dewi%20afifah.jpg" alt="Nur Dewi Afifah" /><div class="assessor-body"><h4>Nur Dewi Afifah</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/rachmat%20astiana.jpg" alt="Rachmat Astiana" /><div class="assessor-body"><h4>Rachmat Astiana</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/rahayu%20wibowo.png" alt="Rahayu Wibowo" /><div class="assessor-body"><h4>Rahayu Wibowo</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/roberto%20pardede.jpeg" alt="Roberto Pardede" /><div class="assessor-body"><h4>Roberto Pardede</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/sri%20prahyoto.jpg" alt="Sri Prahyoto" /><div class="assessor-body"><h4>Sri Prahyoto</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/sumiyanto.jpg" alt="Sumiyanto" /><div class="assessor-body"><h4>Sumiyanto</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/totok%20suharto.png" alt="Totok Suharto" /><div class="assessor-body"><h4>Totok Suharto</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/tri%20iman%20surya.jpg" alt="Tri Iman Surya" /><div class="assessor-body"><h4>Tri Iman Surya</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/yulia%20rosdiati.jpg" alt="Yulia Rosdiati" /><div class="assessor-body"><h4>Yulia Rosdiati</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Adri+Fato&size=600&background=E6F4FB&color=0D1B2A" alt="Adri Fato" /><div class="assessor-body"><h4>Adri Fato</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Eva+Rosmalia&size=600&background=E6F4FB&color=0D1B2A" alt="Eva Rosmalia" /><div class="assessor-body"><h4>Eva Rosmalia</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Arum+Handayani&size=600&background=E6F4FB&color=0D1B2A" alt="Arum Handayani" /><div class="assessor-body"><h4>Arum Handayani</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Safrudiningsih&size=600&background=E6F4FB&color=0D1B2A" alt="Safrudiningsih" /><div class="assessor-body"><h4>Safrudiningsih</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Sugino&size=600&background=E6F4FB&color=0D1B2A" alt="Sugino" /><div class="assessor-body"><h4>Sugino</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Muhammad+Nur+Fazri&size=600&background=E6F4FB&color=0D1B2A" alt="Muhammad Nur Fazri" /><div class="assessor-body"><h4>Muhammad Nur Fazri</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Angga+Meisa+Noor&size=600&background=E6F4FB&color=0D1B2A" alt="Angga Meisa Noor" /><div class="assessor-body"><h4>Angga Meisa Noor</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Deden+Indrawan&size=600&background=E6F4FB&color=0D1B2A" alt="Deden Indrawan" /><div class="assessor-body"><h4>Deden Indrawan</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Ainus+Syifa&size=600&background=E6F4FB&color=0D1B2A" alt="Ainus Syifa" /><div class="assessor-body"><h4>Ainus Syifa</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Hermas+Winata+Sumbono&size=600&background=E6F4FB&color=0D1B2A" alt="Hermas Winata Sumbono" /><div class="assessor-body"><h4>Hermas Winata Sumbono</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Ranny+Novianty&size=600&background=E6F4FB&color=0D1B2A" alt="Ranny Novianty" /><div class="assessor-body"><h4>Ranny Novianty</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Sholikudin&size=600&background=E6F4FB&color=0D1B2A" alt="Sholikudin" /><div class="assessor-body"><h4>Sholikudin</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Agnes+Wayan+Lestari&size=600&background=E6F4FB&color=0D1B2A" alt="Agnes Wayan Lestari" /><div class="assessor-body"><h4>Agnes Wayan Lestari</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Agus+Sistyo&size=600&background=E6F4FB&color=0D1B2A" alt="Agus Sistyo" /><div class="assessor-body"><h4>Agus Sistyo</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Masrahwati+Dewi&size=600&background=E6F4FB&color=0D1B2A" alt="Masrahwati Dewi" /><div class="assessor-body"><h4>Masrahwati Dewi</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Sri+Yulistiani&size=600&background=E6F4FB&color=0D1B2A" alt="Sri Yulistiani" /><div class="assessor-body"><h4>Sri Yulistiani</h4><p>Asesor Kompetensi BNSP</p></div></article>
+
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Suharnio+Eliandy&size=600&background=E6F4FB&color=0D1B2A" alt="Suharnio Eliandy" /><div class="assessor-body"><h4>Suharnio Eliandy</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="https://ui-avatars.com/api/?name=Suryati+Sari+Arum&size=600&background=E6F4FB&color=0D1B2A" alt="Suryati Sari Arum" /><div class="assessor-body"><h4>Suryati Sari Arum</h4><p>Asesor Kompetensi BNSP</p></div></article>
         </div>
       </div>
     </section>
-
-    <!-- ════ DIRECTORY ════ -->
-    <section class="as-directory">
-      <div class="container">
-        <div class="as-dir-header reveal">
-          <div>
-            <h2>Direktori Asesor</h2>
-            <p>Daftar lengkap asesor kompetensi LSP FIT yang aktif dan tersertifikasi BNSP.</p>
-          </div>
-          <div class="as-search-box">
-            <input type="text" id="asSearch" placeholder="Cari nama asesor..." />
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
-              <path d="M14 14l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="as-grid" id="asList">
-
-          <div class="as-card reveal" data-name="Fitri Firmansyah" style="--delay:0.02s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/Fitri firmansyah.png" alt="Fitri Firmansyah" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">FF</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Fitri Firmansyah</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Adri Fato" style="--delay:0.04s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/adri-fato.jpg" alt="Adri Fato" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AF</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Adri Fato</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Margono Sugeng" style="--delay:0.06s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/margono sugeng.jpg" alt="Margono Sugeng" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">MS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Margono Sugeng</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Masdaryanto" style="--delay:0.08s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/masdaryanto.jpeg" alt="Masdaryanto" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">MD</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Masdaryanto</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Anne Mariane" style="--delay:0.10s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/anne mariane.jpg" alt="Anne Mariane" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AM</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Anne Mariane</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Tri Iman Surya" style="--delay:0.12s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/tri iman surya.jpg" alt="Tri Iman Surya" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">TS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Tri Iman Surya</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <!-- <div class="as-card reveal" data-name="Eva Rosmalia" style="--delay:0.14s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/eva-rosmalia.jpg" alt="Eva Rosmalia" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">ER</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Eva Rosmalia</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div> -->
-
-          <div class="as-card reveal" data-name="Arum Handayani" style="--delay:0.16s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/arum-handayani.jpg" alt="Arum Handayani" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AH</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Arum Handayani</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Nelly Triyas Dayanti" style="--delay:0.16s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/nelly triyas dayanti.png" alt="Nelly Triyas Dayanti" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">ND</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Nelly Triyas Dayanti</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Safrudiningsih" style="--delay:0.18s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/safrudiningsih.jpg" alt="Safrudiningsih" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SF</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Safrudiningsih</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Sri Prahyoto" style="--delay:0.20s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/sri prahyoto.jpg" alt="Sri Prahyoto" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SP</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Sri Prahyoto</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Fadjar Eko Novanto" style="--delay:0.22s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/fadjar eko novanto.jpg" alt="Fadjar Eko Novanto" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">FN</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Fadjar Eko Novanto</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Sugino" style="--delay:0.24s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/sugino.jpg" alt="Sugino" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SU</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Sugino</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Roberto Pardede" style="--delay:0.26s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/roberto pardede.jpeg" alt="Roberto Pardede" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">RP</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Roberto Pardede</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Sumiyanto" style="--delay:0.28s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/sumiyanto.jpg" alt="Sumiyanto" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SM</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Sumiyanto</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Muhammad Nur Fazri" style="--delay:0.30s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/muhammad-nur-fazri.jpg" alt="Muhammad Nur Fazri" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">MF</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Muhammad Nur Fazri</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Angga Meisa Noor" style="--delay:0.32s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/angga-meisa-noor.jpg" alt="Angga Meisa Noor" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AN</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Angga Meisa Noor</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Rahayu Wibowo" style="--delay:0.34s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/rahayu wibowo.png" alt="Rahayu Wibowo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">RW</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Rahayu Wibowo</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Deden Indrawan" style="--delay:0.36s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/deden-indrawan.jpg" alt="Deden Indrawan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">DI</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Deden Indrawan</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Ainus Syifa" style="--delay:0.38s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/ainus-syifa.jpg" alt="Ainus Syifa" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Ainus Syifa</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Hermas Winata Sumbono" style="--delay:0.40s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/hermas-winata-sumbono.jpg" alt="Hermas Winata Sumbono" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">HS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Hermas Winata Sumbono</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Totok Suharto" style="--delay:0.42s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/totok suharto.png" alt="Totok Suharto" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">TS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Totok Suharto</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Ranny Novianty" style="--delay:0.44s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/ranny-novianty.jpg" alt="Ranny Novianty" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">RN</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Ranny Novianty</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Sholikudin" style="--delay:0.46s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/sholikudin.jpg" alt="Sholikudin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SH</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Sholikudin</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Daffa Muhammad Ardian" style="--delay:0.48s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/daffa muhammad ardian.jpeg" alt="Daffa Muhammad Ardian" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">DA</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Daffa Muhammad Ardian</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Yulia Rosdiati" style="--delay:0.50s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/yulia rosdiati.jpg" alt="Yulia Rosdiati" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">YR</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Yulia Rosdiati</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Aditya Yudha Suseno" style="--delay:0.52s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/aditya yudha suseno.png" alt="Aditya Yudha Suseno" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Aditya Yudha Suseno</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Agnes Wayan Lestari" style="--delay:0.54s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/agnes-wayan-lestari.jpg" alt="Agnes Wayan Lestari" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AL</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Agnes Wayan Lestari</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Agus Mustofa" style="--delay:0.56s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/Agus Mustofa.jpg" alt="Agus Mustofa" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AM</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Agus Mustofa</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Agus Sistyo" style="--delay:0.58s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/agus-sistyo.jpg" alt="Agus Sistyo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">AS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Agus Sistyo</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="B. Andreas Mada WK" style="--delay:0.60s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/B. Andreas Mada WK.jpg" alt="B. Andreas Mada WK" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">BW</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>B. Andreas Mada WK</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Iwan Setiawan" style="--delay:0.62s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/Iwan Setiawan.jpg" alt="Iwan Setiawan" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">IS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Iwan Setiawan</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Masrahwati Dewi" style="--delay:0.64s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/masrahwati-dewi.jpg" alt="Masrahwati Dewi" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">MD</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Masrahwati Dewi</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Murniadi Chandra" style="--delay:0.66s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/murniadi chandra.JPG" alt="Murniadi Chandra" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">MC</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Murniadi Chandra</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Nur Dewi Afifah" style="--delay:0.68s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/nur dewi afifah.jpg" alt="Nur Dewi Afifah" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">NA</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Nur Dewi Afifah</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Rachmat Astiana" style="--delay:0.70s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/rachmat astiana.jpg" alt="Rachmat Astiana" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">RA</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Rachmat Astiana</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="B. Rusdi Harsono" style="--delay:0.72s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/b.rusdiharsono.jpg" alt="B. Rusdi Harsono" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">BH</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>B. Rusdi Harsono</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Sri Yulistiani" style="--delay:0.74s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/sri-yulistiani.jpg" alt="Sri Yulistiani" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SY</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Sri Yulistiani</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Suharnio Eliandy" style="--delay:0.76s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/suharnio eliandy.jpg" alt="Suharnio Eliandy" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SE</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Suharnio Eliandy</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Suryati Sari Arum" style="--delay:0.78s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/suryati sari arum.jpg" alt="Suryati Sari Arum" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">SA</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Suryati Sari Arum</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-          <div class="as-card reveal" data-name="Marthen Christian David Sipahuta" style="--delay:0.80s">
-            <div class="as-card-photo">
-              <img src="/assets/asesor/marthen christian.jpeg" alt="Marthen Christian David Sipahuta" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="as-photo-placeholder">
-                <span class="as-photo-initials">MS</span>
-              </div>
-            </div>
-            <div class="as-card-info">
-              <h3>Marthen Christian David Sipahuta</h3>
-              <p>Asesor Kompetensi BNSP</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="as-not-found" id="notFound" style="display:none">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <circle cx="28" cy="28" r="20" stroke="currentColor" stroke-width="4"/>
-            <path d="M44 44l14 14" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-            <path d="M22 28h12M28 22v12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <p>Tidak ada asesor yang ditemukan dengan kata kunci tersebut.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ════ CTA ════ -->
-    <section class="as-cta">
-      <div class="as-cta-bg"></div>
-      <div class="container">
-        <div class="as-cta-inner reveal">
-          <h2>Siap Memulai Uji Kompetensi?</h2>
-          <p>Daftarkan diri Anda sekarang dan dapatkan sertifikat kompetensi BNSP yang diakui secara nasional dengan didampingi asesor profesional LSP FIT.</p>
-          <div class="as-cta-btns">
-            <a href="skema.html" class="btn-primary btn-white">Lihat Skema Sertifikasi</a>
-            <a href="kontak.html" class="btn-ghost btn-ghost-white">Hubungi Kami</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div style="margin-bottom:16px;">
-            <img src="/assets/fitb logo.png" alt="LSP FIT" style="height:52px;filter:brightness(0) invert(1);opacity:0.9;" />
-          </div>
-          <p>Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Berlisensi BNSP No. BNSP-LSP-444-ID.</p>
-          <div class="footer-socials">
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Instagram">ig</a>
-            <a href="#" aria-label="WhatsApp">wa</a>
-          </div>
+  <div class="container">
+    <div class="footer-grid">
+      <section>
+        <img src="/assets/fitb%20logo.png" alt="Logo LSP FIT" class="footer-logo-white" style="height:52px;width:auto;" />
+        <p class="footer-text" style="margin-top:10px;">Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Berlisensi BNSP No. BNSP-LSP-444-ID.</p>
+        <div class="footer-social">
+          <a href="https://id.linkedin.com/company/lsp-fasilitator-instruktur-dan-tenaga-kepelatihan" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/info.lspfit/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm8.6 1.8h-8.7A3.85 3.85 0 0 0 3.8 7.65v8.7a3.85 3.85 0 0 0 3.85 3.85h8.7a3.85 3.85 0 0 0 3.85-3.85v-8.7a3.85 3.85 0 0 0-3.85-3.85ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Zm5.3-2.25a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2Z"/></svg>
+          </a>
+          <a href="https://wa.me/6281112101007" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.54 15.04L2 22l5.11-1.46A9.95 9.95 0 1 0 12.04 2Zm5.8 14.19c-.25.7-1.48 1.33-2.04 1.4-.52.08-1.18.11-1.9-.12a16.15 16.15 0 0 1-5.38-3.32 11.95 11.95 0 0 1-2.2-2.92c-.24-.43-1-1.43-1-2.74 0-1.31.69-1.95.94-2.22.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.47.25.61.84 2.12.91 2.27.07.15.12.33.02.54-.1.21-.16.34-.32.52-.16.18-.34.4-.48.53-.16.16-.32.33-.14.64.17.31.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.13.64-.08.17-.2.73-.85.93-1.14.2-.29.4-.24.67-.15.28.1 1.72.81 2.01.96.3.15.5.22.57.34.08.13.08.77-.17 1.47Z"/></svg>
+          </a>
         </div>
-        <div class="footer-col">
-          <h5>Navigasi</h5>
-          <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="aboutus.html">Tentang Kami</a></li>
-            <li><a href="skema.html">Skema Sertifikasi</a></li>
-            <li><a href="asesor.html">Asesor</a></li>
-            <li><a href="berita.html">Berita</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-          </ul>
+      </section>
+      <section>
+        <h4 class="footer-title">Navigasi</h4>
+        <nav class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="aboutus.html">Tentang Kami</a>
+          <a href="skema.html">Skema</a>
+          <a href="asesor.html">Asesor</a>
+          <a href="berita.html">Berita</a>
+          <a href="kontak.html">Kontak</a>
+          <a href="https://app.msdmup.id/" target="_blank" rel="noopener">Portal LMS</a>
+        </nav>
+      </section>
+      <section>
+        <h4 class="footer-title">Skema Unggulan</h4>
+        <div class="footer-links">
+          <a href="/skema.html#klaster">Perencanaan Materi Pelatihan</a>
+          <a href="/skema.html#instruktur">Instruktur Senior</a>
+          <a href="/skema.html#instruktur">Fasilitator</a>
+          <a href="/skema.html#kepelatihan">Manajer Program Pelatihan</a>
         </div>
-        <div class="footer-col">
-          <h5>Skema Unggulan</h5>
-          <ul>
-            <li><a href="skema.html#instruktur">Instruktur Junior</a></li>
-            <li><a href="skema.html#instruktur">Instruktur Senior</a></li>
-            <li><a href="skema.html#instruktur">Fasilitator</a></li>
-            <li><a href="skema.html#klaster">Blended Learning</a></li>
-            <li><a href="skema.html#kepelatihan">Penyelenggara Pelatihan</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Kontak</h5>
-          <ul class="footer-contact">
-            <li><span>&#x1F4CD;</span><span>Ruko Akasa Blok B No. 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan</span></li>
-            <li><span>&#x1F4DE;</span><span>0811-1210-1007</span></li>
-            <li><span>&#x2709;</span><span>info.lspfit@gmail.com</span></li>
-            <li><span>&#x1F310;</span><span>www.sertifikasifit.com</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&#169; 2025 LSP FIT &mdash; Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Hak Cipta Dilindungi.</p>
-        <div class="footer-links-bottom">
-          <a href="#">Kebijakan Privasi</a>
-          <a href="#">Syarat &amp; Ketentuan</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+      </section>
+      <section>
+        <h4 class="footer-title">Kontak</h4>
+        <ul class="footer-contact">
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2Z"/></svg>
+    <span>0811-1210-1007</span>
+  </li>
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v.4l10 5.6 10-5.6V6a2 2 0 0 0-2-2Zm2 4.7-9.5 5.3a1 1 0 0 1-1 0L2 8.7V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.7Z"/></svg>
+    <span>info.lspfit@gmail.com</span>
+  </li>
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+    <span>Ruko Akasa Blok B No 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan</span>
+  </li>
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.93 9h-3.05a15.7 15.7 0 0 0-1.02-4.14A8.03 8.03 0 0 1 18.93 11ZM12 4.07c.84 1.21 1.5 3 1.83 4.93h-3.66C10.5 7.07 11.16 5.28 12 4.07ZM4.07 13h3.05c.12 1.46.48 2.85 1.02 4.14A8.03 8.03 0 0 1 4.07 13Zm3.05-2H4.07a8.03 8.03 0 0 1 4.07-4.14A15.7 15.7 0 0 0 7.12 11Zm.9 2h3.98c-.18 1.59-.6 3.1-1.2 4.26A13.8 13.8 0 0 1 8.02 13Zm3.98-2H8.02c.18-1.59.6-3.1 1.2-4.26.6 1.16 1.02 2.67 1.2 4.26Zm.9 2h3.98a13.8 13.8 0 0 1-2.78 4.26c-.6-1.16-1.02-2.67-1.2-4.26Zm0-2c-.18-1.59-.6-3.1-1.2-4.26A13.8 13.8 0 0 1 15.98 11H12.9Zm1.96 6.14c.54-1.29.9-2.68 1.02-4.14h3.05a8.03 8.03 0 0 1-4.07 4.14Z"/></svg>
+    <span>www.sertifikasifit.com</span>
+  </li>
+</ul>
 
-  <script src="/assets/js/main.js"></script>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 LSP FIT</span>
+      <span>Privacy | Terms</span>
+    </div>
+  </div>
+</footer>
+
+
+  <a class="wa-fab" href="https://wa.me/6281112101007?text=Halo%20LSP%20FIT%2C%20saya%20ingin%20mendaftar%20uji%20kompetensi" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.09 0C5.54 0 .21 5.33.2 11.88a11.8 11.8 0 0 0 1.6 5.98L0 24l6.29-1.65a11.86 11.86 0 0 0 5.78 1.48h.01c6.54 0 11.87-5.33 11.88-11.88a11.8 11.8 0 0 0-3.44-8.47Zm-8.43 18.34h-.01a9.8 9.8 0 0 1-4.99-1.36l-.36-.21-3.73.98 1-3.64-.24-.37a9.82 9.82 0 0 1-1.5-5.23c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.11 1.02 6.96 2.88a9.79 9.79 0 0 1 2.88 6.96c0 5.42-4.41 9.82-9.83 9.82Zm5.39-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.06 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35Z"/></svg>
+  </a>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    /* ── Asesor Search ── */
-    const searchInput=document.getElementById('asSearch');
-    const cards=document.querySelectorAll('.as-card');
-    const notFound=document.getElementById('notFound');
-    searchInput&&searchInput.addEventListener('input',e=>{
-      const q=e.target.value.toLowerCase();
-      let visible=0;
-      cards.forEach(c=>{
-        const name=c.dataset.name.toLowerCase();
-        if(name.includes(q)){c.style.display='';visible++;}
-        else{c.style.display='none';}
-      });
-      notFound.style.display=visible===0?'flex':'none';
-    });
+    AOS.init();
   </script>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

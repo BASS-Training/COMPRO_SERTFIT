@@ -1,853 +1,458 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LSP FIT — Lembaga Sertifikasi Profesi Fasilitator Instruktur &amp; Tenaga Kepelatihan</title>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="stylesheet" href="/assets/css/brand.css" />
-    <link rel="stylesheet" href="/assets/css/pages.css" />
-    <link rel="stylesheet" href="/assets/css/home.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
-    <style>
-      /* Proses 7 tahap grid */
-      .process-timeline-7 {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 28px;
-      }
-      .process-timeline-7 .process-step:nth-child(5),
-      .process-timeline-7 .process-step:nth-child(6),
-      .process-timeline-7 .process-step:nth-child(7) {
-        grid-column: span 1;
-      }
-      .process-row-2 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-        margin-top: 28px;
-        position: relative;
-        z-index: 1;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Visi highlight */
-      .visi-box {
-        background: rgba(0,172,234,0.08);
-        border: 1px solid rgba(0,172,234,0.3);
-        border-radius: 16px;
-        padding: 32px 36px;
-        margin: 48px 0;
-        text-align: center;
-      }
-      .visi-box .visi-q {
-        font-family: var(--font-display);
-        font-size: 3rem;
-        color: var(--cyan);
-        opacity: 0.5;
-        line-height: 1;
-        margin-bottom: 8px;
-      }
-      .visi-box p {
-        font-family: var(--font-display);
-        font-size: 1.2rem;
-        font-style: italic;
-        color: var(--navy);
-        line-height: 1.6;
-      }
-
-      @media (max-width: 768px) {
-        .process-timeline-7 { grid-template-columns: repeat(2, 1fr); }
-        .process-row-2 { grid-template-columns: 1fr 1fr; }
-      }
-      @media (max-width: 480px) {
-        .process-row-2 { grid-template-columns: 1fr; }
-      }
-    </style>
-  </head>
-  <body>
-
-    <!-- ============ NAV ============ -->
-    <header class="site-header" id="siteHeader">
-      <div class="header-inner">
-        <a href="index.html" class="logo-img-wrap">
-          <img src="/assets/fitb logo.png" alt="LSP FIT Logo" class="logo-invert" id="logoImg" />
-        </a>
-        <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
-          <ul>
-            <li><a href="index.html" class="active">Beranda</a></li>
-            <li><a href="aboutus.html">Tentang Kami</a></li>
-            <li class="has-dropdown">
-              <a href="skema.html">Skema <span class="chevron">&#x203A;</span></a>
-              <ul class="dropdown">
-                <li><a href="skema.html#klaster">Skema Klaster</a></li>
-                <li><a href="skema.html#instruktur">Skema Instruktur</a></li>
-                <li><a href="skema.html#kepelatihan">Tenaga Kepelatihan</a></li>
-              </ul>
-            </li>
-            <li><a href="asesor.html">Asesor</a></li>
-            <li><a href="berita.html">Berita</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-          </ul>
-        </nav>
-        <a href="https://wa.me/6281112101007?text=Halo%20LSP%20FIT%2C%20saya%20ingin%20mendaftar%20uji%20kompetensi" class="btn-header" target="_blank" rel="noopener">Daftar Uji</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </header>
-
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="hero-bg">
-        <div class="hero-grid"></div>
-        <div class="hero-blob blob-1"></div>
-        <div class="hero-blob blob-2"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-badge reveal">Terakreditasi BNSP No. BNSP-LSP-444-ID</div>
-        <h1 class="hero-title reveal">
-          Sertifikasi Profesi<br/>
-          <em>Fasilitator Instruktur</em><br/>
-          &amp; Tenaga Kepelatihan
-        </h1>
-        <p class="hero-desc reveal">
-          LSP FIT (Lembaga Sertifikasi Profesi Fasilitator Instruktur &amp; Tenaga Kepelatihan) memiliki lisensi resmi dari BNSP dan berhak melakukan Uji Kompetensi mengacu SKKNI No. 333 Tahun 2020. Didukung oleh APTISI Wilayah 3 DKI Jaya dan AFIN.
-        </p>
-        <div class="hero-cta reveal">
-          <a href="daftar.html" class="btn-primary">Daftar Uji Kompetensi</a>
-          <a href="skema.html" class="btn-ghost">Lihat Skema &#x2192;</a>
-        </div>
-        <div class="hero-trust reveal">
-          <div class="trust-item">
-            <span class="trust-num">30+</span>
-            <span class="trust-label">Skema Sertifikasi</span>
-          </div>
-          <div class="trust-divider"></div>
-          <div class="trust-item">
-            <span class="trust-num">3</span>
-            <span class="trust-label">Kategori Bidang</span>
-          </div>
-          <div class="trust-divider"></div>
-          <div class="trust-item">
-            <span class="trust-num">20+</span>
-            <span class="trust-label">Mitra Industri</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual reveal">
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-logo">FIT</span>
-            <span class="cert-tag">BNSP</span>
-          </div>
-          <div class="cert-body">
-            <div class="cert-line"></div>
-            <div class="cert-line short"></div>
-            <div class="cert-meta">
-              <span>Instruktur Senior</span>
-              <span class="cert-year">2025</span>
-            </div>
-            <div class="cert-seal">&#x2736;</div>
-          </div>
-        </div>
-        <div class="floating-badge badge-top">SKKNI No. 333/2020</div>
-        <div class="floating-badge badge-bottom">Diakui Nasional</div>
-      </div>
-      <div class="hero-scroll">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- ============ MARQUEE ============ -->
-    <div class="marquee-wrap">
-      <div class="marquee-track">
-        <span>Fasilitator</span><span class="dot">&#x25C6;</span>
-        <span>Instruktur Junior</span><span class="dot">&#x25C6;</span>
-        <span>Instruktur Senior</span><span class="dot">&#x25C6;</span>
-        <span>Instruktur Madya</span><span class="dot">&#x25C6;</span>
-        <span>Instruktur Master</span><span class="dot">&#x25C6;</span>
-        <span>Tenaga Kepelatihan</span><span class="dot">&#x25C6;</span>
-        <span>Blended Learning</span><span class="dot">&#x25C6;</span>
-        <span>Pengajar Vokasi</span><span class="dot">&#x25C6;</span>
-        <span>Fasilitator</span><span class="dot">&#x25C6;</span>
-        <span>Instruktur Junior</span><span class="dot">&#x25C6;</span>
-        <span>Instruktur Senior</span><span class="dot">&#x25C6;</span>
-        <span>Tenaga Kepelatihan</span><span class="dot">&#x25C6;</span>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LSP FIT | Beranda</title>
+  <link rel="icon" type="image/png" href="/assets/fitb%20logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/redesign.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <header class="site-header transparent" id="siteHeader">
+    <div class="header-inner">
+      <a class="logo-link" href="index.html" aria-label="LSP FIT Beranda">
+        <img src="/assets/fitb%20logo.png" alt="Logo LSP FIT" />
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a class="active" href="index.html">Beranda</a></li>
+          <li><a href="aboutus.html">Tentang Kami</a></li>
+          <li><a href="skema.html">Skema</a></li>
+          <li><a href="asesor.html">Asesor</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a class="nav-lms" href="https://app.msdmup.id/" target="_blank" rel="noopener">Portal LMS</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary header-cta" href="https://wa.me/6281112101007?text=Halo%20LSP%20FIT%2C%20saya%20ingin%20mendaftar%20uji%20kompetensi" target="_blank" rel="noopener">Daftar Uji</a>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <!-- ============ TENTANG ============ -->
-    <section class="about-section">
-      <div class="container">
-        <div class="about-split">
-          <div class="about-left reveal">
-            <div class="section-eyebrow">Tentang LSP FIT</div>
-            <h2>Lembaga Sertifikasi Profesi<br/>yang Tangguh &amp; Terpercaya</h2>
-            <p>Lembaga Sertifikasi Profesi Fasilitator Instruktur dan Tenaga Kepelatihan (LSP FIT) memiliki lisensi dari Badan Nasional Sertifikasi Profesi (BNSP) dengan Nomor <strong>BNSP-LSP-444-ID</strong> dan berhak melakukan Uji Kompetensi yang mengacu kepada Standar Kompetensi Kerja Nasional Indonesia (SKKNI) No. 333 Tahun 2020.</p>
-            <p>LSP FIT didukung oleh dua asosiasi: <strong>APTISI</strong> (Asosiasi Perguruan Tinggi Swasta Indonesia) Wilayah 3 DKI Jaya dan <strong>AFIN</strong> (Asosiasi Fasilitator Instruktur Nusantara).</p>
-            <div class="about-pillars">
-              <div class="pillar">
-                <span class="pillar-icon">&#x2713;</span>
-                <div>
-                  <strong>Lisensi Resmi BNSP</strong>
-                  <span>No. BNSP-LSP-444-ID</span>
-                </div>
-              </div>
-              <div class="pillar">
-                <span class="pillar-icon">&#x2713;</span>
-                <div>
-                  <strong>Didukung APTISI &amp; AFIN</strong>
-                  <span>Asosiasi nasional terkemuka</span>
-                </div>
-              </div>
-              <div class="pillar">
-                <span class="pillar-icon">&#x2713;</span>
-                <div>
-                  <strong>SKKNI No. 333 Tahun 2020</strong>
-                  <span>Standar kompetensi nasional resmi</span>
-                </div>
-              </div>
-            </div>
-            <a href="aboutus.html" class="btn-primary" style="margin-top:32px;display:inline-flex">Tentang Kami &#x2192;</a>
-          </div>
-          <div class="about-right reveal">
-            <div class="about-image-block">
-              <div class="about-img-frame">
-                <div class="img-placeholder">
-                  <div class="img-icon">&#x2B21;</div>
-                  <span>Dokumentasi Kegiatan LSP FIT</span>
-                </div>
-              </div>
-              <div class="about-stat-float stat-f1">
-                <span class="asf-num">444</span>
-                <span class="asf-label">No. Lisensi BNSP</span>
-              </div>
-              <div class="about-stat-float stat-f2">
-                <span class="asf-num">2020</span>
-                <span class="asf-label">SKKNI No. 333</span>
-              </div>
-            </div>
+  <main class="page-bg">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan</h1>
+          <div class="hero-subtitle">Berlisensi BNSP No. BNSP-LSP-444-ID</div>
+          <p>LSP FIT memiliki lisensi BNSP Nomor BNSP-LSP-444-ID dan berhak melakukan uji kompetensi yang mengacu pada SKKNI No. 333 Tahun 2020 untuk bidang fasilitator, instruktur, dan tenaga kepelatihan.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="skema.html">Lihat Skema</a>
+            <a class="btn btn-outline-light" href="kontak.html">Hubungi Kami</a>
           </div>
         </div>
-
-        <!-- VISI MISI -->
-        <div style="margin-top: 80px;">
-          <div class="visi-box reveal">
-            <div class="visi-q">"</div>
-            <p>Menjadi Lembaga Sertifikasi Profesi Fasilitator Instruktur &amp; Tenaga Kepelatihan yang tangguh dan terpercaya.</p>
-          </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:40px;">
-            <div class="reveal">
-              <div class="section-eyebrow">Misi Kami</div>
-              <div style="display:flex;flex-direction:column;gap:16px;margin-top:12px;">
-                <div style="display:flex;gap:14px;align-items:flex-start;">
-                  <span style="background:var(--red);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;flex-shrink:0;">1</span>
-                  <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.7;">Menyediakan MUK sesuai dengan Ruang Lingkup Skema.</p>
-                </div>
-                <div style="display:flex;gap:14px;align-items:flex-start;">
-                  <span style="background:var(--red);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;flex-shrink:0;">2</span>
-                  <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.7;">Menyediakan Asesor yang kompeten sesuai dengan Ruang Lingkup Skema.</p>
-                </div>
-                <div style="display:flex;gap:14px;align-items:flex-start;">
-                  <span style="background:var(--cyan);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;flex-shrink:0;">3</span>
-                  <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.7;">Mensertifikasi para Instruktur dari Badan Diklat Pemerintah dan Swasta.</p>
-                </div>
-                <div style="display:flex;gap:14px;align-items:flex-start;">
-                  <span style="background:var(--cyan);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;flex-shrink:0;">4</span>
-                  <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.7;">Melaksanakan Uji Kompetensi dengan integritas dan kualitas tinggi mengutamakan Pelayanan Prima.</p>
-                </div>
-              </div>
-            </div>
-            <div class="reveal" style="--delay:0.1s">
-              <div class="section-eyebrow">Dukungan Asosiasi</div>
-              <div style="display:flex;flex-direction:column;gap:20px;margin-top:12px;">
-                <div style="background:var(--off-white);border:1px solid var(--border);border-radius:12px;padding:24px;">
-                  <strong style="color:var(--navy);font-size:1rem;display:block;margin-bottom:6px;">APTISI</strong>
-                  <span style="color:var(--text-muted);font-size:0.88rem;">Asosiasi Perguruan Tinggi Swasta Indonesia Wilayah 3 DKI Jaya</span>
-                </div>
-                <div style="background:var(--off-white);border:1px solid var(--border);border-radius:12px;padding:24px;">
-                  <strong style="color:var(--navy);font-size:1rem;display:block;margin-bottom:6px;">AFIN</strong>
-                  <span style="color:var(--text-muted);font-size:0.88rem;">Asosiasi Fasilitator Instruktur Nusantara</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="hero-media" aria-label="Kegiatan pelatihan profesional">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Sesi pelatihan profesional instruktur dewasa" />
         </div>
       </div>
     </section>
 
-    <!-- ============ STATS ============ -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item reveal">
-            <span class="stat-num" data-target="4">0</span><span class="stat-plus">+</span>
-            <p>Skema Klaster</p>
-          </div>
-          <div class="stat-item reveal">
-            <span class="stat-num" data-target="18">0</span><span class="stat-plus">+</span>
-            <p>Skema Bidang Instruktur</p>
-          </div>
-          <div class="stat-item reveal">
-            <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
-            <p>Skema Tenaga Kepelatihan</p>
-          </div>
-          <div class="stat-item reveal">
-            <span class="stat-num" data-target="20">0</span><span class="stat-plus">+</span>
-            <p>Mitra Perusahaan</p>
-          </div>
-        </div>
-      </div>
-    </section>
-<!-- ============ SKEMA PRODUK ============ -->
-    <section class="produk-section">
-      <!-- Dark editorial bg with grid pattern -->
-      <div class="produk-bg">
-        <div class="produk-bg-grid"></div>
-        <div class="produk-bg-glow"></div>
-      </div>
-      <div class="container" style="position:relative;z-index:1;">
-
-        <!-- Header — centered -->
-        <div class="produk-header-center reveal">
-          <div class="section-eyebrow produk-eyebrow">Produk Kami</div>
-          <h2 class="produk-title">Tiga Kategori<br/><em>Skema Sertifikasi</em></h2>
-          <p class="produk-subtitle">LSP FIT menyediakan skema sertifikasi komprehensif sesuai <strong>SKKNI No. 333 Tahun 2020</strong> untuk tiga bidang profesi utama.</p>
-        </div>
-
-        <!-- Big 3-column cards -->
-        <div class="produk-cards">
-
-          <!-- Card 1: Skema Klaster -->
-          <div class="produk-card reveal" style="--delay:0.04s">
-            <div class="produk-card-top">
-              <div class="produk-num">01</div>
-              <div class="produk-badge">4 Skema</div>
-            </div>
-            <div class="produk-card-icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="4" y="4" width="14" height="14" rx="3" fill="currentColor" opacity="0.9"/>
-                <rect x="22" y="4" width="14" height="14" rx="3" fill="currentColor" opacity="0.5"/>
-                <rect x="4" y="22" width="14" height="14" rx="3" fill="currentColor" opacity="0.5"/>
-                <rect x="22" y="22" width="14" height="14" rx="3" fill="currentColor" opacity="0.25"/>
-              </svg>
-            </div>
-            <h3>Skema Klaster</h3>
-            <p>Sertifikasi berbasis kluster kompetensi untuk penguasaan materi pelatihan secara menyeluruh.</p>
-            <ul class="produk-list">
-              <li>Perencanaan Penyajian Materi Pelatihan</li>
-              <li>Pelaksanaan Blended Learning</li>
-              <li>Penyajian Materi Pembelajaran Daring</li>
-              <li>Pelatihan Tatap Muka (Luring)</li>
-            </ul>
-            <a href="skema.html#klaster" class="produk-link">Lihat Detail <span>&#x2192;</span></a>
-          </div>
-
-          <!-- Card 2: Instruktur — FEATURED (taller, accent) -->
-          <div class="produk-card produk-card-featured reveal" style="--delay:0.09s">
-            <div class="produk-card-top">
-              <div class="produk-num">02</div>
-              <div class="produk-badge produk-badge-accent">18+ Skema</div>
-            </div>
-            <div class="produk-card-icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="12" r="8" fill="currentColor" opacity="0.9"/>
-                <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-              </svg>
-            </div>
-            <h3>Skema Okupasi<br/>Instruktur</h3>
-            <p>Jenjang lengkap dari Level 3 hingga Level 6 Kerangka Kualifikasi Nasional Indonesia.</p>
-            <ul class="produk-list">
-              <li>Asisten Instruktur &amp; Mentor (Level 3)</li>
-              <li>Fasilitator &amp; Instruktur Penyelia (Level 4)</li>
-              <li>Instruktur Muda &amp; Senior (Level 5)</li>
-              <li>Instruktur Madya &amp; Master (Level 6)</li>
-            </ul>
-            <a href="skema.html#instruktur" class="produk-link">Lihat Detail <span>&#x2192;</span></a>
-          </div>
-
-          <!-- Card 3: Tenaga Kepelatihan -->
-          <div class="produk-card reveal" style="--delay:0.14s">
-            <div class="produk-card-top">
-              <div class="produk-num">03</div>
-              <div class="produk-badge">10+ Skema</div>
-            </div>
-            <div class="produk-card-icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <path d="M8 32V16L20 6l12 10v16H26v-8h-12v8H8z" fill="currentColor" opacity="0.9"/>
-                <rect x="16" y="24" width="8" height="8" fill="currentColor" opacity="0.4"/>
-              </svg>
-            </div>
-            <h3>Skema Tenaga<br/>Kepelatihan</h3>
-            <p>Sertifikasi manajemen dan penyelenggaraan lembaga pelatihan dari Level 3 hingga Level 6.</p>
-            <ul class="produk-list">
-              <li>Staff Admin &amp; Penyelenggara Pelatihan (L3)</li>
-              <li>Koordinator Pemagangan (Level 4)</li>
-              <li>Manajer Lembaga Pelatihan (Level 5)</li>
-              <li>Kepala Lembaga Pelatihan (Level 6)</li>
-            </ul>
-            <a href="skema.html#kepelatihan" class="produk-link">Lihat Detail <span>&#x2192;</span></a>
-          </div>
-
-        </div>
-
-        <!-- CTA centered -->
-        <div class="produk-cta-center reveal">
-          <a href="skema.html" class="btn-produk-cta">Lihat Semua Skema &#x2192;</a>
-        </div>
-
-        <!-- Bottom SKKNI callout strip -->
-        <div class="produk-strip reveal">
-          <div class="produk-strip-icon">&#x2713;</div>
-          <p>Seluruh skema mengacu pada <strong>Standar Kompetensi Kerja Nasional Indonesia (SKKNI) No. 333 Tahun 2020</strong> dan lisensi BNSP No. <strong>BNSP-LSP-444-ID</strong></p>
-        </div>
-
+    <section class="section">
+      <div class="container stats-grid">
+        <article class="card stat-card">
+          <span class="stat-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V6l8-4 8 4Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <span class="stat-value">BNSP-LSP-444-ID</span>
+          <span class="stat-label">Lisensi BNSP</span>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h1"/></svg>
+          </span>
+          <span class="stat-value">333/2020</span>
+          <span class="stat-label">SKKNI No. 333 Tahun 2020</span>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="m18 20-6-6-6 6"/><path d="M4 4h16"/></svg>
+          </span>
+          <span class="stat-value">30+</span>
+          <span class="stat-label">Skema Sertifikasi</span>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+          </span>
+          <span class="stat-value">41</span>
+          <span class="stat-label">Asesor Kompetensi</span>
+        </article>
       </div>
     </section>
 
-    <!-- ============ MENGAPA LSP FIT ============ -->
-    <section class="why-section">
-      <div class="why-bg"></div>
+    <section class="section">
       <div class="container">
-        <div class="why-inner">
-          <div class="why-left reveal">
-            <div class="section-eyebrow why-eyebrow">Mengapa LSP FIT?</div>
-            <h2>Standar Kompetensi<br/>yang Tidak Kompromi</h2>
-            <p>LSP FIT berkomitmen menghadirkan proses sertifikasi yang transparan, berstandar tinggi, dan diakui secara nasional. Setiap peserta mendapatkan pelayanan prima dari asesor berpengalaman.</p>
-            <a href="aboutus.html" class="btn-primary btn-why" style="margin-top:32px;display:inline-flex">Pelajari Lebih Lanjut</a>
-          </div>
-          <div class="why-right">
-            <div class="why-card reveal" style="--delay:0.04s">
-              <div class="why-num">01</div>
-              <div class="why-body">
-                <h4>Lisensi Resmi BNSP</h4>
-                <p>Memiliki lisensi resmi BNSP No. BNSP-LSP-444-ID. Sertifikat yang diterbitkan diakui secara nasional oleh pemerintah dan industri.</p>
-              </div>
-            </div>
-            <div class="why-card reveal" style="--delay:0.08s">
-              <div class="why-num">02</div>
-              <div class="why-body">
-                <h4>Asesor Kompeten &amp; Berpengalaman</h4>
-                <p>Menyediakan asesor yang kompeten sesuai Ruang Lingkup Skema. Setiap asesor telah tersertifikasi dan berpengalaman di bidangnya.</p>
-              </div>
-            </div>
-            <div class="why-card reveal" style="--delay:0.12s">
-              <div class="why-num">03</div>
-              <div class="why-body">
-                <h4>Fokus Instruktur &amp; Fasilitator</h4>
-                <p>Satu-satunya LSP yang berfokus khusus pada sertifikasi Fasilitator Instruktur, dan Tenaga Kepelatihan di Indonesia.</p>
-              </div>
-            </div>
-            <div class="why-card reveal" style="--delay:0.16s">
-              <div class="why-num">04</div>
-              <div class="why-body">
-                <h4>Mitra Pemerintah &amp; Swasta</h4>
-                <p>Mensertifikasi Instruktur dari Badan Diklat Pemerintah dan Swasta. Dipercaya oleh Citibank, AHM, Petrosea, dan 20+ perusahaan terkemuka.</p>
-              </div>
-            </div>
-          </div>
+        <div class="section-head">
+          <p class="section-kicker">Tentang LSP FIT</p>
+          <h2 class="section-title">Profil Singkat LSP FIT</h2>
+        </div>
+        <div class="pillar-grid">
+          <article class="card pillar-card">
+            <span class="pillar-icon">🏛</span>
+            <h3>Lisensi BNSP Resmi</h3>
+            <p>LSP FIT berlisensi Badan Nasional Sertifikasi Profesi dengan Nomor BNSP-LSP-444-ID.</p>
+          </article>
+          <article class="card pillar-card">
+            <span class="pillar-icon">🤝</span>
+            <h3>Dukungan Asosiasi</h3>
+            <p>Didukung APTISI Wilayah 3 DKI Jaya dan AFIN (Asosiasi Fasilitator Instruktur Nusantara).</p>
+          </article>
+          <article class="card pillar-card">
+            <span class="pillar-icon">📘</span>
+            <h3>Acuan SKKNI</h3>
+            <p>Pelaksanaan skema dan asesmen mengacu pada Standar Kompetensi Kerja Nasional Indonesia No. 333 Tahun 2020.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ PROSES 7 TAHAP ============ -->
-    <section class="process-section">
+    <section class="section" id="skema-preview">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-eyebrow">Alur Sertifikasi</div>
-          <h2>7 Tahap Proses<br/>Uji Kompetensi</h2>
-          <p>Proses yang terstandar, transparan, dan integritas tinggi sesuai panduan BNSP.</p>
+        <div class="section-head">
+          <p class="section-kicker">Skema Preview</p>
+          <h2 class="section-title">Pilih Kategori Sertifikasi</h2>
+          <p class="section-desc">Detail lengkap unit kompetensi tersedia pada halaman Skema.</p>
         </div>
-        <div class="process-timeline" style="grid-template-columns: repeat(4,1fr);">
-          <div class="process-step reveal" style="--delay:0s">
-            <div class="step-num">01</div>
-            <div class="step-body">
-              <h4>Pendaftaran</h4>
-              <p>Mendaftar ke LSP FIT dan mengisi Form APL 1 &amp; 2 secara lengkap.</p>
-            </div>
-          </div>
-          <div class="process-step reveal" style="--delay:0.06s">
-            <div class="step-num">02</div>
-            <div class="step-body">
-              <h4>Verifikasi &amp; Pembayaran</h4>
-              <p>Verifikasi dokumen pemohon, diterima sebagai asesi, dan melakukan pembayaran.</p>
-            </div>
-          </div>
-          <div class="process-step reveal" style="--delay:0.12s">
-            <div class="step-num">03</div>
-            <div class="step-body">
-              <h4>Konsultasi Pra Asesmen</h4>
-              <p>Melakukan konsultasi pra asesmen bersama asesor yang ditunjuk.</p>
-            </div>
-          </div>
-          <div class="process-step reveal" style="--delay:0.18s">
-            <div class="step-num">04</div>
-            <div class="step-body">
-              <h4>Proses Asesmen</h4>
-              <p>Melakukan proses asesmen kompetensi sesuai skema yang dipilih.</p>
-            </div>
-          </div>
-        </div>
-        <div class="process-row-2 reveal" style="--delay:0.24s">
-          <div class="process-step">
-            <div class="step-num">05</div>
-            <div class="step-body">
-              <h4>Pencatatan Bukti</h4>
-              <p>Asesor kompetensi mencatat bukti dan membuat rekomendasi hasil asesmen.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">06</div>
-            <div class="step-body">
-              <h4>Rapat Pleno</h4>
-              <p>Rapat Pleno Komite Teknik untuk keputusan akhir kompetensi peserta.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">07</div>
-            <div class="step-body">
-              <h4>Serah Terima Sertifikat</h4>
-              <p>Serah terima sertifikat BNSP resmi kepada peserta yang dinyatakan kompeten.</p>
-            </div>
-          </div>
+        <div class="skema-preview-grid">
+          <article class="card skema-card">
+            <span class="skema-icon">📚</span>
+            <span class="badge">4 Skema</span>
+            <h3>Klaster</h3>
+            <p>Sertifikasi kompetensi berbasis klaster kerja untuk perencanaan dan pelaksanaan pembelajaran.</p>
+            <a class="btn btn-outline" href="/skema.html#klaster">Lihat Detail</a>
+          </article>
+          <article class="card skema-card">
+            <span class="skema-icon">🎯</span>
+            <span class="badge">18 Skema</span>
+            <h3>Instruktur</h3>
+            <p>Skema okupasi instruktur dari level operasional hingga senior untuk kebutuhan lembaga dan industri.</p>
+            <a class="btn btn-outline" href="/skema.html#instruktur">Lihat Detail</a>
+          </article>
+          <article class="card skema-card">
+            <span class="skema-icon">🧭</span>
+            <span class="badge">10 Skema</span>
+            <h3>Kepelatihan</h3>
+            <p>Fokus pada pengelolaan program, administrasi, dan manajemen lembaga pelatihan berstandar.</p>
+            <a class="btn btn-outline" href="/skema.html#kepelatihan">Lihat Detail</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ AKTIVITAS ============ -->
-    <section class="activity-section">
+    <section class="section">
       <div class="container">
-        <div class="section-head-row reveal">
-          <div>
-            <div class="section-eyebrow">Aktivitas Terbaru</div>
-            <h2>Dokumentasi &amp; Kegiatan LSP FIT</h2>
-          </div>
-          <a href="berita.html" class="link-arrow">Lihat Semua &#x2192;</a>
+        <div class="section-head">
+          <p class="section-kicker">Alur Sertifikasi</p>
+          <h2 class="section-title">7 Langkah Proses Uji Kompetensi</h2>
+          <p class="section-desc">Langkah mudah untuk mendapatkan sertifikat kompetensi profesional dari BNSP melalui LSP FIT.</p>
         </div>
-        <div class="activity-grid">
-          <div class="act-card act-featured reveal" style="--delay:0.04s">
-            <div class="act-img" style="background:linear-gradient(135deg,#0D1B2A,#1A2F44);">
-              <div class="act-cat-badge">Asesmen Kompetensi</div>
-            </div>
-            <div class="act-body">
-              <span class="act-date">2025</span>
-              <h3>Pelaksanaan Uji Kompetensi Metodologi Pelatihan BRIN — Program Sertifikasi Instruktur</h3>
-              <p>LSP FIT berhasil melaksanakan uji kompetensi untuk program metodologi pelatihan bersama Badan Riset dan Inovasi Nasional dengan peserta dari berbagai instansi pemerintah.</p>
-              <a href="berita.html" class="link-arrow">Baca Selengkapnya &#x2192;</a>
-            </div>
-          </div>
-          <div class="act-side-stack">
-            <div class="act-card act-side reveal" style="--delay:0.08s">
-              <div class="act-img act-img-sm" style="background:linear-gradient(135deg,#0D1B2A,#1A2F44);"><div class="act-cat-badge">Kerjasama</div></div>
-              <div class="act-body">
-                <span class="act-date">2025</span>
-                <h3>Sertifikasi Instruktur Badan Diklat Kabupaten Bogor — Angkatan IV</h3>
-                <a href="berita.html" class="link-arrow">Baca &#x2192;</a>
-              </div>
-            </div>
-            <div class="act-card act-side reveal" style="--delay:0.12s">
-              <div class="act-img act-img-sm" style="background:linear-gradient(135deg,#0D1B2A,#1A2F44);"><div class="act-cat-badge">Asesmen</div></div>
-              <div class="act-body">
-                <span class="act-date">2025</span>
-                <h3>Uji Kompetensi Kelas Metodologi Komunikasi — Program Tenaga Kepelatihan</h3>
-                <a href="berita.html" class="link-arrow">Baca &#x2192;</a>
-              </div>
-            </div>
-            <div class="act-card act-side reveal" style="--delay:0.16s">
-              <div class="act-img act-img-sm" style="background:linear-gradient(135deg,#0D1B2A,#1A2F44);"><div class="act-cat-badge">Sertifikasi</div></div>
-              <div class="act-body">
-                <span class="act-date">2025</span>
-                <h3>Workshop Sertifikasi Instruktur Ketenagakerjaan bersama Instansi Pemerintah</h3>
-                <a href="berita.html" class="link-arrow">Baca &#x2192;</a>
-              </div>
-            </div>
-          </div>
+        <div class="timeline-7">
+          <article class="timeline-step">
+            <span class="timeline-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h1"/></svg>
+            </span>
+            <span class="step-no">1</span>
+            <h4>Pendaftaran</h4>
+            <p>Mendaftar ke LSP FIT dan mengisi Form APL 1 &amp; 2.</p>
+            <span class="step-connector-mobile"></span>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <span class="step-no">2</span>
+            <h4>Verifikasi Dokumen</h4>
+            <p>Dokumen diverifikasi, pemohon diterima sebagai asesi, lalu melakukan pembayaran.</p>
+            <span class="step-connector-mobile"></span>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <span class="step-no">3</span>
+            <h4>Pra Asesmen</h4>
+            <p>Asesi melakukan konsultasi pra asesmen.</p>
+            <span class="step-connector-mobile"></span>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <span class="step-no">4</span>
+            <h4>Uji Kompetensi</h4>
+            <p>Pelaksanaan proses asesmen oleh asesor kompetensi.</p>
+            <span class="step-connector-mobile"></span>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V6l8-4 8 4Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <span class="step-no">5</span>
+            <h4>Rekomendasi Asesor</h4>
+            <p>Asesor mencatat bukti asesmen dan membuat rekomendasi.</p>
+            <span class="step-connector-mobile"></span>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+            </span>
+            <span class="step-no">6</span>
+            <h4>Rapat Pleno</h4>
+            <p>Rapat pleno Komite Teknik untuk penetapan hasil.</p>
+            <span class="step-connector-mobile"></span>
+          </article>
+          <article class="timeline-step">
+            <span class="timeline-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </span>
+            <span class="step-no">7</span>
+            <h4>Serah Terima</h4>
+            <p>Sertifikat diserahkan kepada peserta yang dinyatakan kompeten.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ PARTNER ============ -->
-    <section class="partner-section">
+    <section class="section" id="asesor-home">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-eyebrow">Partner Kami</div>
-          <h2>Dipercaya Perusahaan &amp; Institusi Terkemuka</h2>
-          <p>LSP FIT telah bermitra dan melaksanakan sertifikasi kompetensi bagi tenaga instruktur di berbagai perusahaan dan institusi nasional.</p>
+        <div class="section-head">
+          <p class="section-kicker">Asesor</p>
+          <h2 class="section-title">Tim Asesor Profesional</h2>
         </div>
-        <div class="partner-marquee reveal" aria-label="Daftar mitra LSP FIT">
-          <div class="partner-row">
-            <div class="partner-track">
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/petrosea.svg" alt="PETROSEA logo" loading="lazy">
-                <span class="partner-name">PETROSEA</span><small>Indika Energy Group</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/citibank.svg" alt="Citibank logo" loading="lazy">
-                <span class="partner-name">Citibank</span><small>Perbankan</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/astra-honda-motor.svg" alt="PT. Astra Honda Motor logo" loading="lazy">
-                <span class="partner-name">PT. Astra Honda Motor</span><small>Otomotif</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/palyja.svg" alt="PALYJA logo" loading="lazy">
-                <span class="partner-name">PALYJA</span><small>Air Bersih Jakarta</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/rapp.svg" alt="RAPP logo" loading="lazy">
-                <span class="partner-name">RAPP</span><small>Industri Kertas</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/berau-coal.svg" alt="Berau Coal logo" loading="lazy">
-                <span class="partner-name">Berau Coal</span><small>Pertambangan</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/sanggar-sarana-baja.svg" alt="Sanggar Sarana Baja logo" loading="lazy">
-                <span class="partner-name">Sanggar Sarana Baja</span><small>Konstruksi</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/politeknik-stia-lan.svg" alt="Politeknik STIA LAN logo" loading="lazy">
-                <span class="partner-name">Politeknik STIA LAN</span><small>Perguruan Tinggi</small>
-              </div>
-            </div>
-          </div>
-          <div class="partner-row reverse">
-            <div class="partner-track">
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/universitas-dian-nusantara.svg" alt="Universitas Dian Nusantara logo" loading="lazy">
-                <span class="partner-name">Universitas Dian Nusantara</span><small>Perguruan Tinggi</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/sampoerna-university.svg" alt="Sampoerna University logo" loading="lazy">
-                <span class="partner-name">Sampoerna University</span><small>Perguruan Tinggi</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/madhani.svg" alt="MADHANI logo" loading="lazy">
-                <span class="partner-name">MADHANI</span><small>Pertambangan</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/infomedia.svg" alt="infomedia logo" loading="lazy">
-                <span class="partner-name">infomedia</span><small>Telekomunikasi</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/pupr.svg" alt="PUPR logo" loading="lazy">
-                <span class="partner-name">PUPR</span><small>Kementerian</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/kkp.svg" alt="KKP logo" loading="lazy">
-                <span class="partner-name">KKP</span><small>Kementerian</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/sls-mining.svg" alt="SLS Mining logo" loading="lazy">
-                <span class="partner-name">SLS Mining</span><small>Pertambangan</small>
-              </div>
-              <div class="partner-chip has-logo">
-                <img class="partner-logo-img" src="/assets/partners/lainnya.svg" alt="Lainnya logo" loading="lazy">
-                <span class="partner-name">+Lainnya</span><small>20+ Mitra Aktif</small>
-              </div>
-            </div>
-          </div>
+        <div class="assessor-grid">
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/Agus%20Mustofa.jpg" alt="Agus Mustofa" /><div class="assessor-body"><h4>Agus Mustofa</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/aditya%20yudha%20suseno.png" alt="Aditya Yudha Suseno" /><div class="assessor-body"><h4>Aditya Yudha Suseno</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/anne%20mariane.jpg" alt="Anne Mariane" /><div class="assessor-body"><h4>Anne Mariane</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/margono%20sugeng.jpg" alt="Margono Sugeng" /><div class="assessor-body"><h4>Margono Sugeng</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/marthen%20christian%20david%20sipahuta.jpeg" alt="Marthen Christian David Sipahuta" /><div class="assessor-body"><h4>Marthen C. D. Sipahuta</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/nelly%20triyas%20dayanti.png" alt="Nelly Triyas Dayanti" /><div class="assessor-body"><h4>Nelly Triyas Dayanti</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/nur%20dewi%20afifah.jpg" alt="Nur Dewi Afifah" /><div class="assessor-body"><h4>Nur Dewi Afifah</h4><p>Asesor Kompetensi BNSP</p></div></article>
+          <article class="card assessor-card"><img class="assessor-photo" src="/assets/asesor/yulia%20rosdiati.jpg" alt="Yulia Rosdiati" /><div class="assessor-body"><h4>Yulia Rosdiati</h4><p>Asesor Kompetensi BNSP</p></div></article>
+        </div>
+        <div style="text-align:center; margin-top: 24px;">
+          <a class="btn btn-outline" href="/asesor.html">Lihat Semua Asesor</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ JADWAL ASESMEN ============ -->
-    <section class="jadwal-section">
+    <section class="section">
       <div class="container">
-        <div class="jadwal-inner">
-          <div class="jadwal-left reveal">
-            <div class="section-eyebrow">Jadwal Asesmen</div>
-            <h2>Jadwal Uji Kompetensi<br/>Terdekat</h2>
-            <p>Segera daftarkan diri Anda sebelum kuota habis. Uji kompetensi dilaksanakan di berbagai kota di Indonesia.</p>
-            <a href="daftar.html" class="btn-primary" style="margin-top:24px;display:inline-flex">Daftar Sekarang</a>
-          </div>
-          <div class="jadwal-right reveal" style="--delay:0.1s">
-            <div class="jadwal-table">
-              <div class="jadwal-row jadwal-head">
-                <span>Skema</span>
-                <span>Tanggal</span>
-                <span>Lokasi</span>
-                <span>Kuota</span>
-              </div>
-              <div class="jadwal-row">
-                <span><strong>Instruktur Junior</strong></span>
-                <span>Feb 2025</span>
-                <span>Jakarta</span>
-                <span class="kuota available">Tersedia</span>
-              </div>
-              <div class="jadwal-row">
-                <span><strong>Fasilitator</strong></span>
-                <span>Mar 2025</span>
-                <span>Tangerang</span>
-                <span class="kuota available">Tersedia</span>
-              </div>
-              <div class="jadwal-row">
-                <span><strong>Instruktur Senior</strong></span>
-                <span>Mar 2025</span>
-                <span>Jakarta</span>
-                <span class="kuota limited">Terbatas</span>
-              </div>
-              <div class="jadwal-row">
-                <span><strong>Penyelenggara Pelatihan</strong></span>
-                <span>Apr 2025</span>
-                <span>Online</span>
-                <span class="kuota available">Tersedia</span>
-              </div>
-              <div class="jadwal-row">
-                <span><strong>Instruktur Madya</strong></span>
-                <span>Apr 2025</span>
-                <span>Jakarta</span>
-                <span class="kuota limited">Terbatas</span>
-              </div>
-            </div>
-            <a href="kontak.html" class="link-arrow" style="display:inline-block;margin-top:16px;font-size:0.85rem">Hubungi Kami untuk Info Jadwal &#x2192;</a>
-          </div>
+        <div class="section-head">
+          <p class="section-kicker">Struktur Organisasi</p>
+          <h2 class="section-title">Peran Inti Organisasi LSP FIT</h2>
+        </div>
+        <div class="org-grid">
+          <article class="card org-card"><h3>Ketua LSP</h3><p>Pengarah kebijakan dan tata kelola lembaga sertifikasi.</p></article>
+          <article class="card org-card"><h3>Manajer Sertifikasi</h3><p>Mengelola proses asesmen dan penerbitan sertifikat kompetensi.</p></article>
+          <article class="card org-card"><h3>Manajer Mutu</h3><p>Menjaga standar mutu layanan dan kepatuhan prosedur.</p></article>
+          <article class="card org-card"><h3>Koordinator Asesor</h3><p>Mengoordinasikan penugasan asesor berdasarkan skema.</p></article>
+          <article class="card org-card"><h3>Tim Administrasi</h3><p>Mengelola data peserta, dokumen, dan dukungan operasional.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- ============ CTA BANNER ============ -->
-    <section class="cta-banner">
-      <div class="cta-bg"></div>
+    <section class="section">
       <div class="container">
-        <div class="cta-content reveal">
-          <h2>Siap Uji Kompetensi Anda?</h2>
-          <p>Bergabunglah bersama ribuan Fasilitator Instruktur, dan Tenaga Kepelatihan yang telah mendapatkan sertifikasi resmi BNSP melalui LSP FIT.</p>
-          <div class="cta-buttons">
-            <a href="daftar.html" class="btn-primary btn-white">Daftar Sekarang</a>
-            <a href="kontak.html" class="btn-ghost btn-ghost-white">Hubungi Kami</a>
+        <div class="section-head">
+          <p class="section-kicker">Mitra &amp; Kerjasama</p>
+          <h2 class="section-title">Jaringan Kolaborasi LSP FIT</h2>
+        </div>
+        <div class="partner-wrap">
+          <div class="partner-marquee">
+            <div class="partner-logo"><img src="/assets/partners/udn.jpeg" alt="Universitas Dian Nusantara" /></div>
+            <div class="partner-logo"><img src="/assets/partners/sampoerna.jpeg" alt="Sampoerna University" /></div>
+            <div class="partner-logo"><img src="/assets/partners/ahm.jpeg" alt="Astra Honda Motor" /></div>
+            <div class="partner-logo"><img src="/assets/partners/citibank.jpeg" alt="Citibank" /></div>
+            <div class="partner-logo"><img src="/assets/partners/pupr.jpeg" alt="PUPR" /></div>
+            <div class="partner-logo"><img src="/assets/partners/rapp.jpeg" alt="RAPP" /></div>
+            <div class="partner-logo"><img src="/assets/partners/petrosea.jpeg" alt="Petrosea" /></div>
+            <div class="partner-logo"><img src="/assets/partners/infomedia.jpeg" alt="Infomedia" /></div>
+            <div class="partner-logo"><img src="/assets/partners/iti.jpeg" alt="ITI" /></div>
+            <div class="partner-logo"><img src="/assets/partners/kemnaker.jpeg" alt="Kementerian Ketenagakerjaan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/kesehatan.jpg" alt="Kementerian Kesehatan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/madhani.jpeg" alt="Madhani" /></div>
+            <div class="partner-logo"><img src="/assets/partners/palyja.jpeg" alt="PALYJA" /></div>
+            <div class="partner-logo"><img src="/assets/partners/perhubungan.jpeg" alt="Kementerian Perhubungan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/perikanan.jpeg" alt="Kementerian Kelautan dan Perikanan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/berau.jpeg" alt="Berau Coal" /></div>
+            <div class="partner-logo"><img src="/assets/partners/bogor.jpeg" alt="Bogor" /></div>
+            <div class="partner-logo"><img src="/assets/partners/borneo.jpeg" alt="Borneo" /></div>
+            <div class="partner-logo"><img src="/assets/partners/sanggar.jpeg" alt="Sanggar" /></div>
+            <div class="partner-logo"><img src="/assets/partners/sls.jpeg" alt="SLS" /></div>
+            <div class="partner-logo"><img src="/assets/partners/stialan.jpeg" alt="STIALAN" /></div>
+            <div class="partner-logo"><img src="/assets/partners/udn.jpeg" alt="Universitas Dian Nusantara" /></div>
+            <div class="partner-logo"><img src="/assets/partners/sampoerna.jpeg" alt="Sampoerna University" /></div>
+            <div class="partner-logo"><img src="/assets/partners/ahm.jpeg" alt="Astra Honda Motor" /></div>
+            <div class="partner-logo"><img src="/assets/partners/citibank.jpeg" alt="Citibank" /></div>
+            <div class="partner-logo"><img src="/assets/partners/pupr.jpeg" alt="PUPR" /></div>
+            <div class="partner-logo"><img src="/assets/partners/rapp.jpeg" alt="RAPP" /></div>
+            <div class="partner-logo"><img src="/assets/partners/petrosea.jpeg" alt="Petrosea" /></div>
+            <div class="partner-logo"><img src="/assets/partners/infomedia.jpeg" alt="Infomedia" /></div>
+            <div class="partner-logo"><img src="/assets/partners/iti.jpeg" alt="ITI" /></div>
+            <div class="partner-logo"><img src="/assets/partners/kemnaker.jpeg" alt="Kementerian Ketenagakerjaan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/kesehatan.jpg" alt="Kementerian Kesehatan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/madhani.jpeg" alt="Madhani" /></div>
+            <div class="partner-logo"><img src="/assets/partners/palyja.jpeg" alt="PALYJA" /></div>
+            <div class="partner-logo"><img src="/assets/partners/perhubungan.jpeg" alt="Kementerian Perhubungan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/perikanan.jpeg" alt="Kementerian Kelautan dan Perikanan" /></div>
+            <div class="partner-logo"><img src="/assets/partners/berau.jpeg" alt="Berau Coal" /></div>
+            <div class="partner-logo"><img src="/assets/partners/bogor.jpeg" alt="Bogor" /></div>
+            <div class="partner-logo"><img src="/assets/partners/borneo.jpeg" alt="Borneo" /></div>
+            <div class="partner-logo"><img src="/assets/partners/sanggar.jpeg" alt="Sanggar" /></div>
+            <div class="partner-logo"><img src="/assets/partners/sls.jpeg" alt="SLS" /></div>
+            <div class="partner-logo"><img src="/assets/partners/stialan.jpeg" alt="STIALAN" /></div>
           </div>
+        </div>
+        <div style="text-align:center; margin-top: 24px;">
+          <a class="btn btn-outline" href="kontak.html">Ingin Bermitra?</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="site-footer">
+    <section class="section">
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="footer-logo-wrap">
-              <img src="/assets/fitb logo.png" alt="LSP FIT" class="footer-logo-img" />
-            </div>
-            <p>Lembaga Sertifikasi Profesi Fasilitator Instruktur &amp; Tenaga Kepelatihan. Berlisensi BNSP No. BNSP-LSP-444-ID.</p>
-            <div class="footer-socials">
-              <a href="https://id.linkedin.com/company/lsp-fasilitator-instruktur-dan-tenaga-kepelatihan" aria-label="LinkedIn" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </a>
-              <a href="https://www.instagram.com/info.lspfit/?hl=en" aria-label="Instagram" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-              </a>
-              <a href="https://wa.me/6281112101007" aria-label="WhatsApp" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-              </a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h5>Navigasi</h5>
-            <ul>
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="aboutus.html">Tentang Kami</a></li>
-              <li><a href="skema.html">Skema Sertifikasi</a></li>
-              <li><a href="asesor.html">Asesor</a></li>
-              <li><a href="berita.html">Berita</a></li>
-              <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>Skema Unggulan</h5>
-            <ul>
-              <li><a href="skema.html">Instruktur Junior</a></li>
-              <li><a href="skema.html">Instruktur Senior</a></li>
-              <li><a href="skema.html">Fasilitator</a></li>
-              <li><a href="skema.html">Blended Learning</a></li>
-              <li><a href="skema.html">Penyelenggara Pelatihan</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>Kontak</h5>
-            <ul class="footer-contact">
-              <li>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
-                <span>Ruko Akasa Blok B No. 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan</span>
-              </li>
-              <li>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
-                <span>0811-1210-1007</span>
-              </li>
-              <li>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
-                <span>info.lspfit@gmail.com</span>
-              </li>
-              <li>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span>
-                <span>www.sertifikasifit.com</span>
-              </li>
-            </ul>
-          </div>
+        <div class="section-head">
+          <p class="section-kicker">Testimoni</p>
+          <h2 class="section-title">Kesan Peserta Sertifikasi</h2>
         </div>
-        <div class="footer-bottom">
-          <p>&#169; 2025 LSP FIT &#x2014; Lembaga Sertifikasi Profesi Fasilitator Instruktur &amp; Tenaga Kepelatihan. Hak Cipta Dilindungi.</p>
-          <div class="footer-links-bottom">
-            <a href="#">Kebijakan Privasi</a>
-            <a href="#">Syarat &amp; Ketentuan</a>
-          </div>
+        <div class="testimonial-grid">
+          <article class="card testimonial-card"><div class="rating">★★★★★</div><p>Proses asesmen jelas, profesional, dan membantu saya meningkatkan kredibilitas sebagai instruktur.</p><strong>Rani K.</strong><br /><small>Trainer Korporat</small></article>
+          <article class="card testimonial-card"><div class="rating">★★★★★</div><p>Tim asesor sangat objektif, feedback-nya aplikatif untuk implementasi di kelas pelatihan.</p><strong>Dimas A.</strong><br /><small>Fasilitator SDM</small></article>
+          <article class="card testimonial-card"><div class="rating">★★★★★</div><p>Alur administrasi cepat dan komunikatif. Sangat cocok untuk kebutuhan sertifikasi profesional.</p><strong>Maya P.</strong><br /><small>Koordinator Pelatihan</small></article>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="/assets/js/main.js"></script>
-    <script>
-      // Logo switch on scroll
-      const header = document.getElementById('siteHeader');
-      const logoImg = document.getElementById('logoImg');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 60) {
-          header.classList.add('scrolled');
-          logoImg && logoImg.classList.remove('logo-invert');
-        } else {
-          header.classList.remove('scrolled');
-          logoImg && logoImg.classList.add('logo-invert');
-        }
-      });
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Informasi Utama</p>
+          <h2 class="section-title">Rujukan Dokumen LSP FIT</h2>
+        </div>
+        <div class="news-grid">
+          <article class="card news-card">
+            <img class="news-image" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Uji kompetensi instruktur" />
+            <div class="news-meta"><span>Company Profile</span><span>Profil</span></div>
+            <h3>LSP FIT Berlisensi BNSP No. BNSP-LSP-444-ID</h3>
+            <p>Pelaksanaan sertifikasi mengacu pada SKKNI No. 333 Tahun 2020 untuk bidang fasilitator, instruktur, dan tenaga kepelatihan.</p>
+            <a href="/aboutus.html">Lihat Detail</a>
+          </article>
+          <article class="card news-card">
+            <img class="news-image" src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=900&q=80" alt="Workshop asesor" />
+            <div class="news-meta"><span>Katalog LSP FIT</span><span>Skema</span></div>
+            <h3>30+ Skema: 4 Klaster, 18 Instruktur, 10 Kepelatihan</h3>
+            <p>Skema okupasi dan klaster disusun per jenjang kualifikasi dengan rincian unit kompetensi pada katalog resmi.</p>
+            <a href="/skema.html">Lihat Skema</a>
+          </article>
+          <article class="card news-card">
+            <img class="news-image" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="Kerja sama mitra" />
+            <div class="news-meta"><span>Proses</span><span>Sertifikasi</span></div>
+            <h3>Proses Sertifikasi 7 Tahap</h3>
+            <p>Mulai pendaftaran, verifikasi, pra asesmen, asesmen, rekomendasi asesor, rapat pleno, hingga serah terima sertifikat.</p>
+            <a href="/berita.html">Lihat Informasi</a>
+          </article>
+        </div>
+        <div style="text-align:center; margin-top: 24px;">
+          <a class="btn btn-outline" href="/berita.html">Lihat Semua Berita</a>
+        </div>
+      </div>
+    </section>
 
-      // Partner marquee: clone items for seamless loop (no duplicates in HTML)
-      const initPartnerMarquee = () => {
-        const tracks = document.querySelectorAll('.partner-track');
-        tracks.forEach((track) => {
-          track.querySelectorAll('[data-clone="true"]').forEach((el) => el.remove());
-          const items = Array.from(track.children);
-          if (!items.length) return;
-          const container = track.parentElement;
-          if (!container) return;
-          const baseWidth = track.scrollWidth;
-          track.style.setProperty('--partner-shift', `${baseWidth}px`);
-          const minWidth = baseWidth + container.offsetWidth;
-          let guard = 0;
-          while (track.scrollWidth < minWidth && guard < 6) {
-            items.forEach((item) => {
-              const clone = item.cloneNode(true);
-              clone.setAttribute('data-clone', 'true');
-              clone.setAttribute('aria-hidden', 'true');
-              track.appendChild(clone);
-            });
-            guard += 1;
-          }
-        });
-      };
+    <section class="section bottom-cta">
+      <div class="container">
+        <h2>Siap Mendapatkan Sertifikasi Kompetensi BNSP?</h2>
+        <p>Daftarkan diri Anda sekarang dan pilih skema yang paling relevan dengan kebutuhan karier profesional Anda.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://wa.me/6281112101007?text=Halo%20LSP%20FIT%2C%20saya%20ingin%20mendaftar%20uji%20kompetensi" target="_blank" rel="noopener">Daftar Sekarang</a>
+          <a class="btn btn-outline-light" href="/skema.html">Lihat Skema</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      window.addEventListener('load', initPartnerMarquee);
-      window.addEventListener('resize', () => {
-        window.clearTimeout(window.__partnerResize);
-        window.__partnerResize = window.setTimeout(initPartnerMarquee, 200);
-      });
-    </script>
-  </body>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <section>
+        <img src="/assets/fitb%20logo.png" alt="Logo LSP FIT" class="footer-logo-white" style="height:52px;width:auto;" />
+        <p class="footer-text" style="margin-top:10px;">Lembaga Sertifikasi Profesi Fasilitator, Instruktur &amp; Tenaga Kepelatihan. Berlisensi BNSP No. BNSP-LSP-444-ID.</p>
+        <div class="footer-social">
+          <a href="https://id.linkedin.com/company/lsp-fasilitator-instruktur-dan-tenaga-kepelatihan" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/info.lspfit/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm8.6 1.8h-8.7A3.85 3.85 0 0 0 3.8 7.65v8.7a3.85 3.85 0 0 0 3.85 3.85h8.7a3.85 3.85 0 0 0 3.85-3.85v-8.7a3.85 3.85 0 0 0-3.85-3.85ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Zm5.3-2.25a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2Z"/></svg>
+          </a>
+          <a href="https://wa.me/6281112101007" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.54 15.04L2 22l5.11-1.46A9.95 9.95 0 1 0 12.04 2Zm5.8 14.19c-.25.7-1.48 1.33-2.04 1.4-.52.08-1.18.11-1.9-.12a16.15 16.15 0 0 1-5.38-3.32 11.95 11.95 0 0 1-2.2-2.92c-.24-.43-1-1.43-1-2.74 0-1.31.69-1.95.94-2.22.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.47.25.61.84 2.12.91 2.27.07.15.12.33.02.54-.1.21-.16.34-.32.52-.16.18-.34.4-.48.53-.16.16-.32.33-.14.64.17.31.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.13.64-.08.17-.2.73-.85.93-1.14.2-.29.4-.24.67-.15.28.1 1.72.81 2.01.96.3.15.5.22.57.34.08.13.08.77-.17 1.47Z"/></svg>
+          </a>
+        </div>
+      </section>
+      <section>
+        <h4 class="footer-title">Navigasi</h4>
+        <nav class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="aboutus.html">Tentang Kami</a>
+          <a href="skema.html">Skema</a>
+          <a href="asesor.html">Asesor</a>
+          <a href="berita.html">Berita</a>
+          <a href="kontak.html">Kontak</a>
+          <a href="https://app.msdmup.id/" target="_blank" rel="noopener">Portal LMS</a>
+        </nav>
+      </section>
+      <section>
+        <h4 class="footer-title">Skema Unggulan</h4>
+        <div class="footer-links">
+          <a href="/skema.html#klaster">Perencanaan Materi Pelatihan</a>
+          <a href="/skema.html#instruktur">Instruktur Senior</a>
+          <a href="/skema.html#instruktur">Fasilitator</a>
+          <a href="/skema.html#kepelatihan">Manajer Program Pelatihan</a>
+        </div>
+      </section>
+      <section>
+        <h4 class="footer-title">Kontak</h4>
+        <ul class="footer-contact">
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2Z"/></svg>
+    <span>0811-1210-1007</span>
+  </li>
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v.4l10 5.6 10-5.6V6a2 2 0 0 0-2-2Zm2 4.7-9.5 5.3a1 1 0 0 1-1 0L2 8.7V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.7Z"/></svg>
+    <span>info.lspfit@gmail.com</span>
+  </li>
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+    <span>Ruko Akasa Blok B No 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan</span>
+  </li>
+  <li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.93 9h-3.05a15.7 15.7 0 0 0-1.02-4.14A8.03 8.03 0 0 1 18.93 11ZM12 4.07c.84 1.21 1.5 3 1.83 4.93h-3.66C10.5 7.07 11.16 5.28 12 4.07ZM4.07 13h3.05c.12 1.46.48 2.85 1.02 4.14A8.03 8.03 0 0 1 4.07 13Zm3.05-2H4.07a8.03 8.03 0 0 1 4.07-4.14A15.7 15.7 0 0 0 7.12 11Zm.9 2h3.98c-.18 1.59-.6 3.1-1.2 4.26A13.8 13.8 0 0 1 8.02 13Zm3.98-2H8.02c.18-1.59.6-3.1 1.2-4.26.6 1.16 1.02 2.67 1.2 4.26Zm.9 2h3.98a13.8 13.8 0 0 1-2.78 4.26c-.6-1.16-1.02-2.67-1.2-4.26Zm0-2c-.18-1.59-.6-3.1-1.2-4.26A13.8 13.8 0 0 1 15.98 11H12.9Zm1.96 6.14c.54-1.29.9-2.68 1.02-4.14h3.05a8.03 8.03 0 0 1-4.07 4.14Z"/></svg>
+    <span>www.sertifikasifit.com</span>
+  </li>
+</ul>
+
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 LSP FIT</span>
+      <span>Privacy | Terms</span>
+    </div>
+  </div>
+</footer>
+
+
+  <a class="wa-fab" href="https://wa.me/6281112101007?text=Halo%20LSP%20FIT%2C%20saya%20ingin%20mendaftar%20uji%20kompetensi" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.09 0C5.54 0 .21 5.33.2 11.88a11.8 11.8 0 0 0 1.6 5.98L0 24l6.29-1.65a11.86 11.86 0 0 0 5.78 1.48h.01c6.54 0 11.87-5.33 11.88-11.88a11.8 11.8 0 0 0-3.44-8.47Zm-8.43 18.34h-.01a9.8 9.8 0 0 1-4.99-1.36l-.36-.21-3.73.98 1-3.64-.24-.37a9.82 9.82 0 0 1-1.5-5.23c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.11 1.02 6.96 2.88a9.79 9.79 0 0 1 2.88 6.96c0 5.42-4.41 9.82-9.83 9.82Zm5.39-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.06 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35Z"/></svg>
+  </a>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="/assets/js/main.js"></script>
+</body>
 </html>
