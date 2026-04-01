@@ -570,23 +570,31 @@ ul {
 }
 
 .org-photo-wrap {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 16px;
   border: 3px solid var(--border);
+  flex-shrink: 0;
 }
 
 .org-photo {
-  width: 100%;
-  height: 100%;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
 .org-card {
   text-align: center;
+}
+
+.org-name {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
 }
 
 .partner-wrap {
