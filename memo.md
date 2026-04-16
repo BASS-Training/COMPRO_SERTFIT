@@ -2,13 +2,13 @@
 
 ## 1) Ringkasan Sistem
 - Tipe aplikasi: website company profile statis (multi-page, tanpa backend API lokal).
-- Halaman utama: `index.html`, `aboutus.html`, `skema.html`, `asesor.html`, `berita.html`, `kontak.html`.
+- Halaman utama: `/index.html`, `aboutus.html`, `skema.html`, `asesor.html`, `berita.html`, `kontak.html`.
 - Stack: HTML + CSS + JavaScript vanilla.
 - Pola desain: shared global style + style per halaman + interaksi JS sederhana (scroll, reveal, filter, WhatsApp CTA).
 
 ## 2) Struktur File Utama
 - HTML:
-  - `index.html` (beranda)
+  - `/index.html` (beranda)
   - `aboutus.html` (tentang kami)
   - `skema.html` (produk skema sertifikasi)
   - `asesor.html` (direktori asesor)
@@ -48,7 +48,7 @@
 
 ## 4) Dokumentasi Per Halaman
 
-### A. `index.html` (Beranda)
+### A. `/index.html` (Beranda)
 Fitur utama:
 - Hero utama + badge lisensi BNSP + CTA.
 - Marquee skema/keyword.
@@ -148,7 +148,7 @@ Interaksi khusus (inline script):
 - [ ] Cek console browser sebelum deploy.
 
 ## 7) File Coverage (yang ditinjau untuk memo ini)
-- HTML: `index.html`, `aboutus.html`, `skema.html`, `asesor.html`, `berita.html`, `kontak.html`
+- HTML: `/index.html`, `aboutus.html`, `skema.html`, `asesor.html`, `berita.html`, `kontak.html`
 - JS: `assets/js/main.js`, `assets/js/about.js`
 - CSS: `assets/css/styles.css`, `assets/css/pages.css`, `assets/css/home.css`, `assets/css/aboutus.css`, `assets/css/skema.css`, `assets/css/asesor.css`, `assets/css/berita.css`, `assets/css/kontak.css`, `assets/css/brand.css`
 - Asset inventory: `assets/partners/*`, `assets/asesor/*`, `assets/news/*`, root image assets di `assets/`
@@ -160,7 +160,7 @@ Catatan:
 
 ### A. Menambah Logo Partner (Beranda)
 Lokasi:
-- `index.html` sekitar baris `586-653` (blok `.partner-track`).
+- `/index.html` sekitar baris `586-653` (blok `.partner-track`).
 
 Contoh tambah 1 partner:
 ```html
@@ -176,8 +176,8 @@ Checklist:
 
 ### B. Mengubah Link Menu / Tombol ke Page Lain
 Lokasi utama:
-- Header nav: `index.html` sekitar baris `82-99` (pola sama di halaman lain).
-- Tombol CTA: banyak di `index.html` (mis. baris `124`, `670`, `725`) dan halaman lain.
+- Header nav: `/index.html` sekitar baris `82-99` (pola sama di halaman lain).
+- Tombol CTA: banyak di `/index.html` (mis. baris `124`, `670`, `725`) dan halaman lain.
 
 Contoh ubah link:
 ```html
@@ -196,7 +196,7 @@ Catatan:
 Lokasi:
 - Kontak utama: `kontak.html` sekitar baris `94-121`.
 - Footer kontak: `kontak.html` sekitar baris `252-267`.
-- Footer global lain: `index.html` (`776-791`), `berita.html` (`371-386`), `skema.html` (`310-325`), `aboutus.html` (`269-284`), `asesor.html` (`760-764`).
+- Footer global lain: `/index.html` (`776-791`), `berita.html` (`371-386`), `skema.html` (`310-325`), `aboutus.html` (`269-284`), `asesor.html` (`760-764`).
 
 Contoh update nomor:
 ```html
