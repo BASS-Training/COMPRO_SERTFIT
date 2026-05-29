@@ -20,7 +20,7 @@
   width: 100% !important;
   height: auto !important;
   min-height: 0 !important;
-  aspect-ratio: 4 / 3 !important;
+  aspect-ratio: 16 / 9 !important;
   object-fit: cover !important;
 }
 
@@ -28,21 +28,23 @@
 .activity-list .activity-card-body {
   display: flex !important;
   flex-direction: column !important;
-  gap: 12px !important;
-  padding: 22px !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  padding: 16px 18px 18px !important;
 }
 
 .activity-card--compact .activity-card-body h3,
 .activity-list .activity-card-body h3 {
   margin: 0 !important;
-  font-size: 1.18rem !important;
-  line-height: 1.28 !important;
+  font-size: 1.12rem !important;
+  line-height: 1.24 !important;
 }
 
 .activity-card--compact .activity-card-body p,
 .activity-list .activity-card-body p {
   margin: 0 !important;
-  line-height: 1.7 !important;
+  line-height: 1.55 !important;
+  font-size: 0.95rem !important;
 }
 
 .activity-detail-hero {

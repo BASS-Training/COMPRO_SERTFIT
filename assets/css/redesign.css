@@ -837,15 +837,23 @@ ul {
   width: 100%;
   height: auto;
   min-height: 0;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
 }
 
 .activity-card--compact .activity-card-body {
-  padding: 22px;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 16px 18px 18px;
 }
 
 .activity-card--compact .activity-card-body h3 {
-  font-size: 1.18rem;
+  font-size: 1.12rem;
+  line-height: 1.24;
+}
+
+.activity-card--compact .activity-card-body p {
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .activity-detail-hero {
