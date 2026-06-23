@@ -1,0 +1,9 @@
+config/config.php
+database/backup-*.sql
+database/*backup*.sql
+assets/uploads/kegiatan/*
+!assets/uploads/kegiatan/.gitkeep
+!assets/uploads/kegiatan/.htaccess
+assets/uploads/anggota/*
+!assets/uploads/anggota/.gitkeep
+!assets/uploads/anggota/.htaccess

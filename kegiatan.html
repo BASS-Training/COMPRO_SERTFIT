@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/css/redesign.css?v=20260529-activity-cards" />
+    <link rel="stylesheet" href="/assets/css/redesign.css?v=20260529-backend-ready" />
     <link rel="stylesheet" href="/assets/css/activity-critical.css?v=20260529-gap-fix" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
@@ -27,6 +27,7 @@
             <li><a href="/anggota.html">Anggota</a></li>
             <li><a class="active" href="/kegiatan.html">Kegiatan</a></li>
             <li><a href="/kontak.html">Kontak</a></li>
+            <li><a href="/admin.html">Admin Login</a></li>
             <!-- di Hide <li><a class="nav-lms" href="https://app.sertifikasifit.com/" target="_blank" rel="noopener">Portal LMS</a></li> -->
           </ul>
         </nav>
@@ -62,81 +63,7 @@
             <h2 class="section-title">Sorotan Kegiatan</h2>
           </div>
 
-          <article class="card gallery-featured-card" data-carousel>
-            <div class="gallery-featured-media">
-              <div class="gallery-carousel-track">
-                <div class="gallery-carousel-slide is-active">
-                  <img src="assets/gallery/gathering-asesor-%26-tasyakuran-kantor-lsp-fit-1.jpeg" alt="Gathering Asesor dan Tasyakuran Kantor LSP FIT" />
-                </div>
-                <div class="gallery-carousel-slide">
-                  <img src="assets/gallery/gathering-asesor-%26-tasyakuran-kantor-lsp-fit-2.jpeg" alt="Kebersamaan peserta gathering LSP FIT" />
-                </div>
-                <div class="gallery-carousel-slide">
-                  <img src="assets/gallery/gathering-asesor-%26-tasyakuran-kantor-lsp-fit-3.jpeg" alt="Dokumentasi tasyakuran kantor LSP FIT" />
-                </div>
-              </div>
-              <button class="gallery-carousel-btn prev" type="button" aria-label="Slide sebelumnya">&#8249;</button>
-              <button class="gallery-carousel-btn next" type="button" aria-label="Slide berikutnya">&#8250;</button>
-              <div class="gallery-carousel-dots" aria-label="Navigasi slide"></div>
-            </div>
-            <div class="gallery-featured-body">
-              <span class="gallery-chip">Kegiatan Terbaru</span>
-              <h3>Gathering Asesor &amp; Tasyakuran Kantor LSP FIT</h3>
-              <p>
-                Momen kebersamaan pengurus, anggota, dan asesor dalam memperkuat silaturahmi sekaligus mensyukuri hadirnya ruang kerja
-                sebagai pusat koordinasi kegiatan organisasi.
-              </p>
-              <a class="gallery-featured-link" href="/kegiatan-gathering-asesor-tasyakuran-kantor-lsp-fit.html">Lihat Detail</a>
-            </div>
-          </article>
-
-          <article class="card gallery-featured-card" data-carousel>
-            <div class="gallery-featured-media">
-              <div class="gallery-carousel-track">
-                <div class="gallery-carousel-slide is-active">
-                  <img src="assets/gallery/Penyelenggara-Uji-untuk-BBPVP-Bandung.jpeg" alt="Penyelenggara Uji BBPVP Bandung" />
-                </div>
-              </div>
-              <button class="gallery-carousel-btn prev" type="button" aria-label="Slide sebelumnya">&#8249;</button>
-              <button class="gallery-carousel-btn next" type="button" aria-label="Slide berikutnya">&#8250;</button>
-              <div class="gallery-carousel-dots" aria-label="Navigasi slide"></div>
-            </div>
-            <div class="gallery-featured-body">
-              <span class="gallery-chip">Highlight</span>
-              <h3>Penyelenggara Uji BBPVP Bandung - Skema Penyelenggara Pelatihan</h3>
-              <p>
-                Kegiatan asesmen kompetensi ini menjadi salah satu dokumentasi unggulan LSP FIT dalam mendukung pelatihan dan sertifikasi
-                yang terstruktur di lingkungan BBPVP Bandung.
-              </p>
-              <a class="gallery-featured-link" href="/kegiatan-penyelenggara-uji-bbpvp-bandung.html">Lihat Detail</a>
-            </div>
-          </article>
-
-          <article class="card gallery-featured-card" data-carousel>
-            <div class="gallery-featured-media">
-              <div class="gallery-carousel-track">
-                <div class="gallery-carousel-slide is-active">
-                  <img src="assets/gallery/ToT-shopee-affiliate-2.jpeg" alt="Dokumentasi Pertama Program ToT - Shopee Affiliate" />
-                </div>
-                <div class="gallery-carousel-slide">
-                  <img src="assets/gallery/ToT-shopee-affiliate.jpeg" alt="Dokumentasi kedua Program ToT - Shopee Affiliate" />
-                </div>
-              </div>
-
-              <button class="gallery-carousel-btn prev" type="button" aria-label="Slide sebelumnya">&#8249;</button>
-              <button class="gallery-carousel-btn next" type="button" aria-label="Slide berikutnya">&#8250;</button>
-              <div class="gallery-carousel-dots" aria-label="Navigasi slide"></div>
-            </div>
-            <div class="gallery-featured-body">
-              <span class="gallery-chip">Highlight</span>
-              <h3>Shopee Affiliate Program</h3>
-              <p>
-                Program ini menampilkan momen kolaborasi dan pengembangan kapasitas peserta melalui pelatihan tematik yang dikemas praktis,
-                aplikatif, dan dekat dengan kebutuhan industri digital.
-              </p>
-              <a class="gallery-featured-link" href="/kegiatan-shopee-affiliate-program.html">Lihat Detail</a>
-            </div>
-          </article>
+          <div class="gallery-highlight-list"></div>
 
           <div class="gallery-section-rule" aria-hidden="true"></div>
 
@@ -146,38 +73,7 @@
             <span class="gallery-divider-line"></span>
           </div>
 
-          <div class="gallery-grid">
-            <a class="card gallery-card" href="/kegiatan-penguatan-kompetensi-instruktur-bbpv-semarang.html">
-              <img
-                class="gallery-card-image"
-                src="assets/gallery/penguatan-kompetensi-instruktur-pemerintah-BBPV-semarang.jpeg"
-                alt="Penguatan Kompetensi Instruktur Pemerintah - BBPV Semarang"
-              />
-              <div class="gallery-card-body">
-                <h3>Penguatan Kompetensi Instruktur Pemerintah - BBPV Semarang</h3>
-              </div>
-            </a>
-            <a class="card gallery-card" href="/kegiatan-penguatan-kompetensi-instruktur-bbpvp-bandung.html">
-              <img
-                class="gallery-card-image"
-                src="assets/gallery/penguatan-kompetensi-instruktur-pemerintah-BBPVP-Bandung.jpeg"
-                alt="Penguatan Kompetensi Instruktur Pemerintah - BBPVP Bandung"
-              />
-              <div class="gallery-card-body">
-                <h3>Penguatan Kompetensi Instruktur Pemerintah - BBPVP Bandung</h3>
-              </div>
-            </a>
-            <a class="card gallery-card" href="/kegiatan-sertifikasi-kompetensi-balai-jasa-konstruksi-wilayah-iii-jakarta.html">
-              <img
-                class="gallery-card-image"
-                src="assets/gallery/kegiatan-sertifikasi-kompetensi-Balai-Jasa-Konstruksi-Wilayah-III-Jakarta.jpeg"
-                alt="Kegiatan Sertifikasi Kompetensi - Balai Jasa Konstruksi Wilayah III Jakarta"
-              />
-              <div class="gallery-card-body">
-                <h3>Kegiatan Sertifikasi Kompetensi - Balai Jasa Konstruksi Wilayah III Jakarta</h3>
-              </div>
-            </a>
-          </div>
+          <div class="gallery-grid"></div>
         </div>
       </section>
     </main>
@@ -347,5 +243,6 @@
       });
     </script>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/kegiatan-renderer.js?v=20260529-backend-ready"></script>
   </body>
 </html>

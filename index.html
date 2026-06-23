@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260529-activity-cards" />
+  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260529-backend-ready" />
   <link rel="stylesheet" href="/assets/css/activity-critical.css?v=20260529-gap-fix" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -26,6 +26,7 @@
           <li><a href="/anggota.html">Anggota</a></li>
           <li><a href="/kegiatan.html">Kegiatan</a></li>
           <li><a href="/kontak.html">Kontak</a></li>
+          <li><a href="/admin.html">Admin Login</a></li>
           <!-- di Hide <li><a class="nav-lms" href="https://app.sertifikasifit.com/" target="_blank" rel="noopener">Portal LMS</a></li> -->
         </ul>
       </nav>
@@ -93,32 +94,7 @@
           <h2 class="section-title">Kegiatan AFIN</h2>
           <p class="section-desc">Kumpulan kegiatan terbaru AFIN sebagai ruang silaturahmi, kolaborasi, dan penguatan jejaring profesional.</p>
         </div>
-        <div class="activity-list">
-          <a class="card activity-card activity-card--compact" href="/kegiatan-gathering-asesor-tasyakuran-kantor-lsp-fit.html">
-            <img class="activity-card-image" src="/assets/gallery/gathering-asesor-%26-tasyakuran-kantor-lsp-fit-1.jpeg" alt="Gathering asesor dan tasyakuran kantor LSP FIT" />
-            <div class="activity-card-body"><span class="gallery-chip">Terbaru</span><h3>Gathering Asesor &amp; Tasyakuran Kantor LSP FIT</h3><p>Momen kebersamaan anggota, asesor, dan pengurus dalam mempererat hubungan profesional.</p></div>
-          </a>
-          <a class="card activity-card activity-card--compact" href="/kegiatan-penyelenggara-uji-bbpvp-bandung.html">
-            <img class="activity-card-image" src="/assets/gallery/Penyelenggara-Uji-untuk-BBPVP-Bandung.jpeg" alt="Penyelenggara Uji BBPVP Bandung" />
-            <div class="activity-card-body"><span class="gallery-chip">Asesmen</span><h3>Penyelenggara Uji BBPVP Bandung</h3><p>Dokumentasi kegiatan asesmen kompetensi untuk mendukung pelatihan terstruktur.</p></div>
-          </a>
-          <a class="card activity-card activity-card--compact" href="/kegiatan-shopee-affiliate-program.html">
-            <img class="activity-card-image" src="/assets/gallery/ToT-shopee-affiliate-2.jpeg" alt="Shopee Affiliate Program" />
-            <div class="activity-card-body"><span class="gallery-chip">Pelatihan</span><h3>Shopee Affiliate Program</h3><p>Program kolaboratif untuk pengembangan kapasitas peserta di ekosistem digital.</p></div>
-          </a>
-          <a class="card activity-card activity-card--compact" href="/kegiatan-penguatan-kompetensi-instruktur-bbpv-semarang.html">
-            <img class="activity-card-image" src="/assets/gallery/penguatan-kompetensi-instruktur-pemerintah-BBPV-semarang.jpeg" alt="Penguatan Kompetensi Instruktur Pemerintah BBPV Semarang" />
-            <div class="activity-card-body"><span class="gallery-chip">Kompetensi</span><h3>Penguatan Kompetensi Instruktur BBPV Semarang</h3><p>Kegiatan penguatan kapasitas instruktur pemerintah melalui pembelajaran aplikatif.</p></div>
-          </a>
-          <a class="card activity-card activity-card--compact" href="/kegiatan-penguatan-kompetensi-instruktur-bbpvp-bandung.html">
-            <img class="activity-card-image" src="/assets/gallery/penguatan-kompetensi-instruktur-pemerintah-BBPVP-Bandung.jpeg" alt="Penguatan Kompetensi Instruktur Pemerintah BBPVP Bandung" />
-            <div class="activity-card-body"><span class="gallery-chip">Kompetensi</span><h3>Penguatan Kompetensi Instruktur BBPVP Bandung</h3><p>Ruang pengembangan instruktur untuk memperkuat kualitas fasilitasi dan pelatihan.</p></div>
-          </a>
-          <a class="card activity-card activity-card--compact" href="/kegiatan-sertifikasi-kompetensi-balai-jasa-konstruksi-wilayah-iii-jakarta.html">
-            <img class="activity-card-image" src="/assets/gallery/kegiatan-sertifikasi-kompetensi-Balai-Jasa-Konstruksi-Wilayah-III-Jakarta.jpeg" alt="Kegiatan Sertifikasi Kompetensi Balai Jasa Konstruksi Wilayah III Jakarta" />
-            <div class="activity-card-body"><span class="gallery-chip">Sertifikasi</span><h3>Sertifikasi Kompetensi Balai Jasa Konstruksi Wilayah III Jakarta</h3><p>Dokumentasi kegiatan sertifikasi kompetensi di lingkungan jasa konstruksi.</p></div>
-          </a>
-        </div>
+        <div class="activity-list"></div>
         <div style="text-align:center; margin-top: 24px;">
           <a class="btn btn-outline" href="/kegiatan.html">Lihat Semua Kegiatan</a>
         </div>
@@ -510,5 +486,6 @@
     AOS.init();
   </script>
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/kegiatan-renderer.js?v=20260529-backend-ready"></script>
 </body>
 </html>

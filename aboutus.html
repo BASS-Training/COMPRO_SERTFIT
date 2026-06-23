@@ -25,6 +25,7 @@
             <li><a href="/anggota.html">Anggota</a></li>
             <li><a href="/kegiatan.html">Kegiatan</a></li>
             <li><a href="/kontak.html">Kontak</a></li>
+            <li><a href="/admin.html">Admin Login</a></li>
           </ul>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
@@ -39,8 +40,8 @@
       <section class="page-hero">
         <div class="container">
           <p class="breadcrumb">Beranda / Tentang Kami</p>
-          <h1>Tentang AFIN</h1>
-          <p>
+          <h1 data-profile-field="about_title">Tentang AFIN</h1>
+          <p data-profile-field="about_description">
             Asosiasi Fasilitator Instruktur Nusantara (AFIN) merupakan wadah profesi bagi fasilitator, instruktur, trainer, dan praktisi
             pengembangan sumber daya manusia untuk memperkuat kompetensi, jejaring kolaborasi, serta kontribusi dalam peningkatan mutu
             pembelajaran di Indonesia.
@@ -52,11 +53,11 @@
         <div class="container simple-grid-2">
           <article class="card" style="padding:24px;">
             <h3 class="section-title" style="font-size:2rem; margin-bottom:8px;">Visi</h3>
-            <p>Menjadi asosiasi profesi yang kredibel, inklusif, dan berpengaruh dalam pengembangan fasilitator, instruktur, trainer, serta praktisi pembelajaran di Indonesia.</p>
+            <p data-profile-field="vision">Menjadi asosiasi profesi yang kredibel, inklusif, dan berpengaruh dalam pengembangan fasilitator, instruktur, trainer, serta praktisi pembelajaran di Indonesia.</p>
           </article>
           <article class="card" style="padding:24px;">
             <h3 class="section-title" style="font-size:2rem; margin-bottom:8px;">Misi</h3>
-            <ol style="margin-left:18px; display:grid; gap:8px;">
+            <ol style="margin-left:18px; display:grid; gap:8px;" data-profile-field="mission">
               <li>Menghimpun dan memperkuat jejaring fasilitator, instruktur, trainer, dan praktisi pengembangan SDM di berbagai sektor.</li>
               <li>Mendorong peningkatan kompetensi, etika profesi, dan kualitas praktik fasilitasi serta pembelajaran berkelanjutan.</li>
               <li>Membangun ruang kolaborasi, berbagi pengetahuan, dan pengembangan program yang relevan dengan kebutuhan anggota dan masyarakat.</li>
@@ -127,7 +128,7 @@
                     d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2Z"
                   />
                 </svg>
-                <span>0811-1210-1007</span>
+                <span data-profile-field="contact_phone">0811-1210-1007</span>
               </li>
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -135,13 +136,13 @@
                     d="M20 4H4a2 2 0 0 0-2 2v.4l10 5.6 10-5.6V6a2 2 0 0 0-2-2Zm2 4.7-9.5 5.3a1 1 0 0 1-1 0L2 8.7V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.7Z"
                   />
                 </svg>
-                <span>info@afin.or.id</span>
+                <span data-profile-field="contact_email">info@afin.or.id</span>
               </li>
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
                 </svg>
-                <span>
+                <span data-profile-field="contact_address">
                   Ruko Akasa Blok B No 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan
                 </span>
               </li>
@@ -151,7 +152,7 @@
                     d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.93 9h-3.05a15.7 15.7 0 0 0-1.02-4.14A8.03 8.03 0 0 1 18.93 11ZM12 4.07c.84 1.21 1.5 3 1.83 4.93h-3.66C10.5 7.07 11.16 5.28 12 4.07ZM4.07 13h3.05c.12 1.46.48 2.85 1.02 4.14A8.03 8.03 0 0 1 4.07 13Zm3.05-2H4.07a8.03 8.03 0 0 1 4.07-4.14A15.7 15.7 0 0 0 7.12 11Zm.9 2h3.98c-.18 1.59-.6 3.1-1.2 4.26A13.8 13.8 0 0 1 8.02 13Zm3.98-2H8.02c.18-1.59.6-3.1 1.2-4.26.6 1.16 1.02 2.67 1.2 4.26Zm.9 2h3.98a13.8 13.8 0 0 1-2.78 4.26c-.6-1.16-1.02-2.67-1.2-4.26Zm0-2c-.18-1.59-.6-3.1-1.2-4.26A13.8 13.8 0 0 1 15.98 11H12.9Zm1.96 6.14c.54-1.29.9-2.68 1.02-4.14h3.05a8.03 8.03 0 0 1-4.07 4.14Z"
                   />
                 </svg>
-                <span>www.afin.or.id</span>
+                <span data-profile-field="contact_website">www.afin.or.id</span>
               </li>
             </ul>
           </section>
@@ -181,5 +182,6 @@
       AOS.init();
     </script>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/profile-renderer.js?v=20260622-admin-profile"></script>
   </body>
 </html>

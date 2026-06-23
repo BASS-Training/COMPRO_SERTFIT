@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelola Anggota | AFIN</title>
+  <link rel="icon" type="image/png" href="/assets/facicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260622-admin-navy-member-card" />
+</head>
+<body>
+  <header class="site-header scrolled admin-site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="logo-link" href="/index.html" aria-label="AFIN Beranda">
+        <img src="/assets/fitb%20logo.png?v=20260519-lockup" alt="Logo Asosiasi Fasilitator dan Instruktur Nusantara" />
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="/index.html">Beranda</a></li>
+          <li><a href="/anggota.html">Anggota</a></li>
+          <li><a class="active" href="/admin.html">Admin</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page-bg admin-page">
+    <section class="page-hero admin-hero">
+      <div class="container">
+        <p class="breadcrumb">Admin / Anggota</p>
+        <h1>Kelola Anggota</h1>
+        <p>Tambah anggota, upload foto, edit data, dan atur anggota yang tampil di halaman publik.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container admin-layout">
+        <article class="card admin-card" id="loginPanel">
+          <h2>Login</h2>
+          <p class="admin-note">Masuk menggunakan akun super admin untuk mengelola anggota.</p>
+          <form class="admin-form" id="loginForm">
+            <label for="adminUsername">Username</label>
+            <input id="adminUsername" name="username" type="text" autocomplete="username" required />
+
+            <label for="adminPassword">Password</label>
+            <input id="adminPassword" name="password" type="password" autocomplete="current-password" required />
+
+            <button class="btn btn-primary" type="submit">Masuk</button>
+          </form>
+        </article>
+
+        <section class="admin-workspace" id="adminPanel" hidden>
+          <div class="card admin-card admin-workspace-head">
+            <div>
+              <h2>Data Anggota</h2>
+              <p class="admin-note">Foto opsional. Jika tidak upload foto, sistem membuat avatar otomatis dari nama anggota.</p>
+            </div>
+            <div class="admin-actions">
+              <a class="btn btn-outline" href="/admin.html">Dashboard</a>
+              <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
+            </div>
+          </div>
+
+          <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
+            <a href="/admin-kegiatan.html">Kegiatan</a>
+            <a class="active" href="/admin-anggota.html">Anggota</a>
+            <a href="/admin-profil.html">Profil Website</a>
+          </nav>
+
+          <div class="admin-anggota-stack">
+            <form class="card admin-card admin-form admin-form-grid" id="memberForm">
+              <div class="admin-form-title">
+                <span>Form Anggota</span>
+                <h2>Tambah atau Edit Anggota</h2>
+                <p>Isi nama, label, urutan tampil, dan foto jika tersedia. Untuk mengedit data lama, klik menu titik tiga pada kartu anggota di bawah.</p>
+              </div>
+              <input id="memberId" type="hidden" />
+              <fieldset class="admin-fieldset">
+                <legend>Informasi Anggota</legend>
+                <div class="admin-field">
+                  <label for="memberName">Nama Anggota</label>
+                  <input id="memberName" type="text" placeholder="Contoh: Budi Santoso" required />
+                </div>
+                <div class="admin-field">
+                  <label for="memberRole">Label / Peran</label>
+                  <input id="memberRole" type="text" value="Anggota Perkumpulan" required />
+                </div>
+                <div class="admin-field">
+                  <label for="memberSort">Urutan Tampil</label>
+                  <input id="memberSort" type="number" value="0" />
+                  <small>Angka lebih besar tampil lebih awal.</small>
+                </div>
+                <div class="admin-field">
+                  <label for="memberPhoto">Foto Anggota</label>
+                  <input id="memberPhoto" type="file" accept="image/png,image/jpeg,image/webp" />
+                  <small>JPG, PNG, atau WEBP maksimal 4 MB.</small>
+                </div>
+              </fieldset>
+
+              <div class="admin-actions">
+                <button class="btn btn-outline" type="button" id="previewMemberBtn">Preview</button>
+                <button class="btn btn-primary" type="submit">Simpan Anggota</button>
+                <button class="btn btn-outline" type="button" id="cancelEditBtn" hidden>Batal Edit</button>
+              </div>
+              <p class="admin-message" id="adminMessage" aria-live="polite"></p>
+            </form>
+
+            <aside class="card admin-live-preview" aria-live="polite">
+              <div class="admin-preview-head">
+                <span>Preview</span>
+                <strong>Kartu Anggota</strong>
+              </div>
+              <div class="admin-preview-placeholder" id="previewPlaceholder">
+                Isi nama anggota lalu klik Preview untuk melihat tampilan kartu.
+              </div>
+              <article class="card assessor-card admin-member-preview" id="memberPreview" hidden>
+                <img class="assessor-photo" id="previewPhoto" src="" alt="" />
+                <div class="assessor-body">
+                  <h4 id="previewName"></h4>
+                  <p id="previewRole"></p>
+                </div>
+              </article>
+            </aside>
+
+            <section class="card admin-list-panel admin-anggota-list-panel">
+              <div class="admin-list-head">
+                <div>
+                  <span>Database</span>
+                  <h2>Anggota</h2>
+                </div>
+                <strong id="memberListCount">0 data</strong>
+              </div>
+              <div class="admin-list-search">
+                <label for="memberSearch">Cari anggota</label>
+                <input id="memberSearch" type="search" placeholder="Cari nama atau label anggota" autocomplete="off" />
+              </div>
+              <div class="admin-list-scroll" id="adminMemberList"></div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/admin-anggota.js?v=20260622-admin-members-grid-menu"></script>
+</body>
+</html>
