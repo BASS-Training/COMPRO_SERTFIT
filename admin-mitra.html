@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kelola Anggota | AFIN</title>
+  <title>Kelola Mitra | AFIN</title>
   <link rel="icon" type="image/png" href="/assets/facicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260622-admin-navy-member-card" />
+  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260630-partners-admin" />
 </head>
 <body>
   <header class="site-header scrolled admin-site-header" id="siteHeader">
@@ -19,8 +19,8 @@
       <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
         <ul>
           <li><a href="/index.html">Beranda</a></li>
-          <li><a href="/anggota.html">Anggota</a></li>
-          <li><a class="active" href="/admin.html">Admin</a></li>
+          <li><a href="/admin.html">Admin</a></li>
+          <li><a class="active" href="/admin-mitra.html">Mitra</a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
@@ -32,9 +32,9 @@
   <main class="page-bg admin-page">
     <section class="page-hero admin-hero">
       <div class="container">
-        <p class="breadcrumb">Admin / Anggota</p>
-        <h1>Kelola Anggota</h1>
-        <p>Tambah anggota, upload foto, edit data, dan atur anggota yang tampil di halaman publik.</p>
+        <p class="breadcrumb">Admin / Mitra</p>
+        <h1>Kelola Mitra</h1>
+        <p>Upload logo mitra, atur urutan tampil, dan pilih logo yang muncul pada homepage.</p>
       </div>
     </section>
 
@@ -42,14 +42,12 @@
       <div class="container admin-layout">
         <article class="card admin-card" id="loginPanel">
           <h2>Login</h2>
-          <p class="admin-note">Masuk menggunakan akun super admin untuk mengelola anggota.</p>
+          <p class="admin-note">Masuk menggunakan akun super admin untuk mengelola mitra.</p>
           <form class="admin-form" id="loginForm">
             <label for="adminUsername">Username</label>
             <input id="adminUsername" name="username" type="text" autocomplete="username" required />
-
             <label for="adminPassword">Password</label>
             <input id="adminPassword" name="password" type="password" autocomplete="current-password" required />
-
             <button class="btn btn-primary" type="submit">Masuk</button>
           </form>
         </article>
@@ -57,11 +55,12 @@
         <section class="admin-workspace" id="adminPanel" hidden>
           <div class="card admin-card admin-workspace-head">
             <div>
-              <h2>Data Anggota</h2>
-              <p class="admin-note">Foto opsional. Jika tidak upload foto, sistem membuat avatar otomatis dari nama anggota.</p>
+              <h2>Logo Mitra</h2>
+              <p class="admin-note">Logo aktif akan tampil di section Jaringan Kolaborasi AFIN pada homepage.</p>
             </div>
             <div class="admin-actions">
               <a class="btn btn-outline" href="/admin.html">Dashboard</a>
+              <a class="btn btn-outline" href="/index.html" target="_blank" rel="noopener">Lihat Homepage</a>
               <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
             </div>
           </div>
@@ -69,79 +68,60 @@
           <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
             <a href="/admin-homepage.html">Homepage</a>
             <a href="/admin-kegiatan.html">Kegiatan</a>
-            <a class="active" href="/admin-anggota.html">Anggota</a>
-            <a href="/admin-mitra.html">Mitra</a>
+            <a href="/admin-anggota.html">Anggota</a>
+            <a class="active" href="/admin-mitra.html">Mitra</a>
             <a href="/admin-profil.html">Profil Website</a>
           </nav>
 
-          <div class="admin-anggota-stack">
-            <form class="card admin-card admin-form admin-form-grid" id="memberForm">
+          <div class="admin-kegiatan-stack">
+            <form class="card admin-card admin-form admin-form-grid" id="partnerForm">
               <div class="admin-form-title">
-                <span>Form Anggota</span>
-                <h2>Tambah atau Edit Anggota</h2>
-                <p>Isi nama, label, urutan tampil, dan foto jika tersedia. Untuk mengedit data lama, klik menu titik tiga pada kartu anggota di bawah.</p>
+                <span>Form Mitra</span>
+                <h2>Tambah atau Edit Logo Mitra</h2>
+                <p>Gunakan logo berformat PNG/JPG/WEBP. Logo transparan PNG lebih disarankan agar rapi di homepage.</p>
               </div>
-              <input id="memberId" type="hidden" />
+              <input id="partnerId" type="hidden" />
               <fieldset class="admin-fieldset">
-                <legend>Informasi Anggota</legend>
+                <legend>Informasi Mitra</legend>
                 <div class="admin-field">
-                  <label for="memberName">Nama Anggota</label>
-                  <input id="memberName" type="text" placeholder="Contoh: Budi Santoso" required />
+                  <label for="partnerName">Nama Mitra</label>
+                  <input id="partnerName" type="text" placeholder="Contoh: Sampoerna University" required />
                 </div>
                 <div class="admin-field">
-                  <label for="memberRole">Label / Peran</label>
-                  <input id="memberRole" type="text" value="Anggota Perkumpulan" required />
+                  <label for="partnerUrl">Website / Link Opsional</label>
+                  <input id="partnerUrl" type="text" placeholder="https://..." />
                 </div>
                 <div class="admin-field">
-                  <label for="memberSort">Urutan Tampil</label>
-                  <input id="memberSort" type="number" value="0" />
+                  <label for="partnerSort">Urutan Tampil</label>
+                  <input id="partnerSort" type="number" value="0" />
                   <small>Angka lebih besar tampil lebih awal.</small>
                 </div>
                 <div class="admin-field">
-                  <label for="memberPhoto">Foto Anggota</label>
-                  <input id="memberPhoto" type="file" accept="image/png,image/jpeg,image/webp" />
-                  <small>JPG, PNG, atau WEBP maksimal 4 MB.</small>
+                  <label for="partnerLogo">Logo Mitra</label>
+                  <input id="partnerLogo" type="file" accept="image/png,image/jpeg,image/webp" />
+                  <small id="partnerLogoNote">JPG, PNG, atau WEBP maksimal 4 MB.</small>
                 </div>
               </fieldset>
-
               <div class="admin-actions">
-                <button class="btn btn-outline" type="button" id="previewMemberBtn">Preview</button>
-                <button class="btn btn-primary" type="submit">Simpan Anggota</button>
-                <button class="btn btn-outline" type="button" id="cancelEditBtn" hidden>Batal Edit</button>
+                <button class="btn btn-primary" type="submit" id="savePartnerBtn">Simpan Mitra</button>
+                <button class="btn btn-outline" type="button" id="cancelPartnerEditBtn" hidden>Batal Edit</button>
               </div>
               <p class="admin-message" id="adminMessage" aria-live="polite"></p>
             </form>
 
-            <aside class="card admin-live-preview" aria-live="polite">
-              <div class="admin-preview-head">
-                <span>Preview</span>
-                <strong>Kartu Anggota</strong>
-              </div>
-              <div class="admin-preview-placeholder" id="previewPlaceholder">
-                Isi nama anggota lalu klik Preview untuk melihat tampilan kartu.
-              </div>
-              <article class="card assessor-card admin-member-preview" id="memberPreview" hidden>
-                <img class="assessor-photo" id="previewPhoto" src="" alt="" />
-                <div class="assessor-body">
-                  <h4 id="previewName"></h4>
-                  <p id="previewRole"></p>
-                </div>
-              </article>
-            </aside>
-
-            <section class="card admin-list-panel admin-anggota-list-panel">
+            <section class="card admin-list-panel admin-kegiatan-list-panel">
               <div class="admin-list-head">
                 <div>
                   <span>Database</span>
-                  <h2>Anggota</h2>
+                  <h2>Mitra</h2>
                 </div>
-                <strong id="memberListCount">0 data</strong>
+                <strong id="partnerListCount">0 data</strong>
               </div>
               <div class="admin-list-search">
-                <label for="memberSearch">Cari anggota</label>
-                <input id="memberSearch" type="search" placeholder="Cari nama atau label anggota" autocomplete="off" />
+                <label for="partnerSearch">Cari mitra</label>
+                <input id="partnerSearch" type="search" placeholder="Cari nama mitra" autocomplete="off" />
               </div>
-              <div class="admin-list-scroll" id="adminMemberList"></div>
+              <div class="admin-list-scroll" id="adminPartnerList"></div>
             </section>
           </div>
         </section>
@@ -150,6 +130,6 @@
   </main>
 
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/admin-anggota.js?v=20260622-admin-members-grid-menu"></script>
+  <script src="/assets/js/admin-mitra.js?v=20260630-partners-admin"></script>
 </body>
 </html>

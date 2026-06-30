@@ -68,8 +68,10 @@
           </div>
 
           <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
+            <a href="/admin-homepage.html">Homepage</a>
             <a href="/admin-kegiatan.html">Kegiatan</a>
             <a href="/admin-anggota.html">Anggota</a>
+            <a href="/admin-mitra.html">Mitra</a>
             <a class="active" href="/admin-profil.html">Profil Website</a>
           </nav>
 
@@ -87,16 +89,20 @@
               <textarea id="aboutDescription" name="about_description" class="admin-page-lead-input" rows="5" required></textarea>
             </section>
 
-            <section class="admin-profile-content-editor">
-              <article class="card admin-profile-section-card">
-                <label for="vision">Visi</label>
-                <textarea id="vision" name="vision" rows="6" required></textarea>
-              </article>
-              <article class="card admin-profile-section-card">
-                <label for="mission">Misi</label>
-                <textarea id="mission" name="mission" rows="10" required></textarea>
-                <small>Setiap baris akan tampil sebagai satu poin misi.</small>
-              </article>
+            <section class="admin-about-page-canvas section">
+              <div class="container simple-grid-2">
+                <article class="card admin-profile-section-card">
+                  <h3 class="section-title">Visi</h3>
+                  <label for="vision">Isi Visi</label>
+                  <textarea id="vision" name="vision" rows="7" required></textarea>
+                </article>
+                <article class="card admin-profile-section-card">
+                  <h3 class="section-title">Misi</h3>
+                  <label for="mission">Isi Misi</label>
+                  <textarea id="mission" name="mission" rows="12" required></textarea>
+                  <small>Setiap baris akan tampil sebagai satu poin misi.</small>
+                </article>
+              </div>
             </section>
 
             <section class="card admin-profile-contact-editor">

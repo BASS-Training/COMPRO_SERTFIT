@@ -7,3 +7,6 @@ assets/uploads/kegiatan/*
 assets/uploads/anggota/*
 !assets/uploads/anggota/.gitkeep
 !assets/uploads/anggota/.htaccess
+assets/uploads/mitra/*
+!assets/uploads/mitra/.gitkeep
+!assets/uploads/mitra/.htaccess

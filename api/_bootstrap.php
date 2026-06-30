@@ -119,3 +119,15 @@ function anggota_payload(array $row): array
         'sortOrder' => (int) ($row['sort_order'] ?? 0),
     ];
 }
+
+function partner_payload(array $row): array
+{
+    return [
+        'id' => (string) $row['id'],
+        'name' => $row['name'],
+        'logo' => $row['logo_url'],
+        'websiteUrl' => $row['website_url'] ?? '',
+        'isActive' => (bool) ($row['is_active'] ?? true),
+        'sortOrder' => (int) ($row['sort_order'] ?? 0),
+    ];
+}

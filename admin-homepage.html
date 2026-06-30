@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelola Homepage | AFIN</title>
+  <link rel="icon" type="image/png" href="/assets/facicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260630-homepage-admin" />
+</head>
+<body>
+  <header class="site-header scrolled admin-site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="logo-link" href="/index.html" aria-label="AFIN Beranda">
+        <img src="/assets/fitb%20logo.png?v=20260519-lockup" alt="Logo Asosiasi Fasilitator dan Instruktur Nusantara" />
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="/index.html">Beranda</a></li>
+          <li><a href="/admin.html">Admin</a></li>
+          <li><a class="active" href="/admin-homepage.html">Homepage</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page-bg admin-page">
+    <section class="page-hero admin-hero">
+      <div class="container">
+        <p class="breadcrumb">Admin / Homepage</p>
+        <h1>Kelola Homepage</h1>
+        <p>Edit teks utama halaman beranda, CTA, gambar hero, dan section yang tampil di homepage.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container admin-layout">
+        <article class="card admin-card" id="loginPanel">
+          <h2>Login</h2>
+          <p class="admin-note">Masuk menggunakan akun super admin untuk mengubah homepage.</p>
+          <form class="admin-form" id="loginForm">
+            <label for="adminUsername">Username</label>
+            <input id="adminUsername" name="username" type="text" autocomplete="username" required />
+
+            <label for="adminPassword">Password</label>
+            <input id="adminPassword" name="password" type="password" autocomplete="current-password" required />
+
+            <button class="btn btn-primary" type="submit">Masuk</button>
+          </form>
+        </article>
+
+        <section class="admin-workspace" id="adminPanel" hidden>
+          <div class="card admin-card admin-workspace-head">
+            <div>
+              <h2>Konten Beranda</h2>
+              <p class="admin-note">Perubahan disimpan ke database dan akan diterapkan pada halaman homepage publik.</p>
+            </div>
+            <div class="admin-actions">
+              <a class="btn btn-outline" href="/admin.html">Dashboard</a>
+              <a class="btn btn-outline" href="/index.html" target="_blank" rel="noopener">Lihat Homepage</a>
+              <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
+            </div>
+          </div>
+
+          <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
+            <a class="active" href="/admin-homepage.html">Homepage</a>
+            <a href="/admin-kegiatan.html">Kegiatan</a>
+            <a href="/admin-anggota.html">Anggota</a>
+            <a href="/admin-mitra.html">Mitra</a>
+            <a href="/admin-profil.html">Profil Website</a>
+          </nav>
+
+          <form class="admin-form admin-profile-page-editor admin-homepage-page-editor" id="homepageForm">
+            <div class="card admin-card admin-form-title">
+              <span>Editor Homepage</span>
+              <h2>Konten Utama Beranda</h2>
+              <p>Edit langsung pada tampilan yang menyerupai homepage. Daftar kegiatan dan anggota tetap mengambil data dari modul masing-masing.</p>
+            </div>
+
+            <section class="card admin-profile-contact-editor">
+              <div>
+                <h3>Section Homepage</h3>
+                <p class="admin-note">Drag untuk mengatur urutan section. Gunakan checkbox untuk menampilkan atau menyembunyikan section.</p>
+              </div>
+              <input id="homeSectionOrder" name="home_section_order" type="hidden" />
+              <div class="admin-section-sort-list" id="homeSectionSortList" aria-label="Urutan section homepage">
+                <article class="admin-section-sort-item" draggable="true" data-section-key="activities">
+                  <button class="admin-drag-handle" type="button" aria-label="Drag section Kegiatan">::</button>
+                  <label class="admin-check" for="homeShowActivities"><input id="homeShowActivities" name="home_show_activities" type="checkbox" /><span>Kegiatan<small>Tampilkan kegiatan terbaru.</small></span></label>
+                </article>
+                <article class="admin-section-sort-item" draggable="true" data-section-key="profile">
+                  <button class="admin-drag-handle" type="button" aria-label="Drag section Profil Singkat">::</button>
+                  <label class="admin-check" for="homeShowProfile"><input id="homeShowProfile" name="home_show_profile" type="checkbox" /><span>Profil Singkat<small>Tampilkan kartu profil AFIN.</small></span></label>
+                </article>
+                <article class="admin-section-sort-item" draggable="true" data-section-key="members">
+                  <button class="admin-drag-handle" type="button" aria-label="Drag section Anggota">::</button>
+                  <label class="admin-check" for="homeShowMembers"><input id="homeShowMembers" name="home_show_members" type="checkbox" /><span>Anggota<small>Tampilkan ringkasan anggota.</small></span></label>
+                </article>
+                <article class="admin-section-sort-item" draggable="true" data-section-key="partners">
+                  <button class="admin-drag-handle" type="button" aria-label="Drag section Mitra">::</button>
+                  <label class="admin-check" for="homeShowPartners"><input id="homeShowPartners" name="home_show_partners" type="checkbox" /><span>Mitra<small>Tampilkan jaringan kolaborasi.</small></span></label>
+                </article>
+                <article class="admin-section-sort-item" draggable="true" data-section-key="cta">
+                  <button class="admin-drag-handle" type="button" aria-label="Drag section CTA Bawah">::</button>
+                  <label class="admin-check" for="homeShowCta"><input id="homeShowCta" name="home_show_cta" type="checkbox" /><span>CTA Bawah<small>Tampilkan ajakan bergabung.</small></span></label>
+                </article>
+              </div>
+            </section>
+
+            <div class="admin-homepage-canvas">
+              <section class="hero admin-homepage-hero">
+                <div class="container hero-grid">
+                  <div class="admin-inline-block">
+                    <label for="homeHeroTitle">Judul Hero</label>
+                    <input id="homeHeroTitle" name="home_hero_title" class="admin-inline-title admin-inline-title-light" type="text" required />
+                    <label for="homeHeroDescription">Deskripsi Hero</label>
+                    <textarea id="homeHeroDescription" name="home_hero_description" class="admin-inline-lead admin-inline-lead-light" rows="5" required></textarea>
+                    <div class="hero-actions admin-inline-actions">
+                      <div class="admin-inline-field">
+                        <label for="homeHeroButtonText">Teks Tombol</label>
+                        <input id="homeHeroButtonText" name="home_hero_button_text" type="text" />
+                      </div>
+                      <div class="admin-inline-field">
+                        <label for="homeHeroButtonUrl">Link Tombol</label>
+                        <input id="homeHeroButtonUrl" name="home_hero_button_url" type="text" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hero-media admin-homepage-media">
+                    <label for="homeHeroImage">URL Gambar Hero</label>
+                    <input id="homeHeroImage" name="home_hero_image" type="text" />
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="container">
+                  <div class="section-head admin-inline-section-head">
+                    <label for="homeActivitiesKicker">Kicker Kegiatan</label>
+                    <input id="homeActivitiesKicker" name="home_activities_kicker" class="admin-inline-kicker" type="text" />
+                    <label for="homeActivitiesTitle">Judul Kegiatan</label>
+                    <input id="homeActivitiesTitle" name="home_activities_title" class="admin-inline-section-title" type="text" />
+                    <label for="homeActivitiesDescription">Deskripsi Kegiatan</label>
+                    <textarea id="homeActivitiesDescription" name="home_activities_description" class="admin-inline-desc" rows="3"></textarea>
+                  </div>
+                  <div class="admin-homepage-placeholder-grid">
+                    <article class="card admin-homepage-placeholder-card">Kartu kegiatan terbaru dari database</article>
+                    <article class="card admin-homepage-placeholder-card">Kartu kegiatan terbaru dari database</article>
+                    <article class="card admin-homepage-placeholder-card">Kartu kegiatan terbaru dari database</article>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="container">
+                  <div class="section-head admin-inline-section-head">
+                    <label for="homeProfileKicker">Kicker Profil</label>
+                    <input id="homeProfileKicker" name="home_profile_kicker" class="admin-inline-kicker" type="text" />
+                    <label for="homeProfileTitle">Judul Profil</label>
+                    <input id="homeProfileTitle" name="home_profile_title" class="admin-inline-section-title" type="text" />
+                  </div>
+                  <div class="pillar-grid">
+                    <article class="card pillar-card admin-inline-card">
+                      <label for="homeProfileCardTitle">Judul Kartu Profil</label>
+                      <input id="homeProfileCardTitle" name="home_profile_card_title" class="admin-inline-card-title" type="text" />
+                      <label for="homeProfileCardDescription">Isi Kartu Profil</label>
+                      <textarea id="homeProfileCardDescription" name="home_profile_card_description" rows="5"></textarea>
+                    </article>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="container">
+                  <div class="section-head admin-inline-section-head">
+                    <label for="homeMembersKicker">Kicker Anggota</label>
+                    <input id="homeMembersKicker" name="home_members_kicker" class="admin-inline-kicker" type="text" />
+                    <label for="homeMembersTitle">Judul Anggota</label>
+                    <input id="homeMembersTitle" name="home_members_title" class="admin-inline-section-title" type="text" />
+                  </div>
+                  <div class="admin-homepage-placeholder-grid admin-homepage-placeholder-grid-members">
+                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
+                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
+                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
+                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="container">
+                  <div class="section-head admin-inline-section-head">
+                    <label for="homePartnersKicker">Kicker Mitra</label>
+                    <input id="homePartnersKicker" name="home_partners_kicker" class="admin-inline-kicker" type="text" />
+                    <label for="homePartnersTitle">Judul Mitra</label>
+                    <input id="homePartnersTitle" name="home_partners_title" class="admin-inline-section-title" type="text" />
+                  </div>
+                  <div class="partner-wrap admin-homepage-partner-placeholder">Logo mitra tetap mengikuti data aset homepage.</div>
+                </div>
+              </section>
+
+              <section class="section bottom-cta admin-homepage-cta">
+                <div class="container admin-inline-block">
+                  <label for="homeCtaTitle">Judul CTA</label>
+                  <input id="homeCtaTitle" name="home_cta_title" class="admin-inline-title admin-inline-title-light" type="text" />
+                  <label for="homeCtaDescription">Deskripsi CTA</label>
+                  <textarea id="homeCtaDescription" name="home_cta_description" class="admin-inline-lead admin-inline-lead-light" rows="3"></textarea>
+                  <div class="cta-actions admin-inline-actions">
+                    <div class="admin-inline-field">
+                      <label for="homeCtaButtonText">Teks Tombol CTA</label>
+                      <input id="homeCtaButtonText" name="home_cta_button_text" type="text" />
+                    </div>
+                    <div class="admin-inline-field">
+                      <label for="homeCtaButtonUrl">Link Tombol CTA</label>
+                      <input id="homeCtaButtonUrl" name="home_cta_button_url" type="text" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="card admin-profile-savebar">
+              <p class="admin-message" id="adminMessage" aria-live="polite"></p>
+              <div class="admin-actions">
+                <button class="btn btn-primary" type="submit">Simpan Homepage</button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/admin-homepage.js?v=20260630-homepage-editor"></script>
+</body>
+</html>
