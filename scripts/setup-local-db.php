@@ -64,7 +64,7 @@ $statement->execute([
 
 $memberCount = (int) $pdo->query('SELECT COUNT(*) FROM anggota')->fetchColumn();
 if ($memberCount === 0) {
-    $anggotaHtml = file_get_contents(__DIR__ . '/../anggota.html');
+    $anggotaHtml = file_get_contents(__DIR__ . '/../pages/anggota.html');
     if ($anggotaHtml !== false) {
         preg_match_all(
             '~<article class="card assessor-card"><img class="assessor-photo" src="([^"]+)" alt="([^"]+)" /><div class="assessor-body"><h4>([^<]+)</h4><p>([^<]+)</p></div></article>~',

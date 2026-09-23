@@ -178,13 +178,13 @@ Jika upload masih gagal, hosting tertentu mungkin perlu permission `775`.
 Cek halaman berikut:
 
 ```text
-/admin.html
-/admin-kegiatan.html
-/admin-anggota.html
-/admin-profil.html
-/kegiatan.html
-/anggota.html
-/aboutus.html
+/admin
+/admin-kegiatan
+/admin-anggota
+/admin-profil
+/kegiatan
+/anggota
+/aboutus
 ```
 
 Cek juga endpoint API:

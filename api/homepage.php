@@ -7,7 +7,7 @@ $defaults = [
     'home_hero_title' => 'Asosiasi Fasilitator Instruktur Nusantara',
     'home_hero_description' => 'Asosiasi Fasilitator Instruktur Nusantara menjadi wadah kolaborasi bagi fasilitator, instruktur, trainer, dan praktisi pengembangan SDM untuk memperkuat kompetensi, jejaring profesional, serta kontribusi dalam peningkatan kualitas pembelajaran di Indonesia.',
     'home_hero_button_text' => 'Hubungi Kami',
-    'home_hero_button_url' => '/kontak.html',
+    'home_hero_button_url' => '/kontak',
     'home_hero_image' => 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
     'home_activities_kicker' => 'Kegiatan Terbaru',
     'home_activities_title' => 'Kegiatan AFIN',

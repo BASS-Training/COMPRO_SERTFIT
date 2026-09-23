@@ -163,15 +163,15 @@ Target validasi:
 Cek halaman berikut:
 
 ```text
-/admin.html
-/admin-kegiatan.html
-/admin-anggota.html
-/admin-profil.html
-/kegiatan.html
-/kegiatan-detail.html
-/anggota.html
-/aboutus.html
-/index.html
+/admin
+/admin-kegiatan
+/admin-anggota
+/admin-profil
+/kegiatan
+/kegiatan-detail
+/anggota
+/aboutus
+/
 ```
 
 Target validasi:

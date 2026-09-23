@@ -184,7 +184,7 @@
           <div class="admin-card-menu-list">
             <button class="admin-card-menu-action admin-edit-activity" type="button" data-id="${item.id}">Edit</button>
             <button class="admin-card-menu-action admin-highlight-toggle" type="button" data-id="${item.id}" data-highlight="${isHighlight ? '0' : '1'}">${isHighlight ? 'Hapus Highlight' : 'Jadikan Highlight'}</button>
-            <a class="admin-card-menu-action" href="/kegiatan-detail.html?id=${encodeURIComponent(item.slug || item.id)}" target="_blank" rel="noopener">Detail</a>
+            <a class="admin-card-menu-action" href="/kegiatan-detail?id=${encodeURIComponent(item.slug || item.id)}" target="_blank" rel="noopener">Detail</a>
             <button class="admin-card-menu-action admin-delete" type="button" data-id="${item.id}">Hapus</button>
           </div>
         </details>
@@ -293,7 +293,7 @@
       isHighlight: values.isHighlight,
       createdAt: new Date().toISOString(),
     }));
-    window.open('/kegiatan-detail.html?preview=admin', '_blank', 'noopener');
+    window.open('/kegiatan-detail?preview=admin', '_blank', 'noopener');
     showMessage('Preview dibuka di tab baru menggunakan data form saat ini.', 'success');
   });
 

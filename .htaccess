@@ -2,12 +2,16 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
-# Canonicalize direct .html requests to extensionless URLs.
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
-RewriteRule ^ /%1 [R=301,L,NE]
+# Keep the homepage at the document root.
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]|$) [NC]
+RewriteRule ^index\.html$ / [R=301,L,NE]
 
-# Serve extensionless HTML pages without changing the static file layout.
+# Redirect old root-level .html URLs to their extensionless equivalents.
+RewriteCond %{THE_REQUEST} \s/+([^/\s?]+)\.html(?:[\s?]|$) [NC]
+RewriteRule ^([^/]+)\.html$ /$1 [R=301,L,NE]
+
+# Serve extensionless pages from the pages directory.
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+RewriteRule ^([^/]+)/?$ pages/$1.html [L]

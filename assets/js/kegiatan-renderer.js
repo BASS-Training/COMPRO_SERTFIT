@@ -38,7 +38,7 @@
       "'": '&#39;',
     }[char]));
 
-  const detailHref = (item) => `/kegiatan-detail.html?id=${encodeURIComponent(item.slug || item.id)}`;
+  const detailHref = (item) => `/kegiatan-detail?id=${encodeURIComponent(item.slug || item.id)}`;
 
   const hideStaticFallback = () => {
     document
