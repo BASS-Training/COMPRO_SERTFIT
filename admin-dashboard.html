@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Admin | LSP FIT</title>
+  <link rel="icon" type="image/png" href="/assets/lspfit/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260924-separated-admin" />
+</head>
+<body>
+  <header class="site-header scrolled admin-site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="logo-link" href="/index.html" aria-label="LSP FIT Beranda">
+        <img src="/assets/lspfit/logofit-nobg.png" alt="Logo LSP FIT" />
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="/index.html">Beranda</a></li>
+          <li><a href="/kegiatan.html">Skema Sertifikasi</a></li>
+          <li><a class="active" href="/admin-dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page-bg admin-page">
+    <section class="page-hero admin-hero">
+      <div class="container">
+        <p class="breadcrumb">Beranda / Dashboard Admin</p>
+        <h1>Dashboard Admin</h1>
+        <p>Kelola konten website LSP FIT dari satu tempat.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container admin-layout">
+        <section class="admin-dashboard" id="dashboardPanel">
+          <div class="card admin-dashboard-panel">
+            <div class="admin-dashboard-head">
+              <div>
+                <p class="section-kicker">Akses Penuh</p>
+                <h2 class="section-title">Pengaturan Website</h2>
+                <p class="admin-note" id="adminSessionText">Memeriksa sesi admin...</p>
+              </div>
+              <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
+            </div>
+
+            <div class="admin-overview-grid" aria-label="Ringkasan dashboard admin">
+              <article class="admin-overview-item">
+                <span>01</span>
+                <strong>Pilih modul</strong>
+                <p>Buka bagian website yang ingin diubah.</p>
+              </article>
+              <article class="admin-overview-item">
+                <span>02</span>
+                <strong>Edit konten</strong>
+                <p>Isi form sesuai teks dan gambar yang akan tampil.</p>
+              </article>
+              <article class="admin-overview-item">
+                <span>03</span>
+                <strong>Simpan</strong>
+                <p>Perubahan masuk ke database setelah tombol simpan diklik.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="admin-section-head">
+            <div>
+              <span>Modul Aktif</span>
+              <h2>Modul Pengelolaan Konten</h2>
+            </div>
+            <p>Pilih area website yang akan diperbarui melalui kartu pengelolaan berikut.</p>
+          </div>
+
+          <div class="admin-module-grid">
+            <a class="card admin-module-card is-active" href="/admin-homepage.html">
+              <span class="admin-module-status">Aktif</span>
+              <h3>Homepage</h3>
+              <p>Atur teks hero, profil singkat, CTA, dan section utama yang tampil di halaman depan.</p>
+              <strong>Buka Kelola Homepage</strong>
+            </a>
+            <a class="card admin-module-card is-active" href="/admin-kegiatan.html">
+              <span class="admin-module-status">Aktif</span>
+              <h3>Skema Sertifikasi</h3>
+              <p>Tambah kegiatan, upload foto, kelola highlight, edit narasi, dan hapus kegiatan dari database.</p>
+              <strong>Buka Kelola Skema</strong>
+            </a>
+            <a class="card admin-module-card is-active" href="/admin-anggota.html">
+              <span class="admin-module-status">Aktif</span>
+              <h3>Struktur Tim</h3>
+              <p>Tambah, edit, hide atau tampilkan anggota, serta upload foto profil anggota asosiasi.</p>
+              <strong>Buka Kelola Struktur</strong>
+            </a>
+            <a class="card admin-module-card is-active" href="/admin-profil.html">
+              <span class="admin-module-status">Aktif</span>
+              <h3>Profil Website</h3>
+              <p>Edit profil, visi, misi, kontak, alamat, dan informasi dasar website LSP FIT.</p>
+              <strong>Buka Kelola Profil</strong>
+            </a>
+            <a class="card admin-module-card is-active" href="/admin-mitra.html">
+              <span class="admin-module-status">Aktif</span>
+              <h3>Mitra</h3>
+              <p>Upload logo mitra, atur urutan tampil, dan pilih mitra yang muncul di homepage.</p>
+              <strong>Buka Kelola Mitra</strong>
+            </a>
+          </div>
+
+          <div class="admin-section-head">
+            <div>
+              <span>Pengembangan Dashboard</span>
+              <h2>Modul dalam Tahap Persiapan</h2>
+            </div>
+          </div>
+
+          <div class="admin-module-grid admin-module-grid-planned">
+            <article class="card admin-module-card is-planned">
+              <span class="admin-module-status">Dalam Persiapan</span>
+              <h3>Media Library</h3>
+              <p>Kelola file gambar yang dipakai ulang untuk kegiatan, anggota, dan halaman website.</p>
+            </article>
+            <article class="card admin-module-card is-planned">
+              <span class="admin-module-status">Dalam Persiapan</span>
+              <h3>User Admin</h3>
+              <p>Tambah admin, ganti password, dan atur role akses dashboard.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/admin-dashboard.js?v=20260924-separated-admin"></script>
+</body>
+</html>

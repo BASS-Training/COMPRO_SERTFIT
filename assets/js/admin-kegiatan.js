@@ -1,6 +1,6 @@
 (function () {
-  const STORAGE_KEY = 'afin_kegiatan_items';
-  const SESSION_KEY = 'afin_admin_logged_in';
+  const STORAGE_KEY = 'lspfit_kegiatan_items';
+  const SESSION_KEY = 'lspfit_admin_logged_in';
   const DEMO_USERNAME = 'admin';
   const DEMO_PASSWORD = 'admin123';
 
@@ -282,7 +282,7 @@
       }
     }
 
-    sessionStorage.setItem('afin_kegiatan_preview', JSON.stringify({
+    sessionStorage.setItem('lspfit_kegiatan_preview', JSON.stringify({
       id: values.id || `preview-${Date.now()}`,
       slug: values.id || 'preview-kegiatan',
       title: values.title,

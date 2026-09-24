@@ -1,4 +1,4 @@
-# Backend Kegiatan AFIN
+# Backend LSP FIT
 
 Backend ini disiapkan untuk live server PHP + MySQL.
 
@@ -6,7 +6,7 @@ Backend ini disiapkan untuk live server PHP + MySQL.
 
 1. Buat database MySQL, user, dan password dari panel hosting.
 2. Import `database/schema.sql` ke database tersebut.
-3. Import `database/seed_kegiatan_awal.sql` agar kegiatan lama masuk database dan bisa diatur highlight-nya dari admin.
+3. Import `database/seed_kegiatan_awal.sql`. File ini sengaja tidak mengisi kegiatan lama.
 4. Copy `config/config.example.php` menjadi `config/config.php`.
 5. Isi `db_host`, `db_name`, `db_user`, dan `db_pass` sesuai hosting.
 6. Ganti `admin_password_hash` untuk password admin live.
@@ -33,7 +33,7 @@ Lalu buat user super admin dengan password hash yang sudah dibuat:
 
 ```sql
 INSERT INTO admin_users (username, name, password_hash, role, is_active)
-VALUES ('admin', 'Super Admin AFIN', 'PASTE_PASSWORD_HASH_DI_SINI', 'super_admin', 1)
+VALUES ('admin', 'Super Admin LSP FIT', 'PASTE_PASSWORD_HASH_DI_SINI', 'super_admin', 1)
 ON DUPLICATE KEY UPDATE
   name = VALUES(name),
   password_hash = VALUES(password_hash),
@@ -74,4 +74,10 @@ Setelah itu, jalankan juga:
 database/seed_kegiatan_awal.sql
 ```
 
-Seed ini memasukkan kegiatan yang sebelumnya hardcoded di halaman Kegiatan. Setelah data database tersedia, kartu hardcoded lama hanya menjadi fallback dan tampilan utama dikendalikan dari database/admin.
+Untuk database yang sebelumnya berisi data AFIN, jalankan migration rebranding:
+
+```sql
+database/migrations/20260924_rebrand_lsp_fit.sql
+```
+
+Migration ini menghapus kegiatan dan anggota lama, lalu mengisi pengaturan profil LSP FIT.

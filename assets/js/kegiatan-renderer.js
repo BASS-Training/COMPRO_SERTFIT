@@ -1,5 +1,5 @@
 (function () {
-  const STORAGE_KEY = 'afin_kegiatan_items';
+  const STORAGE_KEY = 'lspfit_kegiatan_items';
 
   const getLocalItems = () => {
     try {

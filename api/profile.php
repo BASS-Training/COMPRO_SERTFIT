@@ -4,12 +4,12 @@ declare(strict_types=1);
 require __DIR__ . '/_bootstrap.php';
 
 $defaults = [
-    'about_title' => 'Tentang AFIN',
-    'about_description' => 'Asosiasi Fasilitator Instruktur Nusantara (AFIN) merupakan wadah profesi bagi fasilitator, instruktur, trainer, dan praktisi pengembangan sumber daya manusia untuk memperkuat kompetensi, jejaring kolaborasi, serta kontribusi dalam peningkatan mutu pembelajaran di Indonesia.',
-    'vision' => 'Menjadi asosiasi profesi yang kredibel, inklusif, dan berpengaruh dalam pengembangan fasilitator, instruktur, trainer, serta praktisi pembelajaran di Indonesia.',
-    'mission' => "Menghimpun dan memperkuat jejaring fasilitator, instruktur, trainer, dan praktisi pengembangan SDM di berbagai sektor.\nMendorong peningkatan kompetensi, etika profesi, dan kualitas praktik fasilitasi serta pembelajaran berkelanjutan.\nMembangun ruang kolaborasi, berbagi pengetahuan, dan pengembangan program yang relevan dengan kebutuhan anggota dan masyarakat.\nMenjalin kemitraan strategis dengan lembaga pendidikan, pelatihan, industri, pemerintah, dan komunitas profesi untuk memperluas dampak asosiasi.\nMemberikan dukungan advokasi, informasi, dan penguatan kapasitas bagi anggota agar mampu berkontribusi secara profesional.",
-    'contact_email' => 'info@afin.or.id',
-    'contact_website' => 'www.afin.or.id',
+    'about_title' => 'Tentang LSP FIT',
+    'about_description' => 'LSP FIT adalah Lembaga Sertifikasi Profesi Fasilitator, Instruktur dan Tenaga Kepelatihan berlisensi BNSP yang menjaga mutu dan relevansi sertifikasi kompetensi.',
+    'vision' => 'Menjadi lembaga sertifikasi profesi yang terpercaya, objektif, dan relevan dengan kebutuhan dunia kerja nasional.',
+    'mission' => "Menyelenggarakan sertifikasi kompetensi sesuai standar BNSP dan SKKNI.\nMenjaga objektivitas, konsistensi, dan mutu proses asesmen.\nMemperluas akses sertifikasi melalui layanan online dan offline.\nMembangun kemitraan dengan pemerintah, industri, lembaga pelatihan, dan perguruan tinggi.\nMendukung pengakuan kompetensi fasilitator, instruktur, dan tenaga kepelatihan.",
+    'contact_email' => 'info.lspfit@gmail.com',
+    'contact_website' => 'www.sertifikasifit.com',
     'contact_phone' => '0811-1210-1007',
     'contact_address' => 'Ruko Akasa Blok B No 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan',
 ];

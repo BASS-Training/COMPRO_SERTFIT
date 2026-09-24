@@ -54,7 +54,7 @@
   });
 
   const avatarUrl = (name) =>
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Anggota AFIN')}&size=600&background=E6F4FB&color=0D1B2A`;
+    `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Tim LSP FIT')}&size=600&background=E6F4FB&color=0D1B2A`;
 
   const setLoggedIn = (isLoggedIn) => {
     loginPanel.hidden = isLoggedIn;
