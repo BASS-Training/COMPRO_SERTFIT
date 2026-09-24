@@ -19,6 +19,39 @@
     });
   };
 
+  const escapeHtml = (value) => String(value || '').replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  }[char]));
+
+  const renderMembers = (items) => {
+    document.querySelectorAll('[data-homepage-members]').forEach((target) => {
+      if (!items.length) return;
+      target.innerHTML = items.map((item) => `
+        <article class="card assessor-card">
+          <img class="assessor-photo" src="${escapeHtml(item.photo)}" alt="${escapeHtml(item.name)}" />
+          <div class="assessor-body"><h4>${escapeHtml(item.name)}</h4><p>${escapeHtml(item.roleLabel)}</p></div>
+        </article>
+      `).join('');
+    });
+  };
+
+  const renderPartners = (items) => {
+    document.querySelectorAll('[data-homepage-partners]').forEach((target) => {
+      if (!items.length) return;
+      const cards = items.map((item) => {
+        const logo = `<div class="partner-logo"><img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.name)}" /></div>`;
+        return item.websiteUrl
+          ? `<a href="${escapeHtml(item.websiteUrl)}" target="_blank" rel="noopener">${logo}</a>`
+          : logo;
+      }).join('');
+      target.innerHTML = `<div class="partner-marquee" aria-label="Daftar mitra LSP FIT">${cards}${cards}</div>`;
+    });
+  };
+
   const applySectionOrder = (value) => {
     const order = String(value || '')
       .split(',')
@@ -79,4 +112,14 @@
     .catch(() => {
       // Static HTML remains the public fallback.
     });
+
+  fetch('/api/anggota.php', { credentials: 'same-origin' })
+    .then((response) => response.ok ? response.json() : Promise.reject(new Error('Request gagal')))
+    .then((data) => renderMembers(Array.isArray(data.items) ? data.items : []))
+    .catch(() => {});
+
+  fetch('/api/partners.php', { credentials: 'same-origin' })
+    .then((response) => response.ok ? response.json() : Promise.reject(new Error('Request gagal')))
+    .then((data) => renderPartners(Array.isArray(data.items) ? data.items : []))
+    .catch(() => {});
 }());

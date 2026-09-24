@@ -20,7 +20,6 @@
         <ul>
           <li><a href="/index.html">Beranda</a></li>
           <li><a href="/kegiatan.html">Skema Sertifikasi</a></li>
-          <li><a class="active" href="/admin-dashboard.html">Dashboard</a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
@@ -61,18 +60,8 @@
               <p class="admin-note">Isi data kegiatan, cek preview detail jika perlu, lalu simpan setelah tampilannya sudah sesuai.</p>
             </div>
             <div class="admin-actions">
-              <a class="btn btn-outline" href="/admin-dashboard.html">Dashboard</a>
-              <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
             </div>
           </div>
-
-          <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
-            <a href="/admin-homepage.html">Homepage</a>
-            <a class="active" href="/admin-kegiatan.html">Kegiatan</a>
-            <a href="/admin-anggota.html">Anggota</a>
-            <a href="/admin-mitra.html">Mitra</a>
-            <a href="/admin-profil.html">Profil Website</a>
-          </nav>
 
           <div class="admin-kegiatan-stack">
             <form class="card admin-card admin-form admin-form-grid" id="activityForm">
@@ -151,6 +140,7 @@
   </main>
 
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/admin-shell.js?v=20260924-admin-sidebar"></script>
   <script src="/assets/js/admin-kegiatan.js?v=20260622-admin-header-grid-menu"></script>
 </body>
 </html>

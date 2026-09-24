@@ -59,11 +59,48 @@ if ($method === 'GET') {
 if ($method === 'POST') {
     require_admin();
     $pdo = db();
+    $heroImageUrl = trim((string) ($_POST['home_hero_image'] ?? ''));
+    $heroImage = $_FILES['home_hero_image_file'] ?? null;
+    if ($heroImage && ($heroImage['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE) {
+        if (($heroImage['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+            $uploadErrors = [
+                UPLOAD_ERR_INI_SIZE => 'Ukuran file melebihi batas server.',
+                UPLOAD_ERR_FORM_SIZE => 'Ukuran file melebihi batas form.',
+                UPLOAD_ERR_PARTIAL => 'File hanya terupload sebagian.',
+                UPLOAD_ERR_NO_TMP_DIR => 'Folder sementara upload tidak tersedia.',
+                UPLOAD_ERR_CANT_WRITE => 'Server tidak bisa menulis file upload.',
+                UPLOAD_ERR_EXTENSION => 'Upload dihentikan oleh ekstensi server.',
+            ];
+            $errorCode = (int) ($heroImage['error'] ?? 0);
+            json_response(['ok' => false, 'message' => $uploadErrors[$errorCode] ?? 'Upload gambar hero gagal.'], 422);
+        }
+        if (($heroImage['size'] ?? 0) > 4 * 1024 * 1024) {
+            json_response(['ok' => false, 'message' => 'Ukuran gambar hero maksimal 4 MB.'], 422);
+        }
+        $imageInfo = @getimagesize((string) $heroImage['tmp_name']);
+        $mime = $imageInfo['mime'] ?? '';
+        $extensions = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+        if (!isset($extensions[$mime])) {
+            json_response(['ok' => false, 'message' => 'Format gambar hero harus JPG, PNG, atau WEBP.'], 422);
+        }
+        $uploadDir = __DIR__ . '/../assets/uploads/homepage';
+        if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true)) {
+            json_response(['ok' => false, 'message' => 'Folder upload homepage tidak bisa dibuat.'], 500);
+        }
+        $fileName = bin2hex(random_bytes(12)) . '.' . $extensions[$mime];
+        if (!move_uploaded_file((string) $heroImage['tmp_name'], $uploadDir . '/' . $fileName)) {
+            json_response(['ok' => false, 'message' => 'Gambar hero gagal disimpan.'], 500);
+        }
+        $heroImageUrl = '/assets/uploads/homepage/' . $fileName;
+    }
     $statement = $pdo->prepare('INSERT INTO site_settings (setting_key, setting_value) VALUES (:setting_key, :setting_value) ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value)');
     foreach ($defaults as $key => $default) {
         $value = strpos($key, 'home_show_') === 0
             ? (isset($_POST[$key]) && $_POST[$key] === '1' ? '1' : '0')
             : trim((string) ($_POST[$key] ?? $default));
+        if ($key === 'home_hero_image' && $heroImageUrl !== '') {
+            $value = $heroImageUrl;
+        }
         $statement->execute([
             'setting_key' => $key,
             'setting_value' => $value,

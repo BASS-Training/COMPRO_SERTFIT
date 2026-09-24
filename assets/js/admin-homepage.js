@@ -38,6 +38,10 @@
   };
 
   const defaultSectionOrder = ['activities', 'profile', 'members', 'partners', 'cta'];
+  const linkFields = {
+    home_hero_button_url: ['homeHeroButtonUrl', 'homeHeroButtonUrlCustom'],
+    home_cta_button_url: ['homeCtaButtonUrl', 'homeCtaButtonUrlCustom'],
+  };
 
   const showMessage = (text, type) => {
     message.textContent = text;
@@ -89,6 +93,17 @@
     Object.entries(fieldIds).forEach(([key, id]) => {
       const field = document.getElementById(id);
       if (!field) return;
+      if (linkFields[key]) {
+        const [selectId, customId] = linkFields[key];
+        const select = document.getElementById(selectId);
+        const custom = document.getElementById(customId);
+        const value = settings[key] || '';
+        const isKnown = Array.from(select.options).some((option) => option.value === value);
+        select.value = isKnown ? value : '__custom';
+        custom.value = isKnown ? '' : value;
+        custom.hidden = isKnown;
+        return;
+      }
       if (key === 'home_section_order') {
         field.value = settings[key] || defaultSectionOrder.join(',');
         applySectionOrder(field.value);
@@ -107,6 +122,13 @@
     Object.entries(fieldIds).forEach(([key, id]) => {
       const field = document.getElementById(id);
       if (!field) return;
+      if (linkFields[key]) {
+        const [selectId, customId] = linkFields[key];
+        const select = document.getElementById(selectId);
+        const custom = document.getElementById(customId);
+        settings[key] = (select.value === '__custom' ? custom.value : select.value).trim();
+        return;
+      }
       if (key === 'home_section_order') updateSectionOrderInput();
       settings[key] = field.type === 'checkbox'
         ? (field.checked ? '1' : '0')
@@ -114,6 +136,15 @@
     });
     return settings;
   };
+
+  Object.values(linkFields).forEach(([selectId, customId]) => {
+    const select = document.getElementById(selectId);
+    const custom = document.getElementById(customId);
+    select.addEventListener('change', () => {
+      custom.hidden = select.value !== '__custom';
+      if (select.value !== '__custom') custom.value = '';
+    });
+  });
 
   const loadHomepage = async () => {
     const data = await apiRequest('/api/homepage.php');
@@ -155,7 +186,7 @@
     }
   });
 
-  logoutBtn.addEventListener('click', async () => {
+  logoutBtn?.addEventListener('click', async () => {
     const formData = new FormData();
     formData.append('action', 'logout');
     try {
@@ -184,9 +215,13 @@
     });
 
     try {
+      const heroImageFile = document.getElementById('homeHeroImageFile')?.files[0];
       const data = await apiRequest('/api/homepage.php', {
         method: 'POST',
-        body: formData,
+        body: (() => {
+          if (heroImageFile) formData.append('home_hero_image_file', heroImageFile);
+          return formData;
+        })(),
       });
       fillForm(data.settings || settings);
       showMessage('Homepage berhasil disimpan.', 'success');

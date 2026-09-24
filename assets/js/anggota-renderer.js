@@ -1,5 +1,5 @@
 (function () {
-  const grid = document.querySelector('.assessor-grid');
+  const grid = document.querySelector('[data-member-list], .assessor-grid');
   if (!grid) return;
 
   const escapeHtml = (value) =>

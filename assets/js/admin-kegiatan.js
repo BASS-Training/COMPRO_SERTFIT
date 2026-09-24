@@ -245,7 +245,7 @@
     showMessage('Username atau password salah.', 'error');
   });
 
-  logoutBtn.addEventListener('click', async () => {
+  logoutBtn?.addEventListener('click', async () => {
     if (backendMode) {
       const formData = new FormData();
       formData.append('action', 'logout');

@@ -19,7 +19,6 @@
       <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
         <ul>
           <li><a href="/index.html">Beranda</a></li>
-          <li><a href="/admin-dashboard.html">Dashboard</a></li>
           <li><a class="active" href="/admin-homepage.html">Homepage</a></li>
         </ul>
       </nav>
@@ -61,21 +60,11 @@
               <p class="admin-note">Perubahan disimpan ke database dan akan diterapkan pada halaman homepage publik.</p>
             </div>
             <div class="admin-actions">
-              <a class="btn btn-outline" href="/admin-dashboard.html">Dashboard</a>
               <a class="btn btn-outline" href="/index.html" target="_blank" rel="noopener">Lihat Homepage</a>
-              <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
             </div>
           </div>
 
-          <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
-            <a class="active" href="/admin-homepage.html">Homepage</a>
-            <a href="/admin-kegiatan.html">Kegiatan</a>
-            <a href="/admin-anggota.html">Anggota</a>
-            <a href="/admin-mitra.html">Mitra</a>
-            <a href="/admin-profil.html">Profil Website</a>
-          </nav>
-
-          <form class="admin-form admin-profile-page-editor admin-homepage-page-editor" id="homepageForm">
+          <form class="admin-form admin-profile-page-editor admin-homepage-page-editor" id="homepageForm" method="post" enctype="multipart/form-data">
             <div class="card admin-card admin-form-title">
               <span>Editor Homepage</span>
               <h2>Konten Utama Beranda</h2>
@@ -127,13 +116,24 @@
                       </div>
                       <div class="admin-inline-field">
                         <label for="homeHeroButtonUrl">Link Tombol</label>
-                        <input id="homeHeroButtonUrl" name="home_hero_button_url" type="text" />
+                        <select id="homeHeroButtonUrl" class="admin-link-select">
+                          <option value="/kegiatan.html">Skema Sertifikasi</option>
+                          <option value="/index.html">Beranda</option>
+                          <option value="/aboutus.html">Tentang Kami</option>
+                          <option value="/anggota.html">Struktur Tim</option>
+                          <option value="/kontak.html">Kontak</option>
+                          <option value="__custom">Link Eksternal / Custom</option>
+                        </select>
+                        <input id="homeHeroButtonUrlCustom" class="admin-link-custom" type="url" placeholder="https://contoh.com atau /halaman.html" hidden />
                       </div>
                     </div>
                   </div>
                   <div class="hero-media admin-homepage-media">
                     <label for="homeHeroImage">URL Gambar Hero</label>
                     <input id="homeHeroImage" name="home_hero_image" type="text" />
+                    <label for="homeHeroImageFile">Upload Gambar Hero</label>
+                    <input id="homeHeroImageFile" name="home_hero_image_file" type="file" accept="image/jpeg,image/png,image/webp" />
+                    <small>JPG, PNG, atau WEBP maksimal 4 MB. Upload akan menggantikan URL gambar.</small>
                   </div>
                 </div>
               </section>
@@ -217,7 +217,15 @@
                     </div>
                     <div class="admin-inline-field">
                       <label for="homeCtaButtonUrl">Link Tombol CTA</label>
-                      <input id="homeCtaButtonUrl" name="home_cta_button_url" type="text" />
+                      <select id="homeCtaButtonUrl" class="admin-link-select">
+                        <option value="/kontak.html">Kontak</option>
+                        <option value="/kegiatan.html">Skema Sertifikasi</option>
+                        <option value="/index.html">Beranda</option>
+                        <option value="/aboutus.html">Tentang Kami</option>
+                        <option value="/anggota.html">Struktur Tim</option>
+                        <option value="__custom">Link Eksternal / Custom</option>
+                      </select>
+                      <input id="homeCtaButtonUrlCustom" class="admin-link-custom" type="url" placeholder="https://contoh.com atau /halaman.html" hidden />
                     </div>
                   </div>
                 </div>
@@ -237,6 +245,7 @@
   </main>
 
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/admin-homepage.js?v=20260630-homepage-editor"></script>
+  <script src="/assets/js/admin-shell.js?v=20260924-admin-sidebar"></script>
+  <script src="/assets/js/admin-homepage.js?v=20260924-hero-upload"></script>
 </body>
 </html>

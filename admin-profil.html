@@ -20,7 +20,6 @@
         <ul>
           <li><a href="/index.html">Beranda</a></li>
           <li><a href="/aboutus.html">Tentang LSP FIT</a></li>
-          <li><a class="active" href="/admin-dashboard.html">Dashboard</a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
@@ -61,19 +60,9 @@
               <p class="admin-note">Tulis profil resmi LSP FIT. Poin misi dipisahkan per baris.</p>
             </div>
             <div class="admin-actions">
-              <a class="btn btn-outline" href="/admin-dashboard.html">Dashboard</a>
               <a class="btn btn-outline" href="/aboutus.html" target="_blank" rel="noopener">Lihat Page</a>
-              <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
             </div>
           </div>
-
-          <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
-            <a href="/admin-homepage.html">Homepage</a>
-            <a href="/admin-kegiatan.html">Kegiatan</a>
-            <a href="/admin-anggota.html">Anggota</a>
-            <a href="/admin-mitra.html">Mitra</a>
-            <a class="active" href="/admin-profil.html">Profil Website</a>
-          </nav>
 
           <form class="admin-form admin-profile-page-editor" id="profileForm">
             <div class="card admin-card admin-form-title">
@@ -87,6 +76,38 @@
               <input id="aboutTitle" name="about_title" class="admin-page-title-input" type="text" required />
               <label for="aboutDescription">Deskripsi Tentang Kami</label>
               <textarea id="aboutDescription" name="about_description" class="admin-page-lead-input" rows="5" required></textarea>
+            </section>
+
+            <section class="admin-about-page-canvas section">
+              <div class="container simple-grid-3">
+                <article class="card admin-profile-section-card">
+                  <h3 class="section-title">Profil</h3>
+                  <label for="aboutProfileKicker">Label Profil</label>
+                  <input id="aboutProfileKicker" name="about_profile_kicker" type="text" required />
+                  <label for="aboutProfileTitle">Judul Profil</label>
+                  <input id="aboutProfileTitle" name="about_profile_title" type="text" required />
+                  <label for="aboutProfileDescription">Deskripsi Profil</label>
+                  <textarea id="aboutProfileDescription" name="about_profile_description" rows="5" required></textarea>
+                </article>
+                <article class="card admin-profile-section-card">
+                  <h3 class="section-title">Dukungan</h3>
+                  <label for="aboutSupportKicker">Label Dukungan</label>
+                  <input id="aboutSupportKicker" name="about_support_kicker" type="text" required />
+                  <label for="aboutSupportTitle">Judul Dukungan</label>
+                  <input id="aboutSupportTitle" name="about_support_title" type="text" required />
+                  <label for="aboutSupportDescription">Deskripsi Dukungan</label>
+                  <textarea id="aboutSupportDescription" name="about_support_description" rows="5" required></textarea>
+                </article>
+                <article class="card admin-profile-section-card">
+                  <h3 class="section-title">Jangkauan</h3>
+                  <label for="aboutReachKicker">Label Jangkauan</label>
+                  <input id="aboutReachKicker" name="about_reach_kicker" type="text" required />
+                  <label for="aboutReachTitle">Judul Jangkauan</label>
+                  <input id="aboutReachTitle" name="about_reach_title" type="text" required />
+                  <label for="aboutReachDescription">Deskripsi Jangkauan</label>
+                  <textarea id="aboutReachDescription" name="about_reach_description" rows="5" required></textarea>
+                </article>
+              </div>
             </section>
 
             <section class="admin-about-page-canvas section">
@@ -144,6 +165,11 @@
               <p id="previewVision"></p>
               <ol id="previewMission"></ol>
               <p id="previewContact"></p>
+              <div class="simple-grid-3">
+                <article><strong id="previewAboutProfileTitle"></strong><p id="previewAboutProfileDescription"></p></article>
+                <article><strong id="previewAboutSupportTitle"></strong><p id="previewAboutSupportDescription"></p></article>
+                <article><strong id="previewAboutReachTitle"></strong><p id="previewAboutReachDescription"></p></article>
+              </div>
             </div>
           </form>
         </section>
@@ -152,6 +178,7 @@
   </main>
 
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/admin-profil.js?v=20260622-admin-profile-page-editor"></script>
+  <script src="/assets/js/admin-shell.js?v=20260924-admin-sidebar"></script>
+   <script src="/assets/js/admin-profil.js?v=20260924-about-cards"></script>
 </body>
 </html>

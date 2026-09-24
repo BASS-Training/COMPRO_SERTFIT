@@ -10,6 +10,15 @@
   const fields = {
     about_title: document.getElementById('aboutTitle'),
     about_description: document.getElementById('aboutDescription'),
+    about_profile_kicker: document.getElementById('aboutProfileKicker'),
+    about_profile_title: document.getElementById('aboutProfileTitle'),
+    about_profile_description: document.getElementById('aboutProfileDescription'),
+    about_support_kicker: document.getElementById('aboutSupportKicker'),
+    about_support_title: document.getElementById('aboutSupportTitle'),
+    about_support_description: document.getElementById('aboutSupportDescription'),
+    about_reach_kicker: document.getElementById('aboutReachKicker'),
+    about_reach_title: document.getElementById('aboutReachTitle'),
+    about_reach_description: document.getElementById('aboutReachDescription'),
     vision: document.getElementById('vision'),
     mission: document.getElementById('mission'),
     contact_email: document.getElementById('contactEmail'),
@@ -57,6 +66,12 @@
     const settings = getSettings();
     document.getElementById('previewAboutTitle').textContent = settings.about_title;
     document.getElementById('previewAboutDescription').textContent = settings.about_description;
+    document.getElementById('previewAboutProfileTitle').textContent = settings.about_profile_title;
+    document.getElementById('previewAboutProfileDescription').textContent = settings.about_profile_description;
+    document.getElementById('previewAboutSupportTitle').textContent = settings.about_support_title;
+    document.getElementById('previewAboutSupportDescription').textContent = settings.about_support_description;
+    document.getElementById('previewAboutReachTitle').textContent = settings.about_reach_title;
+    document.getElementById('previewAboutReachDescription').textContent = settings.about_reach_description;
     document.getElementById('previewVision').textContent = settings.vision;
 
     const mission = document.getElementById('previewMission');
@@ -120,7 +135,7 @@
     }
   });
 
-  logoutBtn.addEventListener('click', async () => {
+  logoutBtn?.addEventListener('click', async () => {
     const formData = new FormData();
     formData.append('action', 'logout');
     try {
@@ -143,8 +158,15 @@
   profileForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const settings = getSettings();
-    if (!settings.about_title || !settings.about_description || !settings.vision || !settings.mission) {
-      showMessage('Judul, deskripsi, visi, dan misi wajib diisi.', 'error');
+    const requiredFields = [
+      'about_title', 'about_description',
+      'about_profile_kicker', 'about_profile_title', 'about_profile_description',
+      'about_support_kicker', 'about_support_title', 'about_support_description',
+      'about_reach_kicker', 'about_reach_title', 'about_reach_description',
+      'vision', 'mission',
+    ];
+    if (requiredFields.some((key) => !settings[key])) {
+      showMessage('Field konten profil wajib diisi.', 'error');
       return;
     }
 

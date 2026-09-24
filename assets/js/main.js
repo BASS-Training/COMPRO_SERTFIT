@@ -97,4 +97,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialTab = hashTabMap[window.location.hash] || 'klaster';
     activateTab(initialTab);
   }
+
+  const contactItems = document.querySelectorAll('.contact-info-list li');
+  if (contactItems.length >= 4) {
+    fetch('/api/profile.php', { credentials: 'same-origin' })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error('Request gagal')))
+      .then((data) => {
+        const settings = data && data.settings;
+        if (!settings) return;
+        [settings.contact_phone, settings.contact_email, settings.contact_website, settings.contact_address]
+          .forEach((value, index) => {
+            if (!value) return;
+            const label = contactItems[index].querySelector('strong');
+            contactItems[index].textContent = '';
+            if (label) contactItems[index].appendChild(label);
+            contactItems[index].appendChild(document.createElement('br'));
+            contactItems[index].appendChild(document.createTextNode(value));
+          });
+      })
+      .catch(() => {});
+  }
+
+  const kegiatanGrids = document.querySelectorAll('.scheme-card-grid');
+  const kegiatanGrid = kegiatanGrids[0];
+  if (kegiatanGrid) {
+    const escapeHtml = (value) => String(value || '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[char]));
+    fetch('/api/kegiatan.php?limit=50', { credentials: 'same-origin' })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error('Request gagal')))
+      .then((data) => {
+        if (!Array.isArray(data.items) || !data.items.length) return;
+        kegiatanGrids.forEach((grid, index) => {
+          if (index > 0) grid.closest('.scheme-section')?.setAttribute('hidden', '');
+        });
+        const heading = kegiatanGrid.closest('.scheme-section')?.querySelector('.section-title');
+        const description = kegiatanGrid.closest('.scheme-section')?.querySelector('.section-desc');
+        if (heading) heading.textContent = 'Skema sertifikasi LSP FIT';
+        if (description) description.textContent = 'Pilihan skema sertifikasi yang dikelola dan diperbarui melalui dashboard admin.';
+        kegiatanGrid.innerHTML = data.items.map((item) => `
+          <article class="card scheme-card">
+            <span class="scheme-card-number">${escapeHtml(item.category)}</span>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.summary)}</p>
+            <a class="btn btn-secondary" href="/kegiatan-detail.html?id=${encodeURIComponent(item.slug)}">Lihat Detail</a>
+          </article>
+        `).join('');
+      })
+      .catch(() => {});
+  }
 });

@@ -135,7 +135,7 @@
     }
   });
 
-  logoutBtn.addEventListener('click', async () => {
+  logoutBtn?.addEventListener('click', async () => {
     const formData = new FormData();
     formData.append('action', 'logout');
     try {

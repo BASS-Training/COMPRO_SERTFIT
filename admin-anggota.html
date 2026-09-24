@@ -20,7 +20,6 @@
         <ul>
           <li><a href="/index.html">Beranda</a></li>
           <li><a href="/anggota.html">Struktur</a></li>
-          <li><a class="active" href="/admin-dashboard.html">Dashboard</a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
@@ -61,18 +60,8 @@
               <p class="admin-note">Foto opsional. Jika tidak upload foto, sistem membuat avatar otomatis dari nama anggota.</p>
             </div>
             <div class="admin-actions">
-              <a class="btn btn-outline" href="/admin-dashboard.html">Dashboard</a>
-              <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
             </div>
           </div>
-
-          <nav class="admin-module-tabs" aria-label="Menu pengelolaan admin">
-            <a href="/admin-homepage.html">Homepage</a>
-            <a href="/admin-kegiatan.html">Kegiatan</a>
-            <a class="active" href="/admin-anggota.html">Anggota</a>
-            <a href="/admin-mitra.html">Mitra</a>
-            <a href="/admin-profil.html">Profil Website</a>
-          </nav>
 
           <div class="admin-anggota-stack">
             <form class="card admin-card admin-form admin-form-grid" id="memberForm">
@@ -115,7 +104,7 @@
             <aside class="card admin-live-preview" aria-live="polite">
               <div class="admin-preview-head">
                 <span>Preview</span>
-                <strong>Kartu Anggota</strong>
+                <strong>Tampilan Anggota</strong>
               </div>
               <div class="admin-preview-placeholder" id="previewPlaceholder">
                 Isi nama anggota lalu klik Preview untuk melihat tampilan kartu.
@@ -150,6 +139,7 @@
   </main>
 
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/admin-shell.js?v=20260924-admin-sidebar"></script>
   <script src="/assets/js/admin-anggota.js?v=20260622-admin-members-grid-menu"></script>
 </body>
 </html>
