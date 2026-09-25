@@ -26,17 +26,17 @@ INSERT INTO partners (name, logo_url, website_url, sort_order) VALUES
   ('PUPR', '/assets/partners/pupr.jpeg', NULL, 2);
 
 INSERT INTO kegiatan (title, slug, category, summary, description, image_url, is_highlight, sort_order) VALUES
-  ('Pelaksanaan Program Pembelajaran', 'pelaksanaan-program-pembelajaran', 'Bidang Instruktur', 'Kompetensi untuk melaksanakan program pembelajaran secara terstruktur dan efektif.', 'Kompetensi untuk melaksanakan program pembelajaran secara terstruktur, efektif, dan sesuai kebutuhan peserta.', '/assets/lspfit/logofit-nobg.png', 1, 11),
-  ('Penyajian Materi Pembelajaran Daring', 'penyajian-materi-pembelajaran-daring', 'Bidang Instruktur', 'Kompetensi untuk menyajikan materi pembelajaran melalui metode dan platform daring.', 'Kompetensi untuk menyajikan materi pembelajaran melalui metode dan platform pembelajaran daring.', '/assets/lspfit/logofit-nobg.png', 1, 10),
-  ('Perencanaan Penyajian Materi Pelatihan', 'perencanaan-penyajian-materi-pelatihan', 'Bidang Instruktur', 'Kompetensi untuk merancang materi, metode, dan media pelatihan.', 'Kompetensi untuk merancang alur, materi, metode, dan media pelatihan yang relevan.', '/assets/lspfit/logofit-nobg.png', 1, 9),
-  ('Asisten hingga Instruktur Terampil', 'asisten-hingga-instruktur-terampil', 'Jenjang KKNI 3', 'Skema bagi asisten, mentor, pelatih, dan instruktur terampil.', 'Asisten Instruktur, Mentor, Pelatih, Pelatih di Tempat Kerja, Instruktur Junior, dan Instruktur Terampil.', '/assets/lspfit/logofit-nobg.png', 0, 8),
-  ('Instruktur dan Fasilitator', 'instruktur-dan-fasilitator', 'Jenjang KKNI 4', 'Skema bagi instruktur, fasilitator, dan pengajar vokasi.', 'Instruktur Pertama, Instruktur, Fasilitator, Pengajar Vokasi, dan Instruktur Penyelia.', '/assets/lspfit/logofit-nobg.png', 0, 7),
-  ('Instruktur Muda dan Senior', 'instruktur-muda-dan-senior', 'Jenjang KKNI 5', 'Skema untuk instruktur dengan pengalaman pengembangan pembelajaran.', 'Skema untuk instruktur dengan pengalaman dan tanggung jawab pengembangan pembelajaran yang lebih luas.', '/assets/lspfit/logofit-nobg.png', 0, 6),
-  ('Instruktur Madya dan Master', 'instruktur-madya-dan-master', 'Jenjang KKNI 6', 'Skema tingkat lanjut untuk pengembangan dan mutu pembelajaran.', 'Skema tingkat lanjut bagi instruktur yang memimpin, mengembangkan, dan memastikan mutu pembelajaran.', '/assets/lspfit/logofit-nobg.png', 0, 5),
-  ('Operasional Pelatihan', 'operasional-pelatihan', 'Bidang Tenaga Kepelatihan', 'Skema untuk operasional, administrasi, dan penyelenggaraan pelatihan.', 'Staf Administrasi, Pelaksanaan Kegiatan Pelatihan, Pemasar Program, Pengelola Rekrutmen dan Seleksi, Penyelenggara Pelatihan, Penyedia Bahan Pelatihan, dan Penata Diklat.', '/assets/lspfit/logofit-nobg.png', 0, 4),
-  ('Koordinator dan Pengembang', 'koordinator-dan-pengembang', 'Bidang Tenaga Kepelatihan', 'Skema untuk koordinasi dan pengembangan lembaga pelatihan.', 'Koordinator Pemagangan serta Pengembang Kurikulum dan Fasilitas Pelatihan.', '/assets/lspfit/logofit-nobg.png', 0, 3),
-  ('Manager', 'manager-pelatihan', 'Bidang Tenaga Kepelatihan', 'Kompetensi untuk mengelola fungsi manajerial pelatihan.', 'Kompetensi untuk mengelola fungsi manajerial dalam penyelenggaraan program pelatihan.', '/assets/lspfit/logofit-nobg.png', 0, 2),
-  ('Kepala Lembaga Pelatihan', 'kepala-lembaga-pelatihan', 'Bidang Tenaga Kepelatihan', 'Kompetensi tingkat lanjut untuk memimpin lembaga pelatihan.', 'Kompetensi tingkat lanjut untuk memimpin dan mengembangkan lembaga pelatihan.', '/assets/lspfit/logofit-nobg.png', 0, 1);
+  ('Pelaksanaan Program Pembelajaran', 'pelaksanaan-program-pembelajaran', 'Bidang Instruktur - Klaster', 'Kompetensi untuk melaksanakan program pembelajaran secara terstruktur dan efektif.', 'Kompetensi untuk melaksanakan program pembelajaran secara terstruktur, efektif, dan sesuai kebutuhan peserta.', '/assets/lspfit/logofit-nobg.png', 1, 11),
+  ('Penyajian Materi Pembelajaran Daring', 'penyajian-materi-pembelajaran-daring', 'Bidang Instruktur - Klaster', 'Kompetensi untuk menyajikan materi pembelajaran melalui metode dan platform daring.', 'Kompetensi untuk menyajikan materi pembelajaran melalui metode dan platform pembelajaran daring.', '/assets/lspfit/logofit-nobg.png', 1, 10),
+  ('Perencanaan Penyajian Materi Pelatihan', 'perencanaan-penyajian-materi-pelatihan', 'Bidang Instruktur - Klaster', 'Kompetensi untuk merancang materi, metode, dan media pelatihan.', 'Kompetensi untuk merancang alur, materi, metode, dan media pelatihan yang relevan.', '/assets/lspfit/logofit-nobg.png', 1, 9),
+  ('Asisten hingga Instruktur Terampil', 'asisten-hingga-instruktur-terampil', 'Bidang Instruktur - Jenjang 3', 'Skema bagi asisten, mentor, pelatih, dan instruktur terampil.', 'Asisten Instruktur, Mentor, Pelatih, Pelatih di Tempat Kerja, Instruktur Junior, dan Instruktur Terampil.', '/assets/lspfit/logofit-nobg.png', 0, 8),
+  ('Instruktur dan Fasilitator', 'instruktur-dan-fasilitator', 'Bidang Instruktur - Jenjang 4', 'Skema bagi instruktur, fasilitator, dan pengajar vokasi.', 'Instruktur Pertama, Instruktur, Fasilitator, Pengajar Vokasi, dan Instruktur Penyelia.', '/assets/lspfit/logofit-nobg.png', 0, 7),
+  ('Instruktur Muda dan Senior', 'instruktur-muda-dan-senior', 'Bidang Instruktur - Jenjang 5', 'Skema untuk instruktur dengan pengalaman pengembangan pembelajaran.', 'Instruktur Muda dan Instruktur Senior.', '/assets/lspfit/logofit-nobg.png', 0, 6),
+  ('Instruktur Madya dan Master', 'instruktur-madya-dan-master', 'Bidang Instruktur - Jenjang 6', 'Skema tingkat lanjut untuk pengembangan dan mutu pembelajaran.', 'Instruktur Madya dan Instruktur Master.', '/assets/lspfit/logofit-nobg.png', 0, 5),
+  ('Operasional Pelatihan', 'operasional-pelatihan', 'Bidang Tenaga Kepelatihan - Jenjang 3', 'Skema untuk operasional, administrasi, dan penyelenggaraan pelatihan.', 'Staf Administrasi, Pelaksanaan Kegiatan Pelatihan, Pelatihan Pemasar Program, Pengelola Rekrutmen dan Seleksi, Penyelenggara Pelatihan, Penyedia Bahan Pelatihan, dan Penata Diklat.', '/assets/lspfit/logofit-nobg.png', 0, 4),
+  ('Koordinator dan Pengembang', 'koordinator-dan-pengembang', 'Bidang Tenaga Kepelatihan - Jenjang 4', 'Skema untuk koordinasi dan pengembangan lembaga pelatihan.', 'Koordinator Pemagangan serta Pengembang Kurikulum dan Fasilitas Pelatihan.', '/assets/lspfit/logofit-nobg.png', 0, 3),
+  ('Manager', 'manager-pelatihan', 'Bidang Tenaga Kepelatihan - Jenjang 5', 'Kompetensi untuk mengelola fungsi manajerial pelatihan.', 'Manager.', '/assets/lspfit/logofit-nobg.png', 0, 2),
+  ('Kepala Lembaga Pelatihan', 'kepala-lembaga-pelatihan', 'Bidang Tenaga Kepelatihan - Jenjang 6', 'Kompetensi tingkat lanjut untuk memimpin lembaga pelatihan.', 'Kepala Lembaga Pelatihan.', '/assets/lspfit/logofit-nobg.png', 0, 1);
 
 INSERT INTO site_settings (setting_key, setting_value) VALUES
   ('about_title', 'Tentang LSP FIT'),
@@ -70,7 +70,7 @@ INSERT INTO site_settings (setting_key, setting_value) VALUES
   ('home_show_partners', '1'),
   ('home_show_cta', '1'),
   ('home_section_order', 'profile,members,partners,cta'),
-  ('content_seed_version', '20260924-lsp-fit-content'),
+  ('content_seed_version', '20260925-dynamic-about-media'),
   ('home_partners_layout', 'carousel'),
   ('home_members_layout', 'cards'),
   ('about_profile_kicker', 'Profil'),
@@ -81,5 +81,16 @@ INSERT INTO site_settings (setting_key, setting_value) VALUES
   ('about_support_description', 'LSP FIT didukung oleh APTISI wilayah 3 DKI Jakarta dan AFIN sebagai asosiasi pendukung dalam pengembangan kompetensi.'),
   ('about_reach_kicker', 'Jangkauan'),
   ('about_reach_title', 'Jangkauan Nasional'),
-  ('about_reach_description', 'LSP FIT membangun jaringan dengan instansi pemerintah, lembaga pelatihan, institusi pendidikan, dunia usaha, dan dunia industri di seluruh Indonesia.')
+  ('about_reach_description', 'LSP FIT membangun jaringan dengan instansi pemerintah, lembaga pelatihan, institusi pendidikan, dunia usaha, dan dunia industri di seluruh Indonesia.'),
+  ('about_leader_kicker', 'Sambutan Pimpinan'),
+  ('about_leader_title', 'Membangun kepercayaan melalui kompetensi'),
+  ('about_leader_quote', 'LSP FIT hadir untuk memastikan setiap proses sertifikasi berjalan objektif, profesional, dan memberi nilai nyata bagi peserta, dunia kerja, serta ekosistem pelatihan di Indonesia.'),
+  ('about_leader_name', 'Fitri Firmansyah'),
+  ('about_leader_role', 'Direktur LSP FIT'),
+  ('about_video_kicker', 'Kenali LSP FIT'),
+  ('about_video_title', 'Video perkenalan'),
+  ('about_video_description', 'Area ini disiapkan untuk menampilkan video profil dan layanan LSP FIT.'),
+  ('about_video_url', ''),
+  ('about_video_note_label', 'Siap diisi'),
+  ('about_video_note_description', 'Gunakan video yang menjelaskan profil lembaga, layanan sertifikasi, skema, dan alur pendaftaran.')
 ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value);

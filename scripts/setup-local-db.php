@@ -9,7 +9,7 @@ if (getenv('MYSQL_PASSWORD') !== false) {
 }
 
 $passwordCandidates = array_values(array_unique(array_merge($passwordCandidates, ['', 'root'])));
-$database = 'afin_compro';
+$database = 'lsp_compro';
 $connectedPassword = null;
 $pdo = null;
 
@@ -40,6 +40,8 @@ foreach ([
     __DIR__ . '/../database/migrations/20260924_rebrand_lsp_fit.sql',
     __DIR__ . '/../database/seed_lsp_fit_content.sql',
     __DIR__ . '/../database/migrations/20260924_lsp_fit_content.sql',
+    __DIR__ . '/../database/migrations/20260925_dynamic_about_media.sql',
+    __DIR__ . '/../database/migrations/20260925_restore_scheme_groups.sql',
 ] as $sqlFile) {
     $sql = file_get_contents($sqlFile);
     if ($sql === false) {
@@ -104,6 +106,17 @@ $defaultSettings = [
     'about_reach_kicker' => 'Jangkauan',
     'about_reach_title' => 'Jangkauan Nasional',
     'about_reach_description' => 'LSP FIT membangun jaringan dengan instansi pemerintah, lembaga pelatihan, institusi pendidikan, dunia usaha, dan dunia industri di seluruh Indonesia.',
+    'about_leader_kicker' => 'Sambutan Pimpinan',
+    'about_leader_title' => 'Membangun kepercayaan melalui kompetensi',
+    'about_leader_quote' => 'LSP FIT hadir untuk memastikan setiap proses sertifikasi berjalan objektif, profesional, dan memberi nilai nyata bagi peserta, dunia kerja, serta ekosistem pelatihan di Indonesia.',
+    'about_leader_name' => 'Fitri Firmansyah',
+    'about_leader_role' => 'Direktur LSP FIT',
+    'about_video_kicker' => 'Kenali LSP FIT',
+    'about_video_title' => 'Video perkenalan',
+    'about_video_description' => 'Area ini disiapkan untuk menampilkan video profil dan layanan LSP FIT.',
+    'about_video_url' => '',
+    'about_video_note_label' => 'Siap diisi',
+    'about_video_note_description' => 'Gunakan video yang menjelaskan profil lembaga, layanan sertifikasi, skema, dan alur pendaftaran.',
     'vision' => 'Menjadi lembaga sertifikasi profesi yang terpercaya, objektif, dan relevan dengan kebutuhan dunia kerja nasional.',
     'mission' => "Menyelenggarakan sertifikasi kompetensi sesuai standar BNSP dan SKKNI.\nMenjaga objektivitas, konsistensi, dan mutu proses asesmen.\nMemperluas akses sertifikasi melalui layanan online dan offline.\nMembangun kemitraan dengan pemerintah, industri, lembaga pelatihan, dan perguruan tinggi.\nMendukung pengakuan kompetensi fasilitator, instruktur, dan tenaga kepelatihan.",
     'contact_email' => 'info.lspfit@gmail.com',

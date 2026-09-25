@@ -1,7 +1,7 @@
 <?php
 return [
     'db_host' => '127.0.0.1',
-    'db_name' => 'afin_compro',
+    'db_name' => 'lsp_compro',
     'db_user' => 'afin_user',
     'db_pass' => 'change_this_password',
     'admin_username' => 'admin',

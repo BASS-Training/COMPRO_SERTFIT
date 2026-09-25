@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a[href="/admin"], a[href="/admin.html"]').forEach((link) => {
+    link.closest('li')?.remove();
+  });
+
   const aosTargets = document.querySelectorAll(
     '.section-head, .card, .timeline-step, .assessor-card, .table-row, .hero h1, .hero p, .hero-actions, .hero-media'
   );
@@ -118,31 +122,51 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(() => {});
   }
 
-  const kegiatanGrids = document.querySelectorAll('.scheme-card-grid');
-  const kegiatanGrid = kegiatanGrids[0];
-  if (kegiatanGrid) {
+  const schemeGrids = document.querySelectorAll('[data-scheme-group]');
+  if (schemeGrids.length) {
     const escapeHtml = (value) => String(value || '').replace(/[&<>"']/g, (char) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[char]));
+    const schemeGroup = (item) => {
+      const category = String(item.category || '').toLowerCase();
+      if (category.includes('tenaga kepelatihan')) return 'training-level';
+      if (category.includes('jenjang')) return 'instructor-level';
+      if (category.includes('instruktur') || category.includes('klaster')) return 'instructor-cluster';
+      return '';
+    };
+    const levelLabel = (item) => {
+      const match = String(item.category || '').match(/jenjang(?:\s+kkni)?\s*([3-6])/i);
+      if (match) return `Jenjang ${match[1]}`;
+      const fallbackLevels = {
+        'operasional-pelatihan': 'Jenjang 3',
+        'koordinator-dan-pengembang': 'Jenjang 4',
+        'manager-pelatihan': 'Jenjang 5',
+        'kepala-lembaga-pelatihan': 'Jenjang 6',
+      };
+      return fallbackLevels[item.slug] || item.category || 'Skema';
+    };
     fetch('/api/kegiatan.php?limit=50', { credentials: 'same-origin' })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error('Request gagal')))
       .then((data) => {
         if (!Array.isArray(data.items) || !data.items.length) return;
-        kegiatanGrids.forEach((grid, index) => {
-          if (index > 0) grid.closest('.scheme-section')?.setAttribute('hidden', '');
+        const groupedItems = data.items.reduce((groups, item) => {
+          const group = schemeGroup(item);
+          if (group) groups[group].push(item);
+          return groups;
+        }, { 'instructor-cluster': [], 'instructor-level': [], 'training-level': [] });
+
+        schemeGrids.forEach((grid) => {
+          const group = grid.dataset.schemeGroup;
+          const items = groupedItems[group] || [];
+          if (!items.length) return;
+          grid.innerHTML = items.map((item, index) => `
+            <article class="card scheme-card${group === 'instructor-cluster' ? '' : ' scheme-card-level'}">
+              <span class="${group === 'instructor-cluster' ? 'scheme-card-number' : 'scheme-card-level-label'}">${group === 'instructor-cluster' ? String(index + 1).padStart(2, '0') : escapeHtml(levelLabel(item))}</span>
+              <h3>${escapeHtml(item.title)}</h3>
+              <p>${escapeHtml(item.description || item.summary)}</p>
+            </article>
+          `).join('');
         });
-        const heading = kegiatanGrid.closest('.scheme-section')?.querySelector('.section-title');
-        const description = kegiatanGrid.closest('.scheme-section')?.querySelector('.section-desc');
-        if (heading) heading.textContent = 'Skema sertifikasi LSP FIT';
-        if (description) description.textContent = 'Pilihan skema sertifikasi yang dikelola dan diperbarui melalui dashboard admin.';
-        kegiatanGrid.innerHTML = data.items.map((item) => `
-          <article class="card scheme-card">
-            <span class="scheme-card-number">${escapeHtml(item.category)}</span>
-            <h3>${escapeHtml(item.title)}</h3>
-            <p>${escapeHtml(item.summary)}</p>
-            <a class="btn btn-secondary" href="/kegiatan-detail.html?id=${encodeURIComponent(item.slug)}">Lihat Detail</a>
-          </article>
-        `).join('');
       })
       .catch(() => {});
   }

@@ -2,6 +2,16 @@
 
 Backend ini disiapkan untuk live server PHP + MySQL.
 
+## Menjalankan website secara lokal
+
+Jalankan server PHP dengan router lokal agar URL tanpa `.html`, termasuk `/admin`, dapat digunakan:
+
+```bash
+php -S 127.0.0.1:8000 router.php
+```
+
+Halaman login admin tersedia di `http://127.0.0.1:8000/admin`.
+
 ## File yang perlu disiapkan di server
 
 1. Buat database MySQL, user, dan password dari panel hosting.
@@ -60,6 +70,14 @@ assets/uploads/kegiatan
 
 Folder ini harus writable oleh PHP di live server.
 
+Video perkenalan yang diupload dari admin disimpan ke:
+
+```text
+assets/uploads/profile
+```
+
+Folder tersebut juga harus writable oleh PHP. Format upload dibatasi ke MP4 dengan ukuran maksimal 50 MB. Pastikan `upload_max_filesize` minimal `50M` dan `post_max_size` lebih besar dari `50M` pada konfigurasi PHP server.
+
 ## Migration
 
 Kalau tabel `kegiatan` sudah pernah dibuat sebelum fitur highlight, jalankan:
@@ -81,3 +99,15 @@ database/migrations/20260924_rebrand_lsp_fit.sql
 ```
 
 Migration ini menghapus kegiatan dan anggota lama, lalu mengisi pengaturan profil LSP FIT.
+
+Untuk membuat Sambutan Pimpinan dan Video Perkenalan dapat dikelola melalui admin, jalankan:
+
+```sql
+database/migrations/20260925_dynamic_about_media.sql
+```
+
+Untuk mengembalikan pengelompokan Skema Sertifikasi sesuai `new-data.md`, jalankan:
+
+```sql
+database/migrations/20260925_restore_scheme_groups.sql
+```

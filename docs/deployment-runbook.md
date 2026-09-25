@@ -45,7 +45,7 @@ Isi `config/config.php` sesuai credential production:
 <?php
 return [
     'db_host' => 'localhost',
-    'db_name' => 'afin_compro',
+    'db_name' => 'lsp_compro',
     'db_user' => 'production_database_user',
     'db_pass' => 'production_database_password',
     'admin_username' => 'admin',
@@ -60,13 +60,13 @@ Jangan commit `config/config.php` ke repository.
 Jalankan dari environment lokal:
 
 ```bash
-mysqldump -u root -p --default-character-set=utf8mb4 --single-transaction --routines --triggers afin_compro > database/backup-local-afin.sql
+mysqldump -u root -p --default-character-set=utf8mb4 --single-transaction --routines --triggers lsp_compro > database/backup-local-afin.sql
 ```
 
 Jika MySQL lokal tidak memakai password:
 
 ```bash
-mysqldump -u root --default-character-set=utf8mb4 --single-transaction --routines --triggers afin_compro > database/backup-local-afin.sql
+mysqldump -u root --default-character-set=utf8mb4 --single-transaction --routines --triggers lsp_compro > database/backup-local-afin.sql
 ```
 
 File backup database tidak boleh dicommit ke repository.
@@ -78,7 +78,7 @@ Backup database production lebih dulu jika sudah berisi data.
 Import lewat terminal:
 
 ```bash
-mysql -u production_database_user -p afin_compro < database/backup-local-afin.sql
+mysql -u production_database_user -p lsp_compro < database/backup-local-afin.sql
 ```
 
 Import juga bisa dilakukan melalui phpMyAdmin dengan memilih database production, membuka tab `Import`, lalu mengunggah file SQL.

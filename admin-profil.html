@@ -64,7 +64,7 @@
             </div>
           </div>
 
-          <form class="admin-form admin-profile-page-editor" id="profileForm">
+          <form class="admin-form admin-profile-page-editor" id="profileForm" method="post" enctype="multipart/form-data">
             <div class="card admin-card admin-form-title">
               <span>Editor Profil</span>
               <h2>Konten Halaman Tentang Kami</h2>
@@ -126,6 +126,42 @@
               </div>
             </section>
 
+            <section class="admin-about-page-canvas section">
+              <div class="container simple-grid-2">
+                <article class="card admin-profile-section-card">
+                  <h3 class="section-title">Sambutan Pimpinan</h3>
+                  <label for="aboutLeaderKicker">Label Sambutan</label>
+                  <input id="aboutLeaderKicker" name="about_leader_kicker" type="text" required />
+                  <label for="aboutLeaderTitle">Judul Sambutan</label>
+                  <input id="aboutLeaderTitle" name="about_leader_title" type="text" required />
+                  <label for="aboutLeaderQuote">Isi Sambutan</label>
+                  <textarea id="aboutLeaderQuote" name="about_leader_quote" rows="7" required></textarea>
+                  <label for="aboutLeaderName">Nama Pimpinan</label>
+                  <input id="aboutLeaderName" name="about_leader_name" type="text" required />
+                  <label for="aboutLeaderRole">Jabatan Pimpinan</label>
+                  <input id="aboutLeaderRole" name="about_leader_role" type="text" required />
+                </article>
+                <article class="card admin-profile-section-card">
+                  <h3 class="section-title">Video Perkenalan</h3>
+                  <label for="aboutVideoKicker">Label Video</label>
+                  <input id="aboutVideoKicker" name="about_video_kicker" type="text" required />
+                  <label for="aboutVideoTitle">Judul Video</label>
+                  <input id="aboutVideoTitle" name="about_video_title" type="text" required />
+                  <label for="aboutVideoDescription">Deskripsi Video</label>
+                  <textarea id="aboutVideoDescription" name="about_video_description" rows="4" required></textarea>
+                  <label for="aboutVideoUrl">URL YouTube atau MP4</label>
+                  <input id="aboutVideoUrl" name="about_video_url" type="text" inputmode="url" placeholder="https://www.youtube.com/watch?v=..." />
+                  <label for="aboutVideoFile">Upload File MP4</label>
+                  <input id="aboutVideoFile" name="about_video_file" type="file" accept="video/mp4,.mp4" />
+                  <small>MP4 maksimal 50 MB. File upload akan menggantikan URL video. Kosongkan keduanya untuk menampilkan placeholder.</small>
+                  <label for="aboutVideoNoteLabel">Label Catatan</label>
+                  <input id="aboutVideoNoteLabel" name="about_video_note_label" type="text" required />
+                  <label for="aboutVideoNoteDescription">Isi Catatan</label>
+                  <textarea id="aboutVideoNoteDescription" name="about_video_note_description" rows="5" required></textarea>
+                </article>
+              </div>
+            </section>
+
             <section class="card admin-profile-contact-editor">
               <div>
                 <h3>Kontak Footer</h3>
@@ -170,6 +206,12 @@
                 <article><strong id="previewAboutSupportTitle"></strong><p id="previewAboutSupportDescription"></p></article>
                 <article><strong id="previewAboutReachTitle"></strong><p id="previewAboutReachDescription"></p></article>
               </div>
+              <h4 id="previewAboutLeaderTitle"></h4>
+              <p id="previewAboutLeaderQuote"></p>
+              <p id="previewAboutLeaderIdentity"></p>
+              <h4 id="previewAboutVideoTitle"></h4>
+              <p id="previewAboutVideoDescription"></p>
+              <p id="previewAboutVideoUrl"></p>
             </div>
           </form>
         </section>
@@ -179,6 +221,6 @@
 
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/admin-shell.js?v=20260924-admin-sidebar"></script>
-   <script src="/assets/js/admin-profil.js?v=20260924-about-cards"></script>
+   <script src="/assets/js/admin-profil.js?v=20260925-about-media"></script>
 </body>
 </html>

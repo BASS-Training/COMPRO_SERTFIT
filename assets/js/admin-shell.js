@@ -62,7 +62,7 @@
     try {
       await fetch('/api/auth.php', { method: 'POST', credentials: 'same-origin', body: formData });
     } finally {
-      window.location.replace('/admin.html');
+      window.location.replace('/admin');
     }
   });
 

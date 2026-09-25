@@ -82,7 +82,7 @@
     const imageInput = document.getElementById('activityImage');
     return {
       title: document.getElementById('activityTitle').value.trim(),
-      category: document.getElementById('activityCategory').value.trim() || 'Kegiatan',
+      category: document.getElementById('activityCategory').value.trim() || 'Bidang Instruktur - Klaster',
       summary: document.getElementById('activitySummary').value.trim(),
       description: document.getElementById('activityDescription').value.trim(),
       isHighlight: document.getElementById('activityHighlight').checked,

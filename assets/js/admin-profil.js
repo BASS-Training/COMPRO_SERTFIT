@@ -6,6 +6,7 @@
   const logoutBtn = document.getElementById('logoutBtn');
   const previewBtn = document.getElementById('previewProfileBtn');
   const message = document.getElementById('adminMessage');
+  const videoFileInput = document.getElementById('aboutVideoFile');
 
   const fields = {
     about_title: document.getElementById('aboutTitle'),
@@ -19,6 +20,17 @@
     about_reach_kicker: document.getElementById('aboutReachKicker'),
     about_reach_title: document.getElementById('aboutReachTitle'),
     about_reach_description: document.getElementById('aboutReachDescription'),
+    about_leader_kicker: document.getElementById('aboutLeaderKicker'),
+    about_leader_title: document.getElementById('aboutLeaderTitle'),
+    about_leader_quote: document.getElementById('aboutLeaderQuote'),
+    about_leader_name: document.getElementById('aboutLeaderName'),
+    about_leader_role: document.getElementById('aboutLeaderRole'),
+    about_video_kicker: document.getElementById('aboutVideoKicker'),
+    about_video_title: document.getElementById('aboutVideoTitle'),
+    about_video_description: document.getElementById('aboutVideoDescription'),
+    about_video_url: document.getElementById('aboutVideoUrl'),
+    about_video_note_label: document.getElementById('aboutVideoNoteLabel'),
+    about_video_note_description: document.getElementById('aboutVideoNoteDescription'),
     vision: document.getElementById('vision'),
     mission: document.getElementById('mission'),
     contact_email: document.getElementById('contactEmail'),
@@ -72,6 +84,15 @@
     document.getElementById('previewAboutSupportDescription').textContent = settings.about_support_description;
     document.getElementById('previewAboutReachTitle').textContent = settings.about_reach_title;
     document.getElementById('previewAboutReachDescription').textContent = settings.about_reach_description;
+    document.getElementById('previewAboutLeaderTitle').textContent = settings.about_leader_title;
+    document.getElementById('previewAboutLeaderQuote').textContent = settings.about_leader_quote;
+    document.getElementById('previewAboutLeaderIdentity').textContent = [
+      settings.about_leader_name,
+      settings.about_leader_role,
+    ].filter(Boolean).join(' - ');
+    document.getElementById('previewAboutVideoTitle').textContent = settings.about_video_title;
+    document.getElementById('previewAboutVideoDescription').textContent = settings.about_video_description;
+    document.getElementById('previewAboutVideoUrl').textContent = settings.about_video_url || 'Belum ada URL video';
     document.getElementById('previewVision').textContent = settings.vision;
 
     const mission = document.getElementById('previewMission');
@@ -163,6 +184,10 @@
       'about_profile_kicker', 'about_profile_title', 'about_profile_description',
       'about_support_kicker', 'about_support_title', 'about_support_description',
       'about_reach_kicker', 'about_reach_title', 'about_reach_description',
+      'about_leader_kicker', 'about_leader_title', 'about_leader_quote',
+      'about_leader_name', 'about_leader_role',
+      'about_video_kicker', 'about_video_title', 'about_video_description',
+      'about_video_note_label', 'about_video_note_description',
       'vision', 'mission',
     ];
     if (requiredFields.some((key) => !settings[key])) {
@@ -174,6 +199,14 @@
     Object.entries(settings).forEach(([key, value]) => {
       formData.append(key, value);
     });
+    const videoFile = videoFileInput.files[0];
+    if (videoFile) {
+      if (videoFile.size > 50 * 1024 * 1024) {
+        showMessage('Ukuran video maksimal 50 MB.', 'error');
+        return;
+      }
+      formData.append('about_video_file', videoFile);
+    }
 
     try {
       const data = await apiRequest('/api/profile.php', {
@@ -181,6 +214,7 @@
         body: formData,
       });
       fillForm(data.settings || settings);
+      videoFileInput.value = '';
       showMessage('Profil website berhasil disimpan.', 'success');
     } catch (error) {
       showMessage(error.message || 'Profil website gagal disimpan.', 'error');

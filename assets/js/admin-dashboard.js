@@ -18,12 +18,12 @@
     try {
       const data = await apiRequest('/api/auth.php');
       if (!data.authenticated) {
-        window.location.replace('/admin.html');
+        window.location.replace('/admin');
         return;
       }
       sessionText.textContent = `Login sebagai ${data.name || data.username || 'Super Admin'} (${data.role || 'super_admin'}).`;
     } catch (error) {
-      window.location.replace('/admin.html');
+      window.location.replace('/admin');
     }
   };
 
@@ -33,7 +33,7 @@
     try {
       await apiRequest('/api/auth.php', { method: 'POST', body: formData });
     } finally {
-      window.location.replace('/admin.html');
+      window.location.replace('/admin');
     }
   });
 

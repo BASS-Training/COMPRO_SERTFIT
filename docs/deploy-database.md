@@ -21,32 +21,32 @@ Buat database dan user MySQL dari panel hosting atau terminal server.
 Contoh nama database:
 
 ```text
-afin_compro
+lsp_compro
 ```
 
 Contoh data yang perlu disiapkan:
 
 ```text
 DB_HOST=localhost
-DB_NAME=afin_compro
+DB_NAME=lsp_compro
 DB_USER=nama_user_database
 DB_PASS=password_database
 ```
 
 ## 3. Export Database Lokal
 
-Jalankan dari komputer lokal yang memiliki database `afin_compro`.
+Jalankan dari komputer lokal yang memiliki database `lsp_compro`.
 
 Jika memakai PowerShell:
 
 ```powershell
-mysqldump -u root -p --default-character-set=utf8mb4 --single-transaction --routines --triggers afin_compro > database\backup-local-afin.sql
+mysqldump -u root -p --default-character-set=utf8mb4 --single-transaction --routines --triggers lsp_compro > database\backup-local-afin.sql
 ```
 
 Jika user MySQL lokal tidak memakai password:
 
 ```powershell
-mysqldump -u root --default-character-set=utf8mb4 --single-transaction --routines --triggers afin_compro > database\backup-local-afin.sql
+mysqldump -u root --default-character-set=utf8mb4 --single-transaction --routines --triggers lsp_compro > database\backup-local-afin.sql
 ```
 
 File hasil export:
@@ -93,7 +93,7 @@ mysql -u nama_user_database -p nama_database < database/backup-local-afin.sql
 Contoh:
 
 ```bash
-mysql -u afin_user -p afin_compro < database/backup-local-afin.sql
+mysql -u afin_user -p lsp_compro < database/backup-local-afin.sql
 ```
 
 ### Opsi B: Import Lewat phpMyAdmin
@@ -119,7 +119,7 @@ Lalu edit `config/config.php` di server:
 <?php
 return [
     'db_host' => 'localhost',
-    'db_name' => 'afin_compro',
+    'db_name' => 'lsp_compro',
     'db_user' => 'nama_user_database',
     'db_pass' => 'password_database',
     'admin_username' => 'admin',
@@ -213,6 +213,8 @@ Jika server sudah memiliki database dan hanya perlu update struktur tabel, jalan
 SOURCE database/migrations/20260619_add_kegiatan_highlight.sql;
 SOURCE database/migrations/20260622_create_admin_users.sql;
 SOURCE database/migrations/20260622_create_members_and_settings.sql;
+SOURCE database/migrations/20260925_dynamic_about_media.sql;
+SOURCE database/migrations/20260925_restore_scheme_groups.sql;
 ```
 
 Di phpMyAdmin, buka file migration tersebut lalu jalankan isi SQL-nya satu per satu.

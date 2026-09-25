@@ -10,3 +10,6 @@ assets/uploads/anggota/*
 assets/uploads/mitra/*
 !assets/uploads/mitra/.gitkeep
 !assets/uploads/mitra/.htaccess
+assets/uploads/profile/*
+!assets/uploads/profile/.gitkeep
+!assets/uploads/profile/.htaccess
