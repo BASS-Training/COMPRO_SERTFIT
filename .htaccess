@@ -1,6 +1,37 @@
 DirectoryIndex index.html
 
+Options -Indexes
+
+# ---------------------------------------------------------------------------
+# Private paths and files: never serve them over HTTP.
+# The project document root is the repository root, so folders such as
+# scripts/, database/ and docs/ are reachable unless they are blocked here.
+# ---------------------------------------------------------------------------
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(?i:sql|md|env|log|ini|bak|old|dist|lock|yml|yaml|sh|sql\.gz)$">
+    Require all denied
+  </FilesMatch>
+  <FilesMatch "^\.">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+  <FilesMatch "\.(?i:sql|md|env|log|ini|bak|old|dist|lock|yml|yaml|sh)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+  <FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
+
 RewriteEngine On
+
+# Private directories must be rejected before any internal rewrite runs.
+RewriteRule ^(?:scripts|database|docs|config|node_modules)(?:/|$) - [R=404,L]
+RewriteRule ^\.git(?:/|$) - [R=404,L]
 
 # Canonicalize direct .html requests to extensionless URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]

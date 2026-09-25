@@ -28,7 +28,7 @@ if ($action === 'logout') {
 }
 
 try {
-    $config = app_config();
+    app_config();
 } catch (Throwable $error) {
     json_response(['ok' => false, 'message' => 'Backend belum dikonfigurasi.'], 503);
 }
@@ -62,25 +62,8 @@ try {
         ]);
     }
 } catch (Throwable $error) {
-    // Keep config-based login as fallback for servers that have not migrated admin_users yet.
-}
-
-if (
-    hash_equals((string) ($config['admin_username'] ?? ''), $username)
-    && password_verify($password, (string) ($config['admin_password_hash'] ?? ''))
-) {
-    session_regenerate_id(true);
-    $_SESSION['admin_logged_in'] = true;
-    $_SESSION['admin_username'] = $username;
-    $_SESSION['admin_name'] = 'Super Admin';
-    $_SESSION['admin_role'] = 'super_admin';
-    json_response([
-        'ok' => true,
-        'authenticated' => true,
-        'role' => 'super_admin',
-        'username' => $username,
-        'name' => 'Super Admin',
-    ]);
+    // There is no config fallback: credentials come from admin_users only.
+    json_response(['ok' => false, 'message' => 'Login tidak tersedia. Hubungi administrator.'], 503);
 }
 
 json_response(['ok' => false, 'message' => 'Username atau password salah.'], 401);

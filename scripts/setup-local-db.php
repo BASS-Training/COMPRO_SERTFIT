@@ -1,6 +1,11 @@
 <?php
 declare(strict_types=1);
 
+if (PHP_SAPI !== 'cli') {
+    http_response_code(404);
+    exit(1);
+}
+
 $rootUser = getenv('MYSQL_USER') ?: 'root';
 $passwordCandidates = [];
 
@@ -142,8 +147,6 @@ return [
     'db_name' => '{$database}',
     'db_user' => '{$rootUser}',
     'db_pass' => '{$connectedPassword}',
-    'admin_username' => 'admin',
-    'admin_password_hash' => '{$hash}',
 ];
 PHP;
 
