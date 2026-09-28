@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelola Instruktur &amp; Asesor | LSP FIT</title>
+  <link rel="icon" type="image/png" href="/assets/lspfit/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/redesign.css?v=20260928-instructor-crud" />
+</head>
+<body>
+  <header class="site-header scrolled admin-site-header" id="siteHeader"><div class="header-inner"><a class="logo-link" href="/index.html"><img src="/assets/lspfit/logofit-nobg.png" alt="LSP FIT" /></a><nav class="main-nav" id="mainNav"><ul><li><a href="/index.html">Beranda</a></li><li><a href="/instruktur.html">Instruktur &amp; Asesor</a></li></ul></nav><button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
+
+  <main class="page-bg admin-page">
+    <section class="page-hero admin-hero"><div class="container"><p class="breadcrumb">Admin / Instruktur &amp; Asesor</p><h1>Kelola Instruktur &amp; Asesor</h1><p>Tambah, edit, upload foto, dan atur data yang tampil pada website.</p></div></section>
+    <section class="section"><div class="container admin-layout">
+      <article class="card admin-card" id="loginPanel"><h2>Login</h2><p class="admin-note">Masuk menggunakan akun admin untuk mengelola instruktur dan asesor.</p><form class="admin-form" id="loginForm"><label for="adminUsername">Username</label><input id="adminUsername" type="text" autocomplete="username" required /><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" required /><button class="btn btn-primary" type="submit">Masuk</button></form></article>
+
+      <section class="admin-workspace" id="adminPanel" hidden>
+        <div class="card admin-card admin-workspace-head"><div><h2>Data Instruktur &amp; Asesor</h2><p class="admin-note">Foto JPG atau PNG maksimal 4 MB. Data aktif tampil di Home dan halaman Instruktur.</p></div></div>
+        <div class="admin-anggota-stack">
+          <form class="card admin-card admin-form admin-form-grid" id="instructorForm">
+            <div class="admin-form-title"><span>Form Instruktur</span><h2>Tambah atau Edit Instruktur</h2><p>Isi nama, urutan tampil, dan pilih foto dari perangkat.</p></div>
+            <input id="instructorId" type="hidden" />
+            <fieldset class="admin-fieldset"><legend>Informasi Instruktur</legend><div class="admin-field"><label for="instructorName">Nama</label><input id="instructorName" type="text" required /></div><div class="admin-field"><label for="instructorSort">Urutan Tampil</label><input id="instructorSort" type="number" value="0" /><small>Angka lebih besar tampil lebih awal.</small></div><div class="admin-field"><label for="instructorPhoto">Foto</label><input id="instructorPhoto" type="file" accept="image/jpeg,image/png,.jpg,.jpeg,.png" /><small>JPG atau PNG maksimal 4 MB. Foto wajib untuk data baru.</small></div></fieldset>
+            <div class="admin-actions"><button class="btn btn-outline" type="button" id="previewInstructorBtn">Preview</button><button class="btn btn-primary" type="submit">Simpan Instruktur</button><button class="btn btn-outline" type="button" id="cancelInstructorEditBtn" hidden>Batal Edit</button></div><p class="admin-message" id="adminMessage" aria-live="polite"></p>
+          </form>
+
+          <aside class="card admin-live-preview" aria-live="polite"><div class="admin-preview-head"><span>Preview</span><strong>Tampilan Kartu</strong></div><div class="admin-preview-placeholder" id="previewPlaceholder">Isi nama dan pilih foto lalu klik Preview.</div><article class="card instructor-card admin-instructor-preview" id="instructorPreview" hidden><img id="previewInstructorPhoto" src="" alt="" /><h3 id="previewInstructorName"></h3></article></aside>
+
+          <section class="card admin-list-panel admin-anggota-list-panel"><div class="admin-list-head"><div><span>Database</span><h2>Instruktur &amp; Asesor</h2></div><strong id="instructorListCount">0 data</strong></div><div class="admin-list-search"><label for="instructorSearch">Cari nama</label><input id="instructorSearch" type="search" placeholder="Cari instruktur atau asesor" autocomplete="off" /></div><div class="admin-list-scroll" id="adminInstructorList"></div></section>
+        </div>
+      </section>
+    </div></section>
+  </main>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/admin-shell.js?v=20260928-instructor-crud"></script>
+  <script src="/assets/js/admin-instruktur.js?v=20260928-instructor-crud"></script>
+</body>
+</html>

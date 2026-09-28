@@ -120,6 +120,17 @@ function anggota_payload(array $row): array
     ];
 }
 
+function instruktur_payload(array $row): array
+{
+    return [
+        'id' => (string) $row['id'],
+        'name' => $row['name'],
+        'photo' => $row['photo_url'],
+        'isActive' => (bool) ($row['is_active'] ?? true),
+        'sortOrder' => (int) ($row['sort_order'] ?? 0),
+    ];
+}
+
 function partner_payload(array $row): array
 {
     return [

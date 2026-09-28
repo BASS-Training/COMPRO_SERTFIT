@@ -20,12 +20,14 @@ $defaults = [
     'about_leader_quote' => 'LSP FIT hadir untuk memastikan setiap proses sertifikasi berjalan objektif, profesional, dan memberi nilai nyata bagi peserta, dunia kerja, serta ekosistem pelatihan di Indonesia.',
     'about_leader_name' => 'Fitri Firmansyah',
     'about_leader_role' => 'Direktur LSP FIT',
+    'about_leader_image' => '/assets/asesor/Fitri%20firmansyah.png',
     'about_video_kicker' => 'Kenali LSP FIT',
     'about_video_title' => 'Video perkenalan',
     'about_video_description' => 'Area ini disiapkan untuk menampilkan video profil dan layanan LSP FIT.',
     'about_video_url' => '',
     'about_video_note_label' => 'Siap diisi',
     'about_video_note_description' => 'Gunakan video yang menjelaskan profil lembaga, layanan sertifikasi, skema, dan alur pendaftaran.',
+    'about_show_video' => '1',
     'vision' => 'Menjadi lembaga sertifikasi profesi yang terpercaya, objektif, dan relevan dengan kebutuhan dunia kerja nasional.',
     'mission' => "Menyelenggarakan sertifikasi kompetensi sesuai standar BNSP dan SKKNI.\nMenjaga objektivitas, konsistensi, dan mutu proses asesmen.\nMemperluas akses sertifikasi melalui layanan online dan offline.\nMembangun kemitraan dengan pemerintah, industri, lembaga pelatihan, dan perguruan tinggi.\nMendukung pengakuan kompetensi fasilitator, instruktur, dan tenaga kepelatihan.",
     'contact_email' => 'info.lspfit@gmail.com',
@@ -84,6 +86,20 @@ function valid_profile_video_url(string $url): bool
     return preg_match('/\.mp4$/i', $path) === 1;
 }
 
+function valid_profile_image_url(string $url): bool
+{
+    if (preg_match('~^/assets/(?:asesor|uploads/profile)/[^?]+\.(?:jpe?g|png|webp)$~i', $url) === 1) {
+        return true;
+    }
+    if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return false;
+    }
+    $parts = parse_url($url);
+    return in_array(strtolower((string) ($parts['scheme'] ?? '')), ['http', 'https'], true)
+        && !isset($parts['user'])
+        && !isset($parts['pass']);
+}
+
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
 if ($method === 'GET') {
@@ -99,20 +115,47 @@ if ($method === 'POST') {
     require_admin();
     $pdo = db();
     $maxVideoSize = 50 * 1024 * 1024;
-    if ((int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > $maxVideoSize + 1024 * 1024) {
-        json_response(['ok' => false, 'message' => 'Ukuran video maksimal 50 MB.'], 413);
+    $maxImageSize = 4 * 1024 * 1024;
+    if ((int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > $maxVideoSize + $maxImageSize + 1024 * 1024) {
+        json_response(['ok' => false, 'message' => 'Ukuran upload melebihi batas yang diizinkan.'], 413);
     }
 
     $input = [];
     foreach ($defaults as $key => $default) {
-        $input[$key] = trim((string) ($_POST[$key] ?? $default));
+        $input[$key] = $key === 'about_show_video'
+            ? (isset($_POST[$key]) && $_POST[$key] === '1' ? '1' : '0')
+            : trim((string) ($_POST[$key] ?? $default));
     }
     $previousVideoStatement = $pdo->prepare('SELECT setting_value FROM site_settings WHERE setting_key = :setting_key LIMIT 1');
     $previousVideoStatement->execute(['setting_key' => 'about_video_url']);
     $previousVideoUrl = (string) ($previousVideoStatement->fetchColumn() ?: '');
+    $previousVideoStatement->execute(['setting_key' => 'about_leader_image']);
+    $previousLeaderImageUrl = (string) ($previousVideoStatement->fetchColumn() ?: '');
     $videoFile = $_FILES['about_video_file'] ?? null;
     $hasVideoFile = $videoFile && ($videoFile['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE;
     $uploadedVideoPath = '';
+    $leaderImageFile = $_FILES['about_leader_image_file'] ?? null;
+    $hasLeaderImageFile = $leaderImageFile && ($leaderImageFile['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE;
+    $uploadedLeaderImagePath = '';
+    $leaderImageExtension = '';
+
+    if ($hasLeaderImageFile) {
+        if (($leaderImageFile['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+            json_response(['ok' => false, 'message' => 'Upload foto pimpinan gagal.'], 422);
+        }
+        if (($leaderImageFile['size'] ?? 0) > $maxImageSize) {
+            json_response(['ok' => false, 'message' => 'Ukuran foto pimpinan maksimal 4 MB.'], 422);
+        }
+        $imageInfo = @getimagesize((string) $leaderImageFile['tmp_name']);
+        $imageMime = $imageInfo['mime'] ?? '';
+        $imageExtensions = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+        if (!isset($imageExtensions[$imageMime])) {
+            json_response(['ok' => false, 'message' => 'Format foto pimpinan harus JPG, PNG, atau WEBP.'], 422);
+        }
+        $leaderImageExtension = $imageExtensions[$imageMime];
+    } elseif (!valid_profile_image_url($input['about_leader_image'])) {
+        json_response(['ok' => false, 'message' => 'URL foto pimpinan tidak valid.'], 422);
+    }
 
     if ($hasVideoFile) {
         if (($videoFile['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
@@ -154,6 +197,25 @@ if ($method === 'POST') {
         json_response(['ok' => false, 'message' => 'URL video harus berupa link YouTube atau file MP4 melalui HTTP/HTTPS.'], 422);
     }
 
+    if ($hasLeaderImageFile) {
+        $uploadDir = __DIR__ . '/../assets/uploads/profile';
+        if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true)) {
+            if ($uploadedVideoPath !== '') {
+                @unlink(__DIR__ . '/..' . $uploadedVideoPath);
+            }
+            json_response(['ok' => false, 'message' => 'Folder upload profil tidak bisa dibuat.'], 500);
+        }
+        $imageFileName = bin2hex(random_bytes(12)) . '.' . $leaderImageExtension;
+        if (!move_uploaded_file((string) $leaderImageFile['tmp_name'], $uploadDir . '/' . $imageFileName)) {
+            if ($uploadedVideoPath !== '') {
+                @unlink(__DIR__ . '/..' . $uploadedVideoPath);
+            }
+            json_response(['ok' => false, 'message' => 'Foto pimpinan gagal disimpan.'], 500);
+        }
+        $uploadedLeaderImagePath = '/assets/uploads/profile/' . $imageFileName;
+        $input['about_leader_image'] = $uploadedLeaderImagePath;
+    }
+
     $statement = $pdo->prepare('INSERT INTO site_settings (setting_key, setting_value) VALUES (:setting_key, :setting_value) ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value)');
     try {
         foreach ($input as $key => $value) {
@@ -166,6 +228,9 @@ if ($method === 'POST') {
         if ($uploadedVideoPath !== '') {
             @unlink(__DIR__ . '/..' . $uploadedVideoPath);
         }
+        if ($uploadedLeaderImagePath !== '') {
+            @unlink(__DIR__ . '/..' . $uploadedLeaderImagePath);
+        }
         json_response(['ok' => false, 'message' => 'Profil website gagal disimpan.'], 500);
     }
 
@@ -173,6 +238,12 @@ if ($method === 'POST') {
         $previousVideoPath = __DIR__ . '/..' . $previousVideoUrl;
         if (is_file($previousVideoPath)) {
             @unlink($previousVideoPath);
+        }
+    }
+    if ($previousLeaderImageUrl !== $input['about_leader_image'] && strpos($previousLeaderImageUrl, '/assets/uploads/profile/') === 0) {
+        $previousLeaderImagePath = __DIR__ . '/..' . $previousLeaderImageUrl;
+        if (is_file($previousLeaderImagePath)) {
+            @unlink($previousLeaderImagePath);
         }
     }
     json_response(['ok' => true, 'settings' => profile_items($pdo, $defaults)]);

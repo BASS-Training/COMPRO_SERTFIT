@@ -140,9 +140,15 @@
                   <input id="aboutLeaderName" name="about_leader_name" type="text" required />
                   <label for="aboutLeaderRole">Jabatan Pimpinan</label>
                   <input id="aboutLeaderRole" name="about_leader_role" type="text" required />
+                  <label for="aboutLeaderImage">URL Foto Pimpinan</label>
+                  <input id="aboutLeaderImage" name="about_leader_image" type="text" inputmode="url" />
+                  <label for="aboutLeaderImageFile">Upload Foto Pimpinan</label>
+                  <input id="aboutLeaderImageFile" name="about_leader_image_file" type="file" accept="image/jpeg,image/png,image/webp" />
+                  <small>JPG, PNG, atau WEBP maksimal 4 MB. File upload akan menggantikan URL foto.</small>
                 </article>
                 <article class="card admin-profile-section-card">
                   <h3 class="section-title">Video Perkenalan</h3>
+                  <label class="admin-check" for="aboutShowVideo"><input id="aboutShowVideo" name="about_show_video" type="checkbox" /><span>Tampilkan Video Perkenalan<small>Matikan untuk menyembunyikan seluruh bagian video dari halaman Tentang LSP FIT.</small></span></label>
                   <label for="aboutVideoKicker">Label Video</label>
                   <input id="aboutVideoKicker" name="about_video_kicker" type="text" required />
                   <label for="aboutVideoTitle">Judul Video</label>
@@ -206,12 +212,15 @@
                 <article><strong id="previewAboutSupportTitle"></strong><p id="previewAboutSupportDescription"></p></article>
                 <article><strong id="previewAboutReachTitle"></strong><p id="previewAboutReachDescription"></p></article>
               </div>
-              <h4 id="previewAboutLeaderTitle"></h4>
-              <p id="previewAboutLeaderQuote"></p>
+               <h4 id="previewAboutLeaderTitle"></h4>
+               <img id="previewAboutLeaderImage" alt="Preview foto pimpinan" />
+               <p id="previewAboutLeaderQuote"></p>
               <p id="previewAboutLeaderIdentity"></p>
-              <h4 id="previewAboutVideoTitle"></h4>
-              <p id="previewAboutVideoDescription"></p>
-              <p id="previewAboutVideoUrl"></p>
+               <div id="previewAboutVideo">
+                 <h4 id="previewAboutVideoTitle"></h4>
+                 <p id="previewAboutVideoDescription"></p>
+                 <p id="previewAboutVideoUrl"></p>
+               </div>
             </div>
           </form>
         </section>
@@ -220,7 +229,7 @@
   </main>
 
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/admin-shell.js?v=20260924-admin-sidebar"></script>
-   <script src="/assets/js/admin-profil.js?v=20260925-about-media"></script>
+  <script src="/assets/js/admin-shell.js?v=20260928-instructor-crud"></script>
+   <script src="/assets/js/admin-profil.js?v=20260928-leader-photo"></script>
 </body>
 </html>

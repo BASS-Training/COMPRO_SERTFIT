@@ -124,6 +124,8 @@ $defaultSettings = [
     'about_video_note_description' => 'Gunakan video yang menjelaskan profil lembaga, layanan sertifikasi, skema, dan alur pendaftaran.',
     'vision' => 'Menjadi lembaga sertifikasi profesi yang terpercaya, objektif, dan relevan dengan kebutuhan dunia kerja nasional.',
     'mission' => "Menyelenggarakan sertifikasi kompetensi sesuai standar BNSP dan SKKNI.\nMenjaga objektivitas, konsistensi, dan mutu proses asesmen.\nMemperluas akses sertifikasi melalui layanan online dan offline.\nMembangun kemitraan dengan pemerintah, industri, lembaga pelatihan, dan perguruan tinggi.\nMendukung pengakuan kompetensi fasilitator, instruktur, dan tenaga kepelatihan.",
+    'about_show_video' => '1',
+    'about_leader_image' => '/assets/asesor/Fitri%20firmansyah.png',
     'contact_email' => 'info.lspfit@gmail.com',
     'contact_website' => 'www.sertifikasifit.com',
     'contact_phone' => '0811-1210-1007',
@@ -156,6 +158,7 @@ $count = (int) $pdo->query('SELECT COUNT(*) FROM kegiatan')->fetchColumn();
 $highlights = (int) $pdo->query('SELECT COUNT(*) FROM kegiatan WHERE is_highlight = 1')->fetchColumn();
 $admins = (int) $pdo->query("SELECT COUNT(*) FROM admin_users WHERE role = 'super_admin' AND is_active = 1")->fetchColumn();
 $members = (int) $pdo->query('SELECT COUNT(*) FROM anggota')->fetchColumn();
+$instructors = (int) $pdo->query('SELECT COUNT(*) FROM instruktur')->fetchColumn();
 $settings = (int) $pdo->query('SELECT COUNT(*) FROM site_settings')->fetchColumn();
 
 echo "OK\n";
@@ -163,6 +166,7 @@ echo "Database: {$database}\n";
 echo "Kegiatan: {$count}\n";
 echo "Highlight: {$highlights}\n";
 echo "Anggota: {$members}\n";
+echo "Instruktur/Asesor: {$instructors}\n";
 echo "Pengaturan Profil: {$settings}\n";
 echo "Super Admin: {$admins}\n";
 echo "Login: admin / admin123\n";

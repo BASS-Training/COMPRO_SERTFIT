@@ -22,6 +22,13 @@
     });
   };
 
+  const setAttr = (selector, attribute, value) => {
+    if (!value) return;
+    document.querySelectorAll(selector).forEach((element) => {
+      element.setAttribute(attribute, value);
+    });
+  };
+
   const youtubeEmbedUrl = (value) => {
     try {
       const url = new URL(value);
@@ -109,11 +116,15 @@
       setText('[data-profile-field="about_leader_quote"]', settings.about_leader_quote);
       setText('[data-profile-field="about_leader_name"]', settings.about_leader_name);
       setText('[data-profile-field="about_leader_role"]', settings.about_leader_role);
+      setAttr('[data-profile-field="about_leader_image"]', 'src', settings.about_leader_image);
+      setAttr('[data-profile-field="about_leader_image"]', 'alt', `${settings.about_leader_name || 'Pimpinan'}, ${settings.about_leader_role || 'LSP FIT'}`);
       setText('[data-profile-field="about_video_kicker"]', settings.about_video_kicker);
       setText('[data-profile-field="about_video_title"]', settings.about_video_title);
       setText('[data-profile-field="about_video_description"]', settings.about_video_description);
       setText('[data-profile-field="about_video_note_label"]', settings.about_video_note_label);
       setText('[data-profile-field="about_video_note_description"]', settings.about_video_note_description);
+      const videoSection = document.querySelector('[data-profile-section="video"]');
+      if (videoSection) videoSection.hidden = settings.about_show_video === '0';
       setVideo(settings);
       setText('[data-profile-field="vision"]', settings.vision);
       setMission(settings.mission);

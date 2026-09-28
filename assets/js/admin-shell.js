@@ -5,8 +5,9 @@
     { href: '/admin-homepage.html', label: 'Homepage', icon: '02' },
     { href: '/admin-kegiatan.html', label: 'Skema Sertifikasi', icon: '03' },
     { href: '/admin-anggota.html', label: 'Struktur Tim', icon: '04' },
-    { href: '/admin-profil.html', label: 'Profil Website', icon: '05' },
-    { href: '/admin-mitra.html', label: 'Mitra', icon: '06' },
+    { href: '/admin-instruktur.html', label: 'Instruktur & Asesor', icon: '05' },
+    { href: '/admin-profil.html', label: 'Profil Website', icon: '06' },
+    { href: '/admin-mitra.html', label: 'Mitra', icon: '07' },
   ];
 
   document.body.classList.add('admin-shell');

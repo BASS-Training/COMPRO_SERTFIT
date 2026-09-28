@@ -68,7 +68,7 @@
             <div class="card admin-card admin-form-title">
               <span>Editor Homepage</span>
               <h2>Konten Utama Beranda</h2>
-              <p>Edit langsung pada tampilan yang menyerupai homepage. Daftar kegiatan dan anggota tetap mengambil data dari modul masing-masing.</p>
+              <p>Edit langsung pada tampilan yang menyerupai homepage. Daftar instruktur dan asesor dapat dikelola pada section khusus di bawah.</p>
             </div>
 
             <section class="card admin-profile-contact-editor">
@@ -87,8 +87,8 @@
                   <label class="admin-check" for="homeShowProfile"><input id="homeShowProfile" name="home_show_profile" type="checkbox" /><span>Profil Singkat<small>Tampilkan kartu profil LSP FIT.</small></span></label>
                 </article>
                 <article class="admin-section-sort-item" draggable="true" data-section-key="members">
-                  <button class="admin-drag-handle" type="button" aria-label="Drag section Anggota">::</button>
-                  <label class="admin-check" for="homeShowMembers"><input id="homeShowMembers" name="home_show_members" type="checkbox" /><span>Anggota<small>Tampilkan ringkasan anggota.</small></span></label>
+                  <button class="admin-drag-handle" type="button" aria-label="Drag section Instruktur dan Asesor">::</button>
+                  <label class="admin-check" for="homeShowInstructors"><input id="homeShowInstructors" name="home_show_instructors" type="checkbox" /><span>Instruktur &amp; Asesor<small>Tampilkan kartu instruktur dan asesor.</small></span></label>
                 </article>
                 <article class="admin-section-sort-item" draggable="true" data-section-key="partners">
                   <button class="admin-drag-handle" type="button" aria-label="Drag section Mitra">::</button>
@@ -164,13 +164,11 @@
                     <label for="homeProfileTitle">Judul Profil</label>
                     <input id="homeProfileTitle" name="home_profile_title" class="admin-inline-section-title" type="text" />
                   </div>
-                  <div class="pillar-grid">
-                    <article class="card pillar-card admin-inline-card">
-                      <label for="homeProfileCardTitle">Judul Kartu Profil</label>
-                      <input id="homeProfileCardTitle" name="home_profile_card_title" class="admin-inline-card-title" type="text" />
-                      <label for="homeProfileCardDescription">Isi Kartu Profil</label>
-                      <textarea id="homeProfileCardDescription" name="home_profile_card_description" rows="5"></textarea>
-                    </article>
+                  <p class="admin-note">Kartu Profil, Dukungan, dan Jangkauan mengikuti konten dari menu Profil.</p>
+                  <div class="simple-grid-3">
+                    <article class="card admin-homepage-placeholder-card">Profil</article>
+                    <article class="card admin-homepage-placeholder-card">Dukungan</article>
+                    <article class="card admin-homepage-placeholder-card">Jangkauan</article>
                   </div>
                 </div>
               </section>
@@ -178,17 +176,13 @@
               <section class="section">
                 <div class="container">
                   <div class="section-head admin-inline-section-head">
-                    <label for="homeMembersKicker">Kicker Anggota</label>
-                    <input id="homeMembersKicker" name="home_members_kicker" class="admin-inline-kicker" type="text" />
-                    <label for="homeMembersTitle">Judul Anggota</label>
-                    <input id="homeMembersTitle" name="home_members_title" class="admin-inline-section-title" type="text" />
+                    <label for="homeInstructorsKicker">Kicker Instruktur / Asesor</label>
+                    <input id="homeInstructorsKicker" name="home_instructors_kicker" class="admin-inline-kicker" type="text" />
+                    <label for="homeInstructorsTitle">Judul Instruktur / Asesor</label>
+                    <input id="homeInstructorsTitle" name="home_instructors_title" class="admin-inline-section-title" type="text" />
                   </div>
-                  <div class="admin-homepage-placeholder-grid admin-homepage-placeholder-grid-members">
-                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
-                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
-                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
-                    <article class="card admin-homepage-placeholder-card">Kartu anggota dari database</article>
-                  </div>
+                  <p class="admin-note">Data kartu dikelola melalui modul Instruktur &amp; Asesor.</p>
+                  <div class="admin-actions"><a class="btn btn-outline" href="/admin-instruktur.html">Kelola Instruktur &amp; Asesor</a></div>
                 </div>
               </section>
 
@@ -245,7 +239,7 @@
   </main>
 
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/admin-shell.js?v=20260924-admin-sidebar"></script>
-  <script src="/assets/js/admin-homepage.js?v=20260924-hero-upload"></script>
+  <script src="/assets/js/admin-shell.js?v=20260928-instructor-crud"></script>
+  <script src="/assets/js/admin-homepage.js?v=20260928-instructor-crud"></script>
 </body>
 </html>

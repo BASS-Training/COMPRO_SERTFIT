@@ -46,6 +46,18 @@ CREATE TABLE IF NOT EXISTS anggota (
   KEY anggota_active_sort_idx (is_active, sort_order, name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS instruktur (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(140) NOT NULL,
+  photo_url VARCHAR(255) NOT NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort_order INT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY instruktur_active_sort_idx (is_active, sort_order, name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS site_settings (
   setting_key VARCHAR(80) NOT NULL,
   setting_value MEDIUMTEXT NOT NULL,

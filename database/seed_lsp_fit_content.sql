@@ -1,6 +1,7 @@
 -- Seed konten awal LSP FIT. Data konten lama sengaja diganti dengan data ini.
 DELETE FROM kegiatan;
 DELETE FROM anggota;
+DELETE FROM instruktur;
 DELETE FROM partners;
 
 INSERT INTO anggota (name, role_label, photo_url, sort_order) VALUES
@@ -11,6 +12,28 @@ INSERT INTO anggota (name, role_label, photo_url, sort_order) VALUES
   ('Rahayu Wibowo', 'Bidang Sertifikasi', '/assets/asesor/rahayu wibowo.png', 3),
   ('M. Reza Aditya', 'Finance', 'https://ui-avatars.com/api/?name=M.+Reza+Aditya&size=600&background=E6F4FB&color=0D1B2A', 2),
   ('Annisa Ramadaniah', 'Bidang Administrasi', 'https://ui-avatars.com/api/?name=Annisa+Ramadaniah&size=600&background=E6F4FB&color=0D1B2A', 1);
+
+INSERT INTO instruktur (name, photo_url, sort_order) VALUES
+  ('Agus Mustofa', '/assets/asesor/Agus Mustofa.jpg', 20),
+  ('Anne Mariane', '/assets/asesor/anne mariane.jpg', 19),
+  ('B. Andreas Mada WK', '/assets/asesor/B. Andreas Mada WK.jpg', 18),
+  ('B. Rusdiharsono', '/assets/asesor/b.rusdiharsono.jpg', 17),
+  ('Fadjar Eko Novanto', '/assets/asesor/fadjar eko novanto.jpg', 16),
+  ('Fitri Firmansyah', '/assets/asesor/Fitri firmansyah.png', 15),
+  ('Iwan Setiawan', '/assets/asesor/Iwan Setiawan.jpg', 14),
+  ('Margono Sugeng', '/assets/asesor/margono sugeng.jpg', 13),
+  ('Marthen Christian David Sipahuta', '/assets/asesor/marthen christian david sipahuta.jpeg', 12),
+  ('Masdaryanto', '/assets/asesor/masdaryanto.jpeg', 11),
+  ('Nelly Triyas Dayanti', '/assets/asesor/nelly triyas dayanti.png', 10),
+  ('Nur Dewi Afifah', '/assets/asesor/nur dewi afifah.jpg', 9),
+  ('Rachmat Astiana', '/assets/asesor/rachmat astiana.jpg', 8),
+  ('Rahayu Wibowo', '/assets/asesor/rahayu wibowo.png', 7),
+  ('Roberto Pardede', '/assets/asesor/roberto pardede.jpeg', 6),
+  ('Sri Prahyoto', '/assets/asesor/sri prahyoto.jpg', 5),
+  ('Sumiyanto', '/assets/asesor/sumiyanto.jpg', 4),
+  ('Totok Suharto', '/assets/asesor/totok suharto.png', 3),
+  ('Tri Iman Surya', '/assets/asesor/tri iman surya.jpg', 2),
+  ('Yulia Rosdiati', '/assets/asesor/yulia rosdiati.jpg', 1);
 
 INSERT INTO partners (name, logo_url, website_url, sort_order) VALUES
   ('UDN', '/assets/partners/udn.jpeg', NULL, 22), ('STIA LAN', '/assets/partners/stialan.jpeg', NULL, 21),
@@ -43,10 +66,12 @@ INSERT INTO site_settings (setting_key, setting_value) VALUES
   ('about_description', 'LSP FIT adalah Lembaga Sertifikasi Profesi Fasilitator, Instruktur dan Tenaga Kepelatihan berlisensi BNSP yang menjaga mutu dan relevansi sertifikasi kompetensi.'),
   ('vision', 'Menjadi lembaga sertifikasi profesi yang terpercaya, objektif, dan relevan dengan kebutuhan dunia kerja nasional.'),
   ('mission', 'Menyelenggarakan sertifikasi kompetensi sesuai standar BNSP dan SKKNI.\nMenjaga objektivitas, konsistensi, dan mutu proses asesmen.\nMemperluas akses sertifikasi melalui layanan online dan offline.\nMembangun kemitraan dengan pemerintah, industri, lembaga pelatihan, dan perguruan tinggi.\nMendukung pengakuan kompetensi fasilitator, instruktur, dan tenaga kepelatihan.'),
+  ('about_show_video', '1'),
   ('contact_email', 'info.lspfit@gmail.com'),
   ('contact_website', 'www.sertifikasifit.com'),
   ('contact_phone', '0811-1210-1007'),
   ('contact_address', 'Ruko Akasa Blok B No 5, Jl. Raya Astek, Kp. Jombang, Kel. Lengkong Gudang Timur, Kec. Serpong, Kota Tangerang Selatan'),
+  ('about_leader_image', '/assets/asesor/Fitri%20firmansyah.png'),
   ('home_hero_title', 'LSP FIT untuk kompetensi profesional yang diakui.'),
   ('home_hero_description', 'LSP FIT menyelenggarakan sertifikasi kompetensi bagi fasilitator, instruktur, dan tenaga kepelatihan dengan standar BNSP dan kebutuhan dunia kerja.'),
   ('home_hero_button_text', 'Lihat Skema Sertifikasi'),
@@ -54,10 +79,8 @@ INSERT INTO site_settings (setting_key, setting_value) VALUES
   ('home_hero_image', '/assets/lspfit/logofit-nobg.png'),
   ('home_profile_kicker', 'Tentang LSP FIT'),
   ('home_profile_title', 'Lembaga Sertifikasi Profesi berlisensi BNSP'),
-  ('home_profile_card_title', 'Berlisensi BNSP'),
-  ('home_profile_card_description', 'LSP FIT memiliki lisensi BNSP LSP-444-ID dan melaksanakan sertifikasi mengacu SKKNI No. 333 Tahun 2020.'),
-  ('home_members_kicker', 'Struktur LSP FIT'),
-  ('home_members_title', 'Tim pengelola sertifikasi profesional'),
+  ('home_instructors_kicker', 'Instruktur & Asesor'),
+  ('home_instructors_title', 'Tenaga profesional LSP FIT'),
   ('home_partners_kicker', 'Mitra & Kerjasama'),
   ('home_partners_title', 'Jaringan kolaborasi LSP FIT'),
   ('home_cta_title', 'Siap mengikuti sertifikasi kompetensi?'),
@@ -66,13 +89,12 @@ INSERT INTO site_settings (setting_key, setting_value) VALUES
   ('home_cta_button_url', '/kontak.html'),
   ('home_show_activities', '0'),
   ('home_show_profile', '1'),
-  ('home_show_members', '1'),
+  ('home_show_instructors', '1'),
   ('home_show_partners', '1'),
   ('home_show_cta', '1'),
   ('home_section_order', 'profile,members,partners,cta'),
   ('content_seed_version', '20260925-dynamic-about-media'),
   ('home_partners_layout', 'carousel'),
-  ('home_members_layout', 'cards'),
   ('about_profile_kicker', 'Profil'),
   ('about_profile_title', 'Berlisensi BNSP'),
   ('about_profile_description', 'LSP FIT memiliki lisensi BNSP dengan Nomor LSP-444-ID dan berhak melaksanakan uji kompetensi mengacu SKKNI No. 333 Tahun 2020.'),

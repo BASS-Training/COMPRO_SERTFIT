@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const topik = document.getElementById('topik')?.value.trim() || '-';
       const pesan = document.getElementById('pesan')?.value.trim() || '-';
       const text = [
-        'Halo LSP FIT, saya ingin mendaftar uji kompetensi',
+        'Halo LSP FIT, saya ingin berkonsultasi mengenai layanan sertifikasi kompetensi.',
         '',
         `Nama: ${nama}`,
         `Instansi: ${instansi}`,

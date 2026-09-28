@@ -7,6 +7,7 @@
   const previewBtn = document.getElementById('previewProfileBtn');
   const message = document.getElementById('adminMessage');
   const videoFileInput = document.getElementById('aboutVideoFile');
+  const leaderImageFileInput = document.getElementById('aboutLeaderImageFile');
 
   const fields = {
     about_title: document.getElementById('aboutTitle'),
@@ -25,12 +26,14 @@
     about_leader_quote: document.getElementById('aboutLeaderQuote'),
     about_leader_name: document.getElementById('aboutLeaderName'),
     about_leader_role: document.getElementById('aboutLeaderRole'),
+    about_leader_image: document.getElementById('aboutLeaderImage'),
     about_video_kicker: document.getElementById('aboutVideoKicker'),
     about_video_title: document.getElementById('aboutVideoTitle'),
     about_video_description: document.getElementById('aboutVideoDescription'),
     about_video_url: document.getElementById('aboutVideoUrl'),
     about_video_note_label: document.getElementById('aboutVideoNoteLabel'),
     about_video_note_description: document.getElementById('aboutVideoNoteDescription'),
+    about_show_video: document.getElementById('aboutShowVideo'),
     vision: document.getElementById('vision'),
     mission: document.getElementById('mission'),
     contact_email: document.getElementById('contactEmail'),
@@ -59,11 +62,18 @@
   };
 
   const getSettings = () => Object.fromEntries(
-    Object.entries(fields).map(([key, field]) => [key, field.value.trim()])
+    Object.entries(fields).map(([key, field]) => [
+      key,
+      field.type === 'checkbox' ? (field.checked ? '1' : '0') : field.value.trim(),
+    ])
   );
 
   const fillForm = (settings) => {
     Object.entries(fields).forEach(([key, field]) => {
+      if (field.type === 'checkbox') {
+        field.checked = (settings[key] || '0') === '1';
+        return;
+      }
       field.value = settings[key] || '';
     });
     renderPreview();
@@ -90,9 +100,11 @@
       settings.about_leader_name,
       settings.about_leader_role,
     ].filter(Boolean).join(' - ');
+    document.getElementById('previewAboutLeaderImage').src = settings.about_leader_image || '/assets/asesor/Fitri%20firmansyah.png';
     document.getElementById('previewAboutVideoTitle').textContent = settings.about_video_title;
     document.getElementById('previewAboutVideoDescription').textContent = settings.about_video_description;
     document.getElementById('previewAboutVideoUrl').textContent = settings.about_video_url || 'Belum ada URL video';
+    document.getElementById('previewAboutVideo').hidden = settings.about_show_video === '0';
     document.getElementById('previewVision').textContent = settings.vision;
 
     const mission = document.getElementById('previewMission');
@@ -207,6 +219,14 @@
       }
       formData.append('about_video_file', videoFile);
     }
+    const leaderImageFile = leaderImageFileInput.files[0];
+    if (leaderImageFile) {
+      if (leaderImageFile.size > 4 * 1024 * 1024) {
+        showMessage('Ukuran foto pimpinan maksimal 4 MB.', 'error');
+        return;
+      }
+      formData.append('about_leader_image_file', leaderImageFile);
+    }
 
     try {
       const data = await apiRequest('/api/profile.php', {
@@ -215,6 +235,7 @@
       });
       fillForm(data.settings || settings);
       videoFileInput.value = '';
+      leaderImageFileInput.value = '';
       showMessage('Profil website berhasil disimpan.', 'success');
     } catch (error) {
       showMessage(error.message || 'Profil website gagal disimpan.', 'error');
